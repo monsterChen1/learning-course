@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>块级元素与行内元素</title>
+</head>
+<body>
+    <!-- 块级元素 特点：独占一行 -->
+    <marquee>marquee元素-滚动</marquee>
+    <marquee>marquee元素-滚动</marquee>
+    <h1>标题一</h1>
+    <h1>标题一</h1>
+    <p>段落</p>
+    <p>段落</p>
+    <div>div元素</div>
+    <div>div元素</div>
+
+    <!-- 行内元素 特点：不独占一行 -->
+    <input type="text">
+    <input type="text">
+    <span>span元素</span>
+    <span>span元素</span>
+
+    <!-- 规则1：块级元素中能写：行内元素、块级元素 -->
+    <div>
+        <span>span元素</span>
+        <input type="text">
+        <div>div元素</div>
+    </div>
+
+    <!-- 规则2：行内元素中能写：行内元素，但不能写：块级元素 -->
+    <span>
+        <span>span元素</span>
+        <input type="text">
+        <span>span元素</span>
+        <!-- <div>div元素</div> -->
+    </span>
+
+    <!-- 特殊规则：h1～h6不能相互嵌套，p标签不能写块级元素 -->
+</body>
+</html>

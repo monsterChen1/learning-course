@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS的编写位置</title>
+    <!-- 内部样式 -->
+    <style>
+        h2{
+            color: green;
+            font-size: 40px;
+        }
+    </style>
+    <!-- 外部样式 -->
+    <link rel="stylesheet" href="css/class19.css">
+</head>
+<body>
+    <!-- 行内样式 -->
+    <h1 style="color: red;font-size: 60px;">Hello, CSS</h1>
+
+    <!-- 内部样式 -->
+    <h2>Hello, CSS</h2>
+
+    <!-- 外部样式 -->
+    <h3>Hello, CSS</h3>
+
+    <!-- 优先级：行内样式 > 外联样式 = 内部样式 -->
+    <!-- 外联样式和内部样式：被后面定义的样式覆盖(后来者居上) -->
+</body>
+</html>

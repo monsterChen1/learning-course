@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>行内块的幽灵空白问题</title>
+    <style>
+        /* 解决行内块的幽灵空白问题 */
+        /* 行内块元素与文本的基线对齐，而文本的基线与文本最底端之间是有一定距离的 */
+        /* 方法一：给行内块设置vertical-align，值不为baseline */
+        /* 方法二：只有一个行内块的话，设置display:block */
+        /* 方法三：给父元素设置font-size:0 */
+        div {
+            width: 400px;
+            background: gray;
+            /* font-size: 0; */
+        }
+        img {
+            height: 200px;
+            vertical-align: middle;
+            /* display: block; */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="image/3.webp" alt="">
+    </div>
+</body>
+</html>

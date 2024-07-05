@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复合选择器</title>
+    <style>
+        /* 后代选择器 */
+        ul li {
+            color: blue;
+        }
+        ol li {
+            color: green;
+        }
+        ul li span {
+            color: red;
+        }
+        ol li span {
+            color: orange;
+        }
+        /* 子代选择器 */
+        div>a {
+            color: red;
+        }
+        div>p>a {
+            color: orange;
+        }
+        .photo>a {
+            color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <span>广东</span>
+        </li>
+        <!-- <div>
+            <li>广州</li>
+        </div> -->
+        <li>广西</li>
+        <li>福建</li>
+        <li>江西</li>
+    </ul>
+    <hr>
+    <ol>
+        <li>早起</li>
+        <li>早餐</li>
+        <li>上班</li>
+        <li>
+            <span>午饭</span>
+        </li>
+        <li>下班</li>
+        <li>睡觉</li>
+    </ol>
+    <hr>
+    <div>
+        <a href="#">视频</a>
+        <a href="#">音频</a>
+        <p>
+            <a href="#">百度</a>
+            <div class="photo">
+                <a href="#">图片</a>
+            </div>
+        </p>
+    </div>
+</body>
+</html>

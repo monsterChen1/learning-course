@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>框架标签 HTML实体</title>
+</head>
+<body>
+    <!-- 嵌入一个网页 -->
+    <iframe src="https://www.taobao.com/" frameborder="0" width="500" height="500"></iframe>
+    <!-- 嵌入一个其他内容 -->
+    <iframe src="audio/天外来物-薛之谦.320.mp3" frameborder="0"></iframe>
+    <iframe src="video/FLOWER.mp4" frameborder="0"></iframe>
+    <iframe src="image/3.webp" frameborder="0"></iframe><br>
+
+    <!-- 与超链接的target属性配合使用 -->
+    <a href="https://www.taobao.com" target="dialog">去淘宝</a><br>
+    <iframe name="dialog" frameborder="0" width="500" height="500"></iframe>
+
+    <!-- 与表单的target属性配合使用 -->
+    <form action="https://so.toutiao.com/search" target="dialog">
+        <input type="text" name="keyword">
+        <input type="submit" value="搜索">
+    </form>
+
+    <div>你&nbsp;&nbsp;&nbsp;&nbsp;好</div>
+    <div>&lt;h1&gt;</div>
+    <div>空格实体：&amp;nbsp;</div>
+    <div>&实体：&amp;amp;</div>
+    <div>&yen;199</div>
+    <div>&copy;版权所有</div>
+    <div>3 &times; 3 = 9</div>
+    <div>2 &divide; 2 = 1</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3媒体查询-运算符</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            height: 200px;
+            background-color: gray;
+            text-align: center;
+            line-height: 200px;
+            font-size: 100px;
+        }
+
+        /* and 且运算符 */
+        /* 检测视口宽度大于等于700px且小于等于800px，应用如下样式 */
+        /* @media (min-width: 700px) and (max-width: 800px) {
+            h1 {
+                background-color: orange;
+            }
+        } */
+        /* @media screen and (min-width: 700px) and (max-width: 800px) {
+            
+        } */
+
+        /* or 或运算符 */
+        /* @media (max-width: 700px) or (min-width: 800px) {
+            h1 {
+                background-color: orange;
+            }
+        } */
+
+        /* not 否定运算符 */
+        /* @media not screen {
+            h1 {
+                background-color: orange;
+            }
+        } */
+
+        /* only 肯定运算符 */
+        /* @media only screen {
+            h1 {
+                background-color: orange;
+            }
+        } */
+    </style>
+</head>
+<body>
+    <h1>快结束啦！</h1>
+</body>
+</html>

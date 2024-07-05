@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS元素的显示模式</title>
+    <style>
+        html {
+            font-size: 28px;
+        }
+        /* 块元素 block */
+        /* 可以设置宽高 */
+        /* 默认宽度 撑满父元素 */
+        /* 默认高度 由内容决定 */
+        .d1 {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+        .d2 {
+            width: 300px;
+            height: 300px;
+            background-color: orange;
+        }
+        .d3 {
+            width: 400px;
+            height: 400px;
+            background-color: chocolate;
+        }
+
+        /* 行内元素 inline */
+        /* 默认宽度 和 默认高度 都由内容决定 */
+        span {
+            font-size: 50px;
+        }
+        .s1 {
+            /* 不能设置宽高 */
+            /* width: 200px; */
+            /* height: 200px; */
+            background-color: skyblue;
+        }
+        .s2 {
+            background-color: orange;
+        }
+
+        /* 行内块元素 inline-block */
+        /* 默认宽度 和 默认高度 都由内容决定 */
+        /* 可以设置宽 和 高 */
+        img {
+            width: 200px;
+            height: 200px;
+        }
+
+        /* display 修改元素显示模式 */
+        .d4 {
+            width: 200px;
+            height: 200px;
+            display: block;
+            background-color: orange;
+        }
+        .d5 {
+            width: 200px;
+            height: 200px;
+            display: inline;
+            background-color: aqua;
+        }
+        .d6 {
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+            background-color: chocolate;
+        }
+        .d7 {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="d1">第一行</div>
+    <div class="d2">第二行</div>
+    <div class="d3">第三行</div>
+    <hr>
+    <span class="s1">span1</span>
+    <span class="s2">span2</span>
+    <span class="s1">span3</span>
+    <span class="s2">span4</span>
+    <span class="s1">span5</span>
+    <span class="s2">span6</span>
+    <span class="s1">span7</span>
+    <span class="s2">span8</span>
+    <span class="s1">span9</span>
+    <span class="s2">span10</span>
+    <span class="s1">span11</span>
+    <span class="s2">span12</span>
+    <hr>
+    <img src="./image/3.webp" alt="image">
+    <hr>
+    <div class="d4">block</div>
+    <div class="d5">inline</div><br>
+    <div class="d6">inline-block</div>
+    <div class="d7">none</div>
+</body>
+</html> 

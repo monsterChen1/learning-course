@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS外边距</title>
+    <style>
+        .div1 {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            /* 外边距 margin */
+            /* 上边距 */
+            /* margin-top: 10px; */
+            /* 右边距 */
+            /* margin-right: 20px; */
+            /* 下边距 */
+            /* margin-bottom: 30px; */
+            /* 左边距 */
+            /* margin-left: 40px; */
+
+            /* 四边都为10px */
+            /* margin: 10px; */
+            /* 上下10px, 左右20px */
+            /* margin: 10px 20px; */
+            /* 上10px, 左右20px, 下30px */
+            /* margin: 10px 20px 30px; */
+            /* 上10px, 右20px, 下30px, 左40px */
+            margin: 10px 20px 30px 40px;
+        }
+        /* 注意点 */
+        /* 子元素的margin，是根据父元素的content计算的 */
+        .out {
+            width: 400px;
+            height: 400px;
+            padding: 50px;
+            background-color: gray;
+        }
+        .in {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            margin: 50px;
+        }
+        /* 上和左margin影响自己的位置，下和右margin影响兄弟元素的位置 */
+        .top,.middle,.bottom{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+        }
+        .middle {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .center {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        /* 块级元素和行内块元素都可以设置margin，行内元素左右margin可以设置，上下margin设置后无效果 */
+        .block {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            margin: 10px;
+        }
+        .inline-block {
+            margin: 10px;
+        }
+        .inline {
+            margin: 10px;
+            background-color: orange;
+        }
+        /* margin值可以为auto，块级元素的左右margin为auto可以实现水平居中 */
+        .auto {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            margin: 0 auto;
+        }
+        /* margin可以为负值 */
+        .fuzhi {
+            width: 200px;
+            height: 200px;
+            margin-top: -100px;
+            background-color: orange;
+        }
+        /* margin塌陷问题 */
+        .outer {
+            width: 400px;
+            /* height: 400px; */
+            background-color: gray;
+            /* 边距和内边距可以解决塌陷问题 */
+            /* border: 1px solid transparent; */
+            /* padding: 1px; */
+            /* 开启BFC(块级格式化上下文) 都可以解决塌陷问题 */
+            /* overflow: hidden; */
+            /* float: left; */
+            /* display: inline-block; */
+        }
+        .inner1 {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            margin-top: 50px;
+        }
+        .inner2 {
+            width: 100px;
+            height: 100px;
+            background-color: green ;
+            margin-bottom: 50px;
+        }
+        /* margin合并 */
+        .merge1, .merge2, .merge3, .merge4 {
+            width: 200px;
+            height: 200px;
+        }
+        /* 上面元素的下外边距和下面元素的上外边距会合并，取最大的值, 只有上下会合并，左右不会 */
+        .merge1 {
+            background-color: deepskyblue;
+            margin-bottom: 20px;
+        }
+        .merge2 {
+            background-color: deeppink;
+            margin-top: 30px;
+        }
+
+        .merge3 {
+            display: inline-block;
+            background-color: orange;
+            margin-right: 30px;
+        }
+        .merge4 {
+            display: inline-block;
+            background-color: purple;
+            margin-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        margin
+    </div>
+    <hr>
+    <!-- 子元素的margin，是根据父元素的content计算的 -->
+    <div class="out">
+        <div class="in">
+            
+        </div>
+    </div>
+    <hr>
+    <!-- 上和左margin影响自己的位置，下和右margin影响兄弟元素的位置 -->
+    <div class="top">top</div>
+    <div class="middle">middle</div>
+    <div class="bottom">bottom</div>
+    <img class="left" src="./image/悟空.jpg" alt=""><img class="center" src="./image/悟空.jpg" alt=""><img class="right" src="./image/悟空.jpg" alt="">
+    <hr>
+    <!-- 块级元素和行内块元素都可以设置margin，行内元素左右margin可以设置，上下margin设置后无效果 -->
+    <div class="block"></div>
+    <img class="inline-block" src="./image/悟空.jpg" alt=""><br>
+    <span class="inline">行内元素</span><span class="inline">行内元素</span><span class="inline">行内元素</span>
+    <hr>
+    <!-- margin值可以为auto，块级元素的左右margin为auto可以实现水平居中 -->
+    <div class="auto"></div>
+    <hr>
+    <!-- margin可以为负值 -->
+    <div class="fuzhi">111</div>
+    <hr>
+    <!-- margin的塌陷问题 -->
+    <!-- 第一个子元素的margin-top会作用在父元素上 -->
+    <!-- 最后一个子元素的margin-bottom会作用在父元素上 -->
+    <!-- 解决办法 -->
+    <!-- 父元素设置border或padding -->
+    <!-- 父元素开始BFC(块级格式化上下文) -->
+    <div class="outer">
+        <div class="inner1">inner1</div>
+        <div class="inner2">inner2</div>
+    </div>
+    <hr>
+    <!-- 上面元素的下外边距和下面元素的上外边距会合并，取最大的值, 只有上下会合并，左右不会 -->
+    <div class="merge1">one</div>
+    <div class="merge2">two</div>
+    <div class="merge3">three</div>
+    <div class="merge4">four</div>
+</body>
+</html>

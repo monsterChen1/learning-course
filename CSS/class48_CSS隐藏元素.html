@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS隐藏元素</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+        }
+        .div1 {
+            background-color: skyblue;
+            /* display: none; */
+            /* visibility 默认值是show hidden隐藏，还占有原来的位置 */
+            /* visibility: show; */
+            visibility: hidden;
+        }
+        .div2 {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">1</div>
+    <div class="div2">2</div>
+</body>
+</html>

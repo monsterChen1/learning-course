@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS固定定位</title>
+    <style>
+        .outer {
+            width: 500px;
+            background-color: gray;
+            border: 1px solid black;
+            padding: 20px;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+        }
+        .box1 {
+            background-color: skyblue;
+        }
+        .box2 {
+            background-color: orange;
+            /* 开启固定定位 */
+            /* 相对于视口，来调整位置 */
+            /* 会固定在视口的某个位置 */
+            position: fixed;
+            top: 0;
+            left: 0;
+            /* 不能同时设置浮动，浮动会失效 */
+            /* float: left; */
+            /* 可以设置margin，但是跟设置的top、left、right、bottom相对应 */
+            /* margin-top: 100px; */
+        }
+        .box3 {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+    </div>
+</body>
+</html>

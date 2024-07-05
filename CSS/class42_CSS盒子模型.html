@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS盒子模型</title>
+    <style>
+        div {
+            /* 内容区的宽 */
+            width: 200px;
+            /* 内容区的高 */
+            height: 200px;
+            font-size: 20px;
+            /* 内边距 设置的背景颜色会填充到内边距中 */
+            padding: 10px;
+            /* 边框 设置的背景颜色会填充到边框中 */
+            border: 5px solid black;
+            /* 盒子的大小 = content + 左右padding + 左右border */
+            /* 盒子的默认宽度 = 父元素的content - 自身的左右margin */
+            /* 外边距 */
+            margin: 10px;
+
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div>盒子</div>
+</body>
+</html>

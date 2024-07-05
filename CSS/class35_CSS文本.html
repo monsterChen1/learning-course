@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS文本</title>
+    <style>
+        body {
+            font: 28px "娃娃体-简", sans-serif;
+        }
+        /* 文本颜色 color */
+        .text-block1 {
+            /* 颜色：name-color，RGB或RGBA，HSL或HSLA */
+            /* color: chocolate; */
+            color: rgb(210, 105, 30);
+            /* color: hsl(hue, saturation, lightness); */
+        }
+
+        /* 文本间距 */
+        /* 字母间距 letter-spacing */
+        .text-block2 {
+            /* 正值：增大间距 */
+            letter-spacing: 5px;
+            /* 负值：缩小间距 */
+            /* letter-spacing: -5px; */
+        }
+        /* 单词间距 word-spacing */
+        /* 对中文不起作用 */
+        .text-block3 {
+            word-spacing: 20px;
+            /* word-spacing: -5px; */
+        }
+
+        /* 文本修饰 text-decoration */
+        .text-block4 {
+            /* 无作用 */
+            text-decoration: none;
+        }
+        .text-block5 {
+            /* 下划线 */
+            text-decoration: underline;
+        }
+        .text-block6 {
+            /* 上划线 */
+            text-decoration: overline;
+        }
+        .text-block7 {
+            /* 删除线 */
+            text-decoration: line-through;
+        }
+        .text-block8 {
+            /* 下划线虚线 */
+            text-decoration: green underline dotted;
+        }
+        .text-block9 {
+            /* 下划线波浪线 */
+            text-decoration: underline wavy red;
+        }
+
+        /* 文本缩进 text-indent */
+        .text-block10 {
+            text-indent: 2em;
+        }
+
+        /* 文本水平对齐 text-align */
+        .text-block11 {
+            text-align: left;
+        }
+        .text-block12 {
+            text-align: center;
+        }
+        .text-block13 {
+            text-align: right;
+        }
+
+        /* 行高 line-height */
+        .text-block14 {
+            /* normal值 */
+            /* line-height: normal; */
+
+            /* 像素 */
+            /* line-height: 50px; */
+            
+            /* 依据font-size的倍数 */
+            line-height: 1.5;
+
+            /* 依据font-size的百分比 */
+            /* line-height: 150%; */
+        }
+
+        /* 文本垂直对齐 */
+        /* 居中 */
+        .text-block15 {
+            /* 多行文字，行与行直接的间距 */
+            /* 单行文字实现文字垂直居中 */
+            height: 100px;
+            line-height: 100px;
+        }
+        /* 底部 */
+        .text-block16 {
+            height: 100px;
+            font-size: 20px;
+            line-height: 175px;
+        }
+
+        /* vertical-align */
+        .text-block17{
+            height: 200px;
+            font-size: 50px;
+            background-color: skyblue;
+        }
+        .text-block17 span{
+            font-size: 20px;
+            background-color: orange;
+            /* 基线对齐 默认 */
+            /* vertical-align: baseline; */
+            /* 顶部对齐 */
+            /* vertical-align: top; */
+            /* 元素的中部与父元素x的中心对齐 */
+            vertical-align: middle;
+            /* 底部对齐 */
+            /* vertical-align: bottom; */
+        }
+        .text-block17 img{
+            height: 25px;
+            vertical-align: top;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 文本颜色 color -->
+    <div class="text-block1">Lorem ipsum dolor sit.</div><br>
+
+    <!-- 文本间距 -->
+    <!-- 字母间距 letter-spacing -->
+    <div class="text-block2">Lorem ipsum dolor sit.</div><br>
+    <!-- 单词间距 word-spacing 对中文不起作用 -->
+    <div class="text-block3">Lorem ipsum dolor sit.</div><br>
+
+    <!-- 文本修饰 text-decoration -->
+    <!-- 无作用 -->
+    <div class="text-block4">Lorem ipsum dolor sit.</div><br>
+    <!-- 下划线 -->
+    <div class="text-block5">Lorem ipsum dolor sit.</div><br>
+    <!-- 上划线 -->
+    <div class="text-block6">Lorem ipsum dolor sit.</div><br>
+    <!-- 删除线 -->
+    <div class="text-block7">Lorem ipsum dolor sit.</div><br>
+    <!-- 下划线虚线 -->
+    <div class="text-block8">Lorem ipsum dolor sit.</div><br>
+    <!-- 下划线波浪线 -->
+    <div class="text-block9">Lorem ipsum dolor sit.</div><br>
+
+    <!-- 文本缩进 text-indent -->
+    <div class="text-block10">Lorem ipsum dolor sit.</div><br>
+
+    <!-- 文本水平对齐 text-align -->
+    <!-- 左对齐 -->
+    <div class="text-block11">Lorem ipsum dolor sit.</div><br>
+    <!-- 居中 -->
+    <div class="text-block12">Lorem ipsum dolor sit.</div><br>
+    <!-- 右对齐 -->
+    <div class="text-block13">Lorem ipsum dolor sit.</div><br>
+
+    <!-- 行高 line-height -->
+    <!-- normal 像素值 font-size倍数值或百分比 -->
+    <div class="text-block14">Lorem ipsum dolor sit.</div><br>
+    
+
+    <!-- 文本垂直对齐 -->
+    <!-- 顶部对齐 默认 -->
+    <!-- 居中对齐 line-height = height -->
+    <div class="text-block15">Lorem ipsum dolor sit.</div><br>
+    <!-- 底部对齐 line-height = 2 * height - font-size - 动态的值 -->
+    <div class="text-block16">Lorem ipsum dolor sit.</div>
+    
+    <!-- vertical-align -->
+    <!-- 用于指定同一行元素之间，或表格单元格内文字的垂直对齐方式 -->
+    <div class="text-block17">
+        Textgggx<span>Lorem, ipsum.</span><img src="/image/3.webp"/>
+    </div>
+
+
+</body>
+</html>

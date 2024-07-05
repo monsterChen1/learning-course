@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复合选择器</title>
+    <style>
+        p {
+            font-size: small;
+        }
+        /* 交集选择器 且 */
+        p.first {
+            /* 一般都是元素选择器加类选择器 */
+            font-size: 40px;
+        }
+        p.normal#normal-p {
+            /* 一般直接写 #normal-p */
+            font-size: 25px;
+            color: aquamarine;
+        }
+        .first.normal{
+            color: chocolate;
+            font-size: 20px;
+        }
+        /* 并集选择器 或 */
+        h2,
+        h3,
+        h4 {
+            background-color: skyblue;
+            width: 180px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <p class="first">我是第一段落</p>
+    <p class="normal" id="normal-p">正常的段落</p>
+    <p class="first normal">正常的第一个段落</p>
+
+    <h2>第二标题</h2>
+    <h3>第三标题</h3>
+    <h4>第四标题</h4>
+</body>
+</html>

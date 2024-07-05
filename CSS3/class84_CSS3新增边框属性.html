@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3新增边框属性</title>
+    <style>
+        .box1 {
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            /* 四个角统一为50 */
+            /* border-radius: 50px; */
+            /* 左上、右下为20 右上、左下为40 */
+            /* border-radius: 20px 40px; */
+            /* 左上为20 右上、左下为40px 右下为60 */
+            /* border-radius: 20px 40px 60px; */
+
+            /* 单独设置每个角的弧度 */
+            /* border-top-left-radius: 100px; */
+            /* border-top-right-radius: 50px; */
+            /* border-bottom-left-radius: 20px; */
+            /* border-bottom-right-radius: 10px; */
+            border-radius: 100px 50px 20px 10px;
+
+            /* 椭圆 */
+            /* border-top-left-radius: 100px 50px; */
+            /* border-top-right-radius: 50px 20px; */
+            /* border-bottom-left-radius: 20px 10px; */
+            /* border-bottom-right-radius: 10px 5px; */
+            /* border-radius: 100px 50px 20px 10px / 50px 20px 10px 5px; */
+        }
+        .box2 {
+            width: 400px;
+            height: 400px;
+            border: 10px solid black;
+            margin: 0 auto;
+            background-color: gray;
+            padding: 10px;
+            font-size: 40px;
+
+            /* outline-width: 20px; */
+            /* outline-color: orange; */
+            /* outline-style: solid; */
+            outline: 20px solid orange;
+            outline-offset: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 边框圆角 -->
+    <div class="box1"></div>
+    <!-- 外边框 -->
+    <div class="box2">外边框</div>
+</body>
+</html>

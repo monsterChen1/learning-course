@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3常用阈值</title>
+    <style>
+        * {
+            margin: 0;padding: 0;
+        }
+        h1 {
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            font-size: 100px;
+        }
+        /* 超小屏幕 小于768px */
+        @media screen and (max-width: 768px){
+            h1 {
+                background-color: deepskyblue;
+            }
+        }
+
+        /* 中等屏幕 大于等于768px且小于等于992px */
+        @media screen and (min-width:768px) and (max-width: 992px){
+            h1 {
+                background-color: green;
+            }
+        }
+
+        /* 大屏幕 大于等于992px且小于等于1200px */
+        @media screen and (min-width:992px) and (max-width: 1200px){
+            h1 {
+                background-color: orange;
+            }
+        }
+
+        /* 超大屏幕 大于1200px */
+        @media screen and (min-width:1200px){
+            h1 {
+                background-color: purple;
+            }
+        }
+    </style>
+    <!-- <link rel="stylesheet" media="screen and (min-width:1200px)" href="style.css"> -->
+</head>
+<body>
+    <h1>快结束啦！</h1>
+</body>
+</html>

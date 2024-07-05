@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3新增的文本属性</title>
+    <style>
+        /* body {
+            background-color: black;
+        } */
+        /* text-shadow 文本阴影 */
+        h1 {
+            font-size: 80px;
+            text-align: center;
+            color: white;
+
+            /* text-shadow: 3px 3px; */
+            /* text-shadow: 3px 3px red; */
+            /* text-shadow: 水平距离 垂直距离 模糊程度 颜色; */
+            /* text-shadow: 3px 3px 10px red; */
+            text-shadow: 0px 0px 15px red;
+        }
+        /* white-space 文本的换行方式 */
+        .box1 {
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+            font-size: 20px;
+            /* background-color: white; */
+            /* normal 文本超出边界自动换行，文本中的换行被浏览器识别为一个空格 */
+            /* white-space: normal; */
+            /* pre 原样输出 */
+            /* white-space: pre; */
+            /* pre-wrap 在pre效果的基础上，超出元素边界自动换行 */
+            /* white-space: pre-wrap; */
+            /* pre-line 在pre效果的基础上，超出元素边界自动换行，只识别文本中的换行，空格会忽略 */
+            white-space: pre-line;
+            /* nowrap 不强制换行 */
+            /* white-space: nowrap; */
+        }
+        /* text-overflow 文本溢出处理方式 */
+        .box2 {
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+            font-size: 20px;
+            background-color: white;
+            list-style: none;
+        }
+        .box2 li {
+            margin-bottom: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            /* 直接剪切 */
+            /* text-overflow: clip; */
+            /* 替换成... */
+            text-overflow: ellipsis;
+        }
+        /* text-decoration 文本修饰 */
+        .box3 {
+            font-size: 40px;
+            /* 文本装饰线的位置 */
+            /* 无修饰线 */
+            /* text-decoration: none; */
+            /* text-decoration-line: none; */
+
+            /* 下划线 */
+            /* text-decoration: underline; */
+            /* text-decoration-line: underline; */
+
+            /* 上划线 */
+            /* text-decoration: overline; */
+            text-decoration-line: overline;
+
+            /* 贯穿线 */
+            /* text-decoration: line-through; */
+            /* text-decoration-line: line-through; */
+
+            /* 文本装饰线形状 */
+            /* 实线 */
+            /* text-decoration-style: solid; */
+            /* 虚线 */
+            /* text-decoration-style: dashed; */
+            /* 点状线 */
+            /* text-decoration-style: dotted; */
+            /* 双实线 */
+            /* text-decoration-style: double; */
+            /* 波浪线 */
+            /* text-decoration-style: wavy; */
+
+            /* 修饰线颜色 */
+            /* text-decoration-color: red; */
+
+            /* 复合属性 */
+            /* text-decoration: text-decoration-line text-decoration-style text-decoration-color;*/
+            text-decoration: underline wavy red;
+        }
+        .box4 {
+            font-size: 100px;
+            -webkit-text-stroke: 5px green;
+            /* -webkit-text-stroke-width: 5px; */
+            /* -webkit-text-stroke-color: green; */
+            color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <!-- text-shadow 文本阴影 -->
+    <h1>文本阴影</h1>
+    <!-- white-space 文本换行 -->
+    <div class="box1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, libero?
+        Lorem ipsum dolor 
+        sit amet consectetur.
+        Lorem ipsum dolor 
+        sit amet consectetur.
+        Lorem ipsum dolor 
+        sit amet consectetur.
+        Lorem ipsum dolor 
+        sit amet consectetur.
+    </div>
+    <!-- text-overflow 文本溢出处理 -->
+    <ul class="box2">
+        <li>Lorem, ipsum.</li>
+        <li>Lorem, ipsum dolor.</li>
+        <li>Lorem ipsum dolor sit.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, adipisci.</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet fuga et consequuntur ab similique fugit.</li>
+    </ul>
+    <!-- text-decoration 文本修饰线 -->
+    <div class="box3">
+        Lorem ipsum dolor sit amet.
+    </div>
+    <!-- -webkit-text-stroke 文本描边 -->
+    <div class="box4">
+        文本描边
+    </div>
+</body>
+</html>

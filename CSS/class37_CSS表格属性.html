@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS表格属性</title>
+    <style>
+        /* 边框相关的属性 */
+        .border-table {
+            font-size: 26px;
+            border-width: 2px;
+            border-color: green;
+            /* none 无 */
+            /* solid 实线 */
+            /* dashed 虚线 */
+            /* dotted 点线 */
+            /* double 双实线 */
+            border-style: solid;
+            /* border: 2px solid green; */
+        }
+        /* tr {
+            border: 2px solid green;
+        } */
+        .border-table th, .border-table td {
+            border: 2px solid green;
+        }
+        h2 {
+            border: 5px dashed purple;
+        }
+
+        /* 表格相关的属性 */
+        .table {
+            border: 2px solid green;
+            width: 300px;
+            /* 控制表格列宽 */
+            /* auto 自适应 */
+            /* fixed 平均 */
+            table-layout: fixed;
+            /* 控制单元格间距 */
+            border-spacing: 0px;
+            /* 合并单元格边框 */
+            /* collapse 合并 */
+            /* separate 不合并 */
+            border-collapse: collapse;
+
+            /* 隐藏空内容的单元格 */
+            /* show 显示 */
+            /* hide 隐藏 */
+            empty-cells: hide;
+
+            /* 标题的位置 */
+            /* top 顶部 */
+            /* bottom 底部 */
+            caption-side: bottom;
+        }
+        .table td, .table th {
+            border: 2px solid orange;
+        }
+    </style>
+</head>
+<body>
+    <h2>border相关的属性，其他元素也能用</h2>
+    <table class="border-table">
+        <caption>Table</caption>
+        <thead>
+            <tr>
+                <th>01</th>
+                <th>02</th>
+                <th>03</th>
+                <th>04</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td>24</td>
+            </tr>
+            <tr>
+                <td>31</td>
+                <td>32</td>
+                <td>33</td>
+                <td>34</td>
+            </tr>
+            <tr>
+                <td>41</td>
+                <td>42</td>
+                <td>43</td>
+                <td>44</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="table">
+        <caption>Table</caption>
+        <thead>
+            <tr>
+                <th>01</th>
+                <th>02</th>
+                <th>03</th>
+                <th>04000</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td>24</td>
+            </tr>
+            <tr>
+                <td>31</td>
+                <td>32</td>
+                <td>33</td>
+                <td>34</td>
+            </tr>
+            <tr>
+                <td>41</td>
+                <td>42</td>
+                <td>43</td>
+                <td>44</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

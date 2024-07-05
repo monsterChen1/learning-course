@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3线性渐变</title>
+    <style>
+        .box {
+            width: 220px;
+            height: 200px;
+            border: 1px solid black;
+            float: left;
+            margin-right: 50px;
+        }
+        .box1 {
+            /* 多个颜色的渐变，默认从上到下渐变 */
+            background-image: linear-gradient(red, yellow, green);
+            /* 理论上可以无限的添加颜色 */
+            /* background-image: linear-gradient(red, yellow, green, blue, black); */
+        }
+        .box2 {
+            /* 通过关键词修改渐变方向 */
+            /* to left, right, top, bottom */
+            background-image: linear-gradient(to top, red, yellow, green);
+        }
+        .box3 {
+            /* 通过角度调整渐变的方向 */
+            /* 0deg = to top */
+            /* background-image: linear-gradient(0deg, red, yellow, green); */
+            background-image: linear-gradient(20deg, red, yellow, green);
+        }
+        .box4 {
+            /* 控件渐变的位置 */
+            /* 从纯红 => 变黄 => 变绿 => 纯绿 */
+            background-image: linear-gradient(red 50px, yellow 100px, green 150px);
+        }
+        .box5 {
+            /* 渐变的文字 */
+            background-image: linear-gradient(20deg, red 50px, yellow 100px, green 150px);
+            font-size: 40px;
+            text-align: center;
+            line-height: 200px;
+            color: transparent;
+            background-clip: text;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- 线性渐变 -->
+    <div class="box box1">默认情况(从上到下)</div>
+    <div class="box box2">通过关键字修改渐变方向</div>
+    <div class="box box3">通过角度修改渐变方向</div>
+    <div class="box box4">控制渐变的位置</div>
+    <div class="box box5">渐变的文字</div>
+</body>
+</html>

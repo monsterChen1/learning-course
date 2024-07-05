@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS33D变换</title>
+    <style>
+        /* 开启3D空间和设置景深 */
+        .outer1 {
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            margin: 0 auto;
+            margin-top: 100px;
+            /* 开启3D空间 */
+            transform-style: preserve-3d;
+            /* 设置景深 */
+            perspective: 500px;
+        }
+        .inner1 {
+            width: 200px;
+            height: 200px;
+            background-color: deepskyblue;
+            transform: rotateX(60deg);
+        }
+
+        /* 设置透视点的位置 */
+        .outer2 {
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            margin: 0 auto;
+            margin-top: 100px;
+            /* 开启3D空间 */
+            transform-style: preserve-3d;
+            /* 设置景深 */
+            perspective: 500px;
+            /* 透视点的位置 */
+            perspective-origin: 200px 200px;
+        }
+        .inner2 {
+            width: 200px;
+            height: 200px;
+            background-color: deepskyblue;
+            transform: rotateX(45deg);
+        }
+
+        /* 3D位移 */
+        .outer3 {
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            margin: 0 auto;
+            margin-top: 100px;
+            /* 开启3D空间 */
+            transform-style: preserve-3d;
+            /* 设置景深 */
+            perspective: 500px;
+            /* 透视点的位置 */
+            /* perspective-origin: 200px 200px; */
+        }
+        .inner3 {
+            width: 200px;
+            height: 200px;
+            background-color: rgba(0, 191, 255, 0.649);
+            /* transform: translateZ(50px); */
+            /* transform: translateZ(-50px); */
+            transform: translate3d(50px, 50px, 50px);
+        }
+
+        /* 3D旋转 */
+        .outer4 {
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            margin: 0 auto;
+            margin-top: 100px;
+            /* 开启3D空间 */
+            transform-style: preserve-3d;
+            /* 设置景深 */
+            perspective: 500px;
+            /* 透视点的位置 */
+            /* perspective-origin: 200px 200px; */
+        }
+        .inner4 {
+            width: 200px;
+            height: 200px;
+            background-color: rgba(0, 191, 255, 0.649);
+            /* transform: rotateX(45deg); */
+            /* transform: rotateX(-45deg); */
+
+            /* transform: rotateY(45deg); */
+            /* transform: rotateY(-45deg); */
+            
+            transform: rotate3d(1, 1, 1, 45deg);
+        }
+
+        /* 3D缩放 */
+        .outer5 {
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            margin: 0 auto;
+            margin-top: 100px;
+            /* 开启3D空间 */
+            transform-style: preserve-3d;
+            /* 设置景深 */
+            perspective: 500px;
+            /* 透视点的位置 */
+            /* perspective-origin: 200px 200px; */
+        }
+        .inner5 {
+            width: 200px;
+            height: 200px;
+            background-color: rgba(0, 191, 255, 0.649);
+            /* 缩小设置的景深 */
+            /* transform: scaleZ(0.1) rotateX(30deg); */
+            transform: scale3d(1, 2, 3) rotateY(30deg);
+        }
+
+        /* 多重变换 */
+        .outer6 {
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            margin: 0 auto;
+            margin-top: 100px;
+            /* 开启3D空间 */
+            transform-style: preserve-3d;
+            /* 设置景深 */
+            perspective: 500px;
+            /* 透视点的位置 */
+            /* perspective-origin: 200px 200px; */
+        }
+        .inner6 {
+            width: 200px;
+            height: 200px;
+            background-color: rgba(0, 191, 255, 0.649);
+            /* 变换原点 */
+            /* transform-origin: left; */
+            /* transform: rotateY(45deg); */
+            
+            /* 多重变换 */
+            transform: translateZ(100px) scaleZ(4) rotateY(45deg);
+        }
+
+        /* 背部可见性 */
+        .outer7 {
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            margin: 0 auto;
+            margin-top: 100px;
+            /* 开启3D空间 */
+            transform-style: preserve-3d;
+            /* 设置景深 */
+            perspective: 500px;
+            /* 透视点的位置 */
+            /* perspective-origin: 200px 200px; */
+        }
+        .inner7 {
+            width: 200px;
+            height: 200px;
+            background-color: rgba(0, 191, 255, 0.649);
+            transform: rotateY(0deg);
+            /* 背部可见性 */
+            backface-visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <!-- 开启3D空间和设置景深 -->
+    <div class="outer1">
+        <div class="inner1">开启3D空间和设置景深</div>
+    </div>
+
+    <!-- 设置透视点的位置 -->
+    <div class="outer2">
+        <div class="inner2">设置透视点的位置</div>
+    </div>
+
+    <!-- 3D位移 -->
+    <div class="outer3">
+        <div class="inner3">3D位移</div>
+    </div>
+
+    <!-- 3D旋转 -->
+    <div class="outer4">
+        <div class="inner4">3D旋转</div>
+    </div>
+
+    <!-- 3D缩放 -->
+    <div class="outer5">
+        <div class="inner5">3D缩放</div>
+    </div>
+
+    <!-- 多重变换 -->
+    <div class="outer6">
+        <div class="inner6">多重变换</div>
+    </div>
+
+    <!-- 背部可见性 -->
+    <div class="outer7">
+        <div class="inner7">背部可见性</div>
+    </div>
+</body>
+</html>

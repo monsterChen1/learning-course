@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS浮动</title>
+    <style>
+        /* 文字环绕着图片 */
+        /* 右浮动 */
+        .float-1 {
+            width: 400px;
+            height: 200px;
+            background-color: skyblue;
+        }
+        img {
+            margin-right: 0.5rem;
+            float: right;
+        }
+        /* 文字环绕着文字 */
+        /* 左浮动 */
+        .float-2 {
+            width: 400px;
+            height: 300px;
+            background-color: skyblue;
+        }
+        .float-2::first-letter{
+            font-size: 80px;
+            float: left;
+        }
+        /* 元素浮动的特点 */
+        .container {
+            width: 500px;
+            height: 500px;
+            background-color: gray;
+            padding: 10px;
+            text-align: center;
+        }
+        .box {
+            font-size: 30px;
+            padding: 10px;
+        }
+        .box1 {
+            background-color: skyblue;
+            /* margin-bottom: 20px; */
+        }
+        .box2 {
+            background-color: orange;
+            float: left;
+            /* 宽高，margin和padding都能设置 */
+            /* width: 200px; */
+            /* height: 200px; */
+            /* margin: 20px; */
+            /* padding: 20px; */
+        }
+        .box3 {
+            background-color: green;
+            /* height: 200px; */
+            /* float: left; */
+        }
+        /* 浮动 Test1 */
+        .test1 {
+            width: 500px;
+            background-color: gray;
+            border: 1px solid black;
+        }
+        .test1-box {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            border: 1px solid black;
+            margin: 10px;
+        }
+        .box11 {
+            float: right;
+        }
+        /* 浮动 Test2 */
+        .test2 {
+            width: 500px;
+            background-color: gray;
+            border: 1px solid black;
+        }
+        .test2-box {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            border: 1px solid black;
+            margin: 10px;
+        }
+        .box21 {
+            float: left;
+        }
+        /* 浮动 Test3 */
+        .test3 {
+            width: 500px;
+            background-color: gray;
+            border: 1px solid black;
+        }
+        .test3-box {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            border: 1px solid black;
+            margin: 10px;
+            float: left;
+        }
+        /* 浮动 Test4 */
+        .test4 {
+            width: 300px;
+            background-color: gray;
+            border: 1px solid black;
+        }
+        .test4-box {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            border: 1px solid black;
+            margin: 10px;
+            float: left;
+        }
+        /* 浮动 Test5 */
+        .test5 {
+            width: 300px;
+            background-color: gray;
+            border: 1px solid black;
+        }
+        .test5-box {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            border: 1px solid black;
+            margin: 10px;
+            float: left;
+        }
+        .box51 {
+            height: 120px;
+        }
+        /* 清除浮动的影响 */
+        hr{
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="float-1">
+        <img src="image/悟空.jpg" alt="">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis cum tenetur assumenda explicabo sequi ipsa nesciunt harum vel fuga quisquam est molestiae aliquid alias, animi quibusdam nobis expedita omnis cumque? Libero ipsum architecto molestias soluta tenetur maxime vel sit dolores.
+    </div>
+    <hr>
+    <div class="float-2">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde voluptate aut voluptas totam iure recusandae eligendi et rem labore iste doloremque inventore blanditiis necessitatibus quibusdam nihil alias laudantium sunt, itaque odit repellendus amet vel ut quam? Labore laudantium reprehenderit et dolor veniam fuga a qui dolorum, atque ea doloribus ab at possimus. Ab neque eos dolorum tempore unde sequi error harum maxime, delectus, laboriosam quia recusandae eius commodi praesentium itaque mollitia deserunt atque quaerat ad facilis minima veniam. Ab, sint.
+    </div> 
+    <hr>
+    <!-- 浮动后的特点 -->
+    <!-- 脱离文档流 -->
+    <!-- 浮动后：默认宽与高被内容撑开，而且可以设置宽和高 -->
+    <!-- 不会独占一行，和其他元素共用一行 -->
+    <!-- 不会margin合并，不会margin塌陷，都能够完美的设置四个方向的margin和padding -->
+    <!-- 不会像行内块一样被当做文本处理 -->
+    <div class="container">
+        <div class="box box1">盒子1</div>
+        <div class="box box2">盒子2</div>
+        <div class="box box3">盒子3</div>
+    </div>
+    <hr>
+    <div class="test1">
+        <div class="test1-box box11">1</div>
+        <div class="test1-box box12">2</div>
+        <div class="test1-box box13">3</div>
+    </div>
+    <hr>
+    <div class="test2">
+        <div class="test2-box box21">1</div>
+        <div class="test2-box box22">2</div>
+        <div class="test2-box box23">3</div>
+    </div>
+    <hr>
+    <div class="test3">
+        <div class="test3-box box31">1</div>
+        <div class="test3-box box32">2</div>
+        <div class="test3-box box33">3</div>
+    </div>
+    <hr>
+    <div class="test4">
+        <div class="test4-box box41">1</div>
+        <div class="test4-box box42">2</div>
+        <div class="test4-box box43">3</div>
+    </div>
+    <hr>
+    <div class="test5">
+        <div class="test5-box box51">1</div>
+        <div class="test5-box box52">2</div>
+        <div class="test5-box box53">3</div>
+    </div>
+</body>
+</html>

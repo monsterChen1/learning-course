@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS布局小技巧2</title>
+    <style>
+        /* 布局小技巧2 */
+        /* 行内元素、行内块元素可以被父元素当作文本处理 */
+        /* text-align line-height */
+        .contanier {
+            width: 400px;
+            height: 400px;
+            background-color: gray;
+            text-align: center;
+            line-height: 400px;
+        }
+        .inner {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="contanier">
+        <span class="inner">inline</span>
+    </div>
+</body>
+</html>

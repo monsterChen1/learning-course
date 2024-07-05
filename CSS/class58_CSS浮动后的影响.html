@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS浮动后的影响</title>
+    <style>
+        .outer {
+            width: 500px;
+            background-color: gray;
+            border: 1px solid black;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            border: 1px solid black;
+            margin: 10px;
+        }
+        .box1,.box2,.box3 {
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <!-- 浮动后，无法撑开父元素高度，但是宽度会限制浮动元素的活动范围 -->
+    <div class="outer">
+        <!-- 不影响前面兄弟的元素 -->
+        <!-- <div class="box box0">0</div> -->
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <!-- 影响后面兄弟的元素 -->
+        <!-- <div class="box box4">4</div> -->
+    </div>
+    <!-- <div style="background-color: orange;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, alias? Voluptas quia facere quibusdam beatae eaque porro sapiente atque harum saepe soluta! Tempore optio fugiat nobis voluptas commodi tenetur. Consectetur, quas ducimus. Excepturi, dolores rerum maiores eius atque nemo repellat nulla iusto facere, quia repellendus aliquam. Aliquam nesciunt eum quasi praesentium eaque, neque quo, magni animi mollitia perferendis reiciendis commodi voluptas. Assumenda similique nostrum nisi nobis? Quia recusandae repellat alias, rerum officia iste fuga architecto nam possimus tenetur quisquam. Exercitationem dolor doloremque sint repellendus aut impedit eos, ut, hic perspiciatis tempore minima eius, veritatis praesentium maxime quos facere alias delectus.</div> -->
+</body>
+</html>

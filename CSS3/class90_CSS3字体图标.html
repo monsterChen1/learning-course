@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3字体图标</title>
+    <style>
+        /* 使用方式一 */
+        /* 第一步 */
+        @font-face {
+            font-family: 'iconfont';
+            src: url('./font3/iconfont.woff2?t=1676857973138') format('woff2'),
+                url('./font3/iconfont.woff?t=1676857973138') format('woff'),
+                url('./font3/iconfont.ttf?t=1676857973138') format('truetype');
+        }
+        /* 第二步 */
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 100px !important;
+        }
+        svg{
+            width: 100px;
+            height: 100px;
+        }        
+    </style>
+    <!-- 使用方式二 推荐使用 -->
+    <link rel="stylesheet" href="./font3/iconfont.css">
+    <!-- 使用方式三 -->
+    <script src="./font3/iconfont.js"></script>
+</head>
+<body>
+    <span class="iconfont">&#xe85c;</span>
+    <span class="iconfont">&#xe85d;</span>
+    <span class="iconfont">&#xe85e;</span>
+    <span class="iconfont">&#xe85f;</span>
+    <hr>
+    <span class="iconfont icon-chengzi"></span>
+    <span class="iconfont icon-bingqilin"></span>
+    <span class="iconfont icon-hanbao"></span>
+    <span class="iconfont icon-kafeibei"></span>
+    <hr>
+    <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-chengzi"></use>
+    </svg>
+    <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-bingqilin"></use>
+    </svg>
+    <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-hanbao"></use>
+    </svg>
+    <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-kafeibei"></use>
+    </svg>
+</body>
+</html>

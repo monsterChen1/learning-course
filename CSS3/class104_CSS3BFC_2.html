@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 BFC(块级格式化上下文)</title>
+    <style>
+        /* 开启BFC不会被浮动元素覆盖 */
+        .box {
+            width: 100px;
+            height: 100px;
+        }
+        .box1 {
+            background-color: orange;
+            /* 浮动 */
+            float: left;
+        }
+        .box2 {
+            background-color: green;
+
+            /* 开启浮动 */
+            /* float: left; */
+
+            /* 绝对定位 */
+            /* position: absolute; */
+            /* 固定定位 */
+            /* position: fixed; */
+
+            /* 行内块元素 */
+            /* display: inline-block; */
+
+            /* 表格元素 */
+            /* display: table; */
+            
+            /* overflow不为visible */
+            /* overflow: hidden; */
+
+            /* 多列容器 */
+            /* column-count: 1; */
+
+            /* flow-root */
+            /* display: flow-root; */
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+</body>
+</html>

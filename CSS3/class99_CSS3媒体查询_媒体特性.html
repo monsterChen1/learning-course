@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3媒体查询-媒体特性</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            height: 200px;
+            background-color: gray;
+            text-align: center;
+            line-height: 200px;
+            font-size: 100px;
+        }
+        /* 检测到视口的宽度为800px时, 应用如下样式 */
+        @media (width:800px) {
+            h1 {
+                background-color: green;
+            }
+        }
+
+        /* 检测到视口的宽度小于等于700px时, 应用如下样式 */
+        @media (max-width:700px){
+            h1 {
+                background-color: orange;
+            }
+        }
+
+        /* 检测到视口的宽度大于等于900px时, 应用如下样式 */
+        @media (min-width:900px){
+            h1 {
+                background-color: deepskyblue;
+            }
+        }
+
+        /* 检测到视口的高度等于800时，应用如下样式 */
+        /* @media (height:800px) {
+            h1 {
+                background-color: yellow;
+            }
+        } */
+
+        /* 检测到视口的高度小于等于700时，应用如下样式 */
+        /* @media (max-height:700px) {
+            h1 {
+                background-color: purple;
+            }
+        } */
+
+        /* 检测到视口的高度大于等于900时，应用如下样式 */
+        /* @media (min-height:900px) {
+            h1 {
+                background-color: chocolate;
+            }
+        } */
+
+        /* 检测到设备的屏幕宽度为1920px时，应用如下样式 */
+        /* @media (device-width: 1920px) {
+            h1 {
+                background-image: linear-gradient(red, green);
+            }
+        } */
+    </style>
+</head>
+<body>
+    <!-- 媒体查询 媒体特性 -->
+    <h1>快结束啦！</h1>
+</body>
+</html>

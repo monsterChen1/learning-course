@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新增全局属性</title>
+    <style>
+        div {
+            width: 400px;
+            height: 200px;
+            border: 1px solid black;
+            margin-bottom: 10px;
+        }
+        .box1 {
+            background-color: skyblue;
+        }
+        .box2 {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <!-- contenteditable 可编辑性 -->
+    <div class="box1" contenteditable="true">
+        Lorem ipsum dolor sit amet.
+    </div>
+    <!-- draggable 可拖动 -->
+    <div class="box2" draggable="true">
+        Lorem ipsum dolor sit amet.
+    </div>
+    <!-- hidden 隐藏 -->
+    <div hidden>
+        Lorem ipsum dolor sit amet.
+    </div>
+    <!-- spellcheck 拼写检测 -->
+    <div spellcheck="true" contenteditable="true">
+        Lorem ipsum dolor sit amet.
+    </div>
+    <!-- contextmenu 右键菜单 -->
+    <div contextmenu="true">
+        Lorem ipsum dolor sit amet.
+    </div>
+    <!-- data-* 私有定制数据 -->
+    <div data-a="1">
+        Lorem ipsum dolor sit amet.
+    </div>
+</body>
+</html>

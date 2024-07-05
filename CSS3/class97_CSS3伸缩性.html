@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3伸缩性</title>
+    <style>
+        /* 项目在主轴的基准长度 */
+        .outer0 {
+            width: 1000px;
+            height: 900px;
+            background-color: #888888;
+            margin: 0 auto;
+            margin-bottom: 20px;
+
+            display: flex;
+            flex-direction: row;
+            /* flex-direction: column; */
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+        .inner0 {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+        .inner02 {
+            /* 设置伸缩项目在主轴上的基准长度 */
+            flex-basis: 300px;
+            /* flex-basis: auto; */
+        }
+
+        /* 伸缩项目(伸) */
+        .outer1 {
+            width: 1000px;
+            height: 900px;
+            background-color: #888888;
+            margin: 0 auto;
+            margin-bottom: 20px;
+
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+        .inner1 {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            border: 1px solid black;
+            box-sizing: border-box;
+
+            /* 平均分配 */
+            /* 默认值为0 */
+            flex-grow: 1;
+        }
+        /* .inner11 {
+            flex-grow: 1;
+        } */
+        .inner12 {
+            /* 加权分配 */
+            /* flex-grow: 1; */
+            width: 300px;
+        }
+        /* .inner13 {
+            flex-wrap: 1;
+        } */
+
+        /* 伸缩项目(伸) */
+        .outer2 {
+            width: 700px;
+            height: 900px;
+            background-color: #888888;
+            margin: 0 auto;
+            margin-bottom: 20px;
+
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            align-content: flex-start;
+
+            /* 默认值为1 */
+            flex-shrink: 1;
+        }
+        .inner2 {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+        .inner22 {
+            width: 300px;
+        }
+
+        /* 复合属性 */
+        .outer3 {
+            width: 700px;
+            height: 900px;
+            background-color: #888888;
+            margin: 0 auto;
+            margin-bottom: 20px;
+
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            align-content: flex-start;
+        }
+        .inner3 {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            border: 1px solid black;
+            box-sizing: border-box;
+
+            /* 复合属性 */
+            /* flex: flex-grow flex-shrink flex-basis; */
+            flex: 1 1 100px;
+
+            /* 可以拉伸 可以压缩 不设置基准长度 */
+            /* flex: 1 1 auto; */
+            /* flex: auto; */
+            
+            /* 可以拉伸 可以压缩 基准长度为0 */
+            /* flex: 1 1 0; */
+            /* flex: 1; */
+
+            /* 不可以拉伸 不可以压缩 不设置基准长度 */
+            /* flex: 0 0 auto; */
+            /* flex: none; */
+            
+            /* 不可以拉伸 可以压缩 不设置基准长度 */
+            /* flex: 0 1 auto; */
+            /* flex: 0 auto; */
+        }
+
+        /* 项目排序 */
+        .outer4 {
+            width: 700px;
+            height: 900px;
+            background-color: #888888;
+            margin: 0 auto;
+            margin-bottom: 20px;
+
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            align-content: flex-start;
+        }
+        .inner4 {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            border: 1px solid black;
+            box-sizing: border-box;
+
+            flex: 1 1 0;
+        }
+        .inner42 {
+            order: -1;
+        }
+        .inner43 {
+            order: -2;
+        }
+
+        /* 当独对齐 */
+        .outer5 {
+            width: 700px;
+            height: 900px;
+            background-color: #888888;
+            margin: 0 auto;
+            margin-bottom: 20px;
+
+            display: flex;
+            flex-direction: row;
+            /* flex-wrap: wrap; */
+            justify-content: flex-start;
+            align-content: flex-start;
+        }
+        .inner5 {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            border: 1px solid black;
+            box-sizing: border-box;
+
+            flex: 1 1 0;
+        }
+        .inner52 {
+            align-self: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- 项目在主轴的基准长度 -->
+    <div class="outer0">
+        <div class="inner0">1</div>
+        <div class="inner0 inner02">2</div>
+        <div class="inner0">3</div>
+    </div>
+
+    <!-- 伸缩项目(伸) -->
+    <div class="outer1">
+        <div class="inner1 inner11">1</div>
+        <div class="inner1 inner12">2</div>
+        <div class="inner1 inner13">3</div>
+    </div>
+
+    <!-- 伸缩项目(缩) -->
+    <div class="outer2">
+        <div class="inner2 inner21">1</div>
+        <div class="inner2 inner22">2</div>
+        <div class="inner2 inner23">3</div>
+    </div>
+
+     <!-- 复合属性 -->
+    <div class="outer3">
+        <div class="inner3 inner31">1</div>
+        <div class="inner3 inner32">2</div>
+        <div class="inner3 inner33">3</div>
+    </div>
+
+    <!-- 项目排序 -->
+    <div class="outer4">
+        <div class="inner4 inner41">1</div>
+        <div class="inner4 inner42">2</div>
+        <div class="inner4 inner43">3</div>
+    </div>
+
+    <!-- 单独对齐 -->
+    <div class="outer5">
+        <div class="inner5 inner51">1</div>
+        <div class="inner5 inner52">2</div>
+        <div class="inner5 inner53">3</div>
+    </div>
+</body>
+</html>

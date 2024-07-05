@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <!-- 让IE浏览器处于一个最优的渲染模式 -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5兼容性处理</title>
+    <style>
+        header {
+            background-color: orange;
+        }
+        footer {
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            background-color: green;
+        }
+    </style>
+    <!-- 优先使用 webkit ( Chromium ) 内核进行渲染 -->
+    <meta name="render" content="webkit">
+    <!-- 引入兼容的js -->
+    <!--[if lt ie 9]>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!-- 头部 -->
+    <header>
+        <h1>尚品汇</h1>
+        </header>
+        <hr>
+        <!-- 主导航 -->
+        <nav>
+            <a href="#">首页</a>
+            <a href="#">订单</a>
+            <a href="#">购物车</a>
+            <a href="#">我的</a>
+        </nav>
+        <!-- 主要内容 -->
+        <main></main>
+        <div class="page-main">
+            <!-- 侧边栏导航 -->
+            <aside style="float: right;">
+                <nav>
+                    <ul>
+                        <li><a href="#">秒杀专区</a></li>
+                        <li><a href="#">会员专区</a></li>
+                        <li><a href="#">领取优惠卷</a></li>
+                        <li><a href="#">品牌专区</a></li>
+                    </ul>
+                </nav>
+            </aside>
+            
+            <!-- 文章 -->
+            <article>
+                <!-- 章节 -->
+                <h2>《如何一夜暴富》</h2>
+                <section>
+                    <h3>第一种方式：通过做梦</h3>
+                    <p>你要这么做梦：xxxxxxxxxxx</p>
+                </section>
+                <section>
+                    <h3>第二种方式：通过做梦</h3>
+                    <p>你要这么做梦：xxxxxxxxxxx</p>
+                </section>
+                <section>
+                    <h3>第三种方式：通过做梦</h3>
+                    <p>你要这么做梦：xxxxxxxxxxx</p>
+                </section>
+            </article>
+    
+        </div>
+        <hr>
+        <footer>
+            <nav>
+                <a href="#">友情链接1</a>
+                <a href="#">友情链接2</a>
+                <a href="#">友情链接3</a>
+                <a href="#">友情链接4</a>
+            </nav>
+        </footer>
+</body>
+</html>

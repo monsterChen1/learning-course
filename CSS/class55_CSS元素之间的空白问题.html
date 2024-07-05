@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS元素之间的空白问题</title>
+    <style>
+        /* 如何解决空白问题 */
+        /* 方法一：删除空格和换行 */
+        /* 方法二：父元素设置font-size:0; */
+        div {
+            height: 500px;
+            background-color: gray;
+            font-size: 0px;
+        }
+        span {
+            background-color: skyblue;
+            font-size: 26px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>111</span>
+        <span>222</span>
+        <span>333</span>
+        <hr>
+        <img src="image/悟空.jpg" alt="">
+        <img src="image/悟空.jpg" alt="">
+        <img src="image/悟空.jpg" alt="">
+    </div>
+</body>
+</html>

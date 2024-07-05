@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS颜色</title>
+    <style>
+        /* 颜色名 */
+        h2 {
+            color: red;
+        }
+        /* RGB */
+        h3{
+            color: rgb(80, 30, 50);
+        }
+        /* RGBA: A为透明度(0~1) */
+        h4 {
+            color: rgba(138, 43, 226, 0.7);
+        }
+        /* HEX或HEXA 与RGB原理一样 */
+        h5 {
+            color: #000000;
+        }
+        h6 {
+            color: #00ff00f4;
+        }
+        /* HSL或HSLA hls(色相,饱和度,亮度) */
+        .color-hls{
+            color: hsl(180, 100%, 50%);
+        }
+        .color-hlsa{
+            color: hsla(300, 100%, 50%, 0.633);
+        }
+    </style>
+</head>
+<body>
+    <h2>Lorem, ipsum dolor.</h2>
+    <h3>Lorem, ipsum dolor.</h3>
+    <h4>Lorem, ipsum dolor.</h4>
+
+    <h5>Lorem ipsum dolor sit.</h5>
+    <h6>Lorem ipsum dolor sit.</h6>
+
+    <div class="color-hls">Lorem ipsum dolor sit amet.</div>
+    <div class="color-hlsa">Lorem ipsum dolor sit amet.</div>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3动画</title>
+    <style>
+        .outer {
+            width: 1000px;
+            height: 100px;
+            border: 1px solid black;
+            margin-bottom: 20px;
+        }
+        .inner {
+            width: 100px;
+            height: 100px;
+            background-color: deepskyblue;
+            /* 基本使用 */
+            /* 应用动画到元素 */
+            /* animation-name: goright; */
+            animation-name: goright2;
+            /* 动画持续的时间 */
+            animation-duration: 3s;
+            /* 动画开始的延迟时间 */
+            animation-delay: 0.8s;
+
+            /* 其他属性 */
+            /* 设置动画的类型 */
+            animation-timing-function: linear;
+            /* animation-timing-function: steps(20); */
+
+            /* 动画播放的次数 */
+            /* animation-iteration-count: 3; */
+            /* 无限次数 */
+            animation-iteration-count: infinite;
+
+            /* 动画的方向 */
+            /* 默认状态 from - to */
+            animation-direction: normal;
+            /* 反转状态 to - from */
+            /* animation-direction: reverse; */
+            /* 往返状态 from - to - from */
+            /* animation-direction: alternate; */
+            /* 反转往返状态 to - from - to */
+            /* animation-direction: alternate-reverse; */
+
+            /* 动画以外的状态 */
+            /* animation-fill-mode: forwards; */
+            /* animation-fill-mode: backwards; */
+
+            /* 复合属性 */
+            /* animation: goright2 3s 0.8s linear infinite normal; */
+        }
+        .outer:hover .inner {
+            /* 动画的播放状态 */
+            animation-play-state: paused;
+        }
+
+        /* 定义一个动画(定义一组关键帧) */
+        @keyframes goright {
+            /* 第一帧 */
+            from {
+
+            }
+            /* 第二帧 */
+            to {
+                transform: translateX(900px);
+                background-color: red;
+            }
+        }
+        @keyframes goright2 {
+            0% {
+
+            }
+            /* 20% {} */
+            /* 50% {} */
+            /* 80% {} */
+            100% {
+                transform: translateX(900px) rotate(360deg);
+                background-color: purple;
+                border-radius: 50%;
+            }
+        }
+
+        .outer1 {
+            width: 1000px;
+            height: 200px;
+            border: 1px solid black;
+        }
+        .inner1 {
+            width: 100px;
+            height: 100px;
+        }
+        /* 过渡效果 */
+        .inner11 {
+            background-color: orange;
+            transition: 3s all linear;
+        }
+        .outer1:hover .inner11 {
+            transform: translateX(900px);
+        }
+        /* 动画效果 */
+        .inner12 {
+            background-color: green;
+            animation: goright3 3s linear forwards;
+        }
+        @keyframes goright3 {
+            from {}
+            to {
+                transform: translateX(900px);
+            }
+        }
+
+        /* 动画案例 */
+        .box {
+            width: 130px;
+            height: 130px;
+            background-image: url("images/bike.png");
+            animation: bike 0.5s steps(31) infinite;
+            margin: 0 auto;
+        }
+        @keyframes bike {
+            from {}
+            to{
+                background-position: 0px -4030px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner"></div>
+    </div>
+
+    <!-- 过渡和动画的区别 -->
+    <div class="outer1">
+        <div class="inner1 inner11">过渡</div>
+        <div class="inner1 inner12">动画</div>
+    </div>
+
+    <!-- 动画案例 -->
+    <div class="box"></div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS绝对定位</title>
+    <style>
+        .outer {
+            width: 500px;
+            background-color: gray;
+            border: 1px solid black;
+            padding: 20px;
+            /* 脱离文档流的元素，参考点就是第一个设置定位的祖先元素 */
+            position: relative;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+        }
+        .box1 {
+            background-color: skyblue;
+        }
+        .box2 {
+            background-color: orange;
+            /* 开启绝对定位 */
+            /* 脱离了文档流 */
+            /* 成为定位元素 */
+            position: absolute;
+            /* 可以正值和负值 */
+            /* top、bottom不能同时设置，同时只有top生效 */
+            top: 220px;
+            left: 20px;
+            /* bottom: 100px; */
+            /* left、right不能同时设置，同时只有left生效 */
+            /* left: 0; */
+            /* right: 100px; */
+            /* 不能设置float浮动，跟绝对定位同时设置的话，浮动会失效 */
+            /* float: right; */
+            /* 可以设置margin, 但是根据top、left、right、bottom决定哪个生效，不推荐使用 */
+            /* margin-top: 20px; */
+            /* transition: 1s all linear; */
+        }
+        .box3 {
+            background-color: green;
+        }
+        .outer:hover .box2 {
+            left: 220px;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <!-- 没有脱离文档流的元素，参考点就是父元素 -->
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+    </div>
+</body>
+</html>

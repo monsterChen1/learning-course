@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS定位可以越过padding</title>
+    <style>
+        .outer {
+            width: 500px;
+            height: 500px;
+            background-color: gray;
+            position: relative;
+            padding: 20px;
+        }
+        .inner {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            /* 越过padding */
+            /* 以盒子为定位 padding包含在盒子中 */
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner"></div>
+    </div>
+</body>
+</html>

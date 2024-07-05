@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS属性继承</title>
+    <style>
+        /* 可继承属性：字体属性、文本属性（除vertical-align）、文字颜色等*/
+        body {
+            font-size: 28px;
+            color: red;
+            font-weight: bold;
+        }
+        /* 不可继承属性：宽、高、背景颜色、内外边距、边框、溢出方式 */
+        .d1 {
+            width: 600px;
+            height: 600px;
+            padding: 50px;
+            background-color: gray;
+        }
+        .d2 {
+            width: 400px;
+            height: 400px;
+            padding: 20px;
+            background-color: orange;
+        }
+        .d3 {
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            background-color: green;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="d1">
+        d1
+        <div class="d2">
+            d2
+            <div class="d3">
+                d3
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS布局小技巧1</title>
+    <style>
+        /* 布局小技巧1 */
+        /* 通过margin来实现水平垂直居中(父元素的高改变而改变) */
+        .contanier1 {
+            width: 400px;
+            height: 400px;
+            background-color: gray;
+            overflow: hidden;
+        }
+        .inner1 {
+            width: 200px;
+            height: 100px;
+            background-color: orange;
+            margin: 0 auto;
+            margin-top: 150px;
+            text-align: center;
+            line-height: 100px;
+        }
+        /* 行内元素、行内块元素可以被父元素当作文本处理 */
+        .contanier2 {
+            width: 400px;
+            height: 400px;
+            background-color: gray;
+            line-height: 400px;
+            text-align: center;
+        }
+        .inner2 {
+            display: inline-block;
+            width: 200px;
+            height: 100px;
+            background: orange;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="contanier1">
+        <div class="inner1">margin</div>
+    </div>
+    <hr>
+    <div class="contanier2">
+        <div class="inner2">inline-block + line-height</div>
+    </div>
+</body>
+</html>

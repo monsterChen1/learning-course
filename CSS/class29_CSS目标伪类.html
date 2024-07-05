@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>目标伪类</title>
+    <style>
+        /* 目标伪类选择器 */
+        div {
+            height: 500px;
+            background-color: skyblue;
+            margin-bottom: 20px;
+        }
+        div:target {
+            background-color: green;
+        }
+        /* 语言伪类 */
+        :lang(zh-CN){
+            color: orange;
+        }
+        /* [lang="zh-CN"]{
+            color: orange;
+        } */
+    </style>
+</head>
+<body>
+    <a href="#one">去看1</a>
+    <a href="#two">去看2</a>
+    <a href="#three">去看3</a>
+
+    <div id="one">1</div>
+    <div id="two">2</div>
+    <div id="three">3</div>
+
+    <div>哈哈哈哈哈</div>
+    <div>呵呵呵</div>
+</body>
+</html>

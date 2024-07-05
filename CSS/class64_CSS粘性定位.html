@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS粘性定位</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            height: 2000px;
+        }
+        .page-header {
+            height: 100px;
+            background-color: orange;
+            text-align: center;
+            line-height: 100px;
+            font-size: 20px;
+        }
+        .item {
+            background-color: gray;
+        }
+        .item-top {
+            font-size: 40px;
+            background-color: skyblue;
+            /* 开启粘性定位 */
+            position: sticky;
+            /* 常用是top */
+            top: 0;
+            /* 同时也可以设置浮动，但不推荐 */
+            /* float: left; */
+            /* 可以设置margin，但不推荐 */
+            /* margin: 10px; */
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部 -->
+    <div class="page-header">
+        头部
+    </div>
+    <!-- 内容区 -->
+    <div class="content">
+        <div class="item">
+            <div class="item-top">A</div>
+            <h1>A1</h1>
+            <h1>A2</h1>
+            <h1>A3</h1>
+            <h1>A4</h1>
+            <h1>A5</h1>
+            <h1>A6</h1>
+            <h1>A7</h1>
+            <h1>A8</h1>
+        </div>
+        <div class="item">
+            <div class="item-top">B</div>
+            <h1>B1</h1>
+            <h1>B2</h1>
+            <h1>B3</h1>
+            <h1>B4</h1>
+            <h1>B5</h1>
+            <h1>B6</h1>
+            <h1>B7</h1>
+            <h1>B8</h1>
+        </div>
+        <div class="item">
+            <div class="item-top">C</div>
+            <h1>C1</h1>
+            <h1>C2</h1>
+            <h1>C3</h1>
+            <h1>C4</h1>
+            <h1>C5</h1>
+            <h1>C6</h1>
+            <h1>C7</h1>
+            <h1>C8</h1>
+        </div>
+    </div>
+</body>
+</html>

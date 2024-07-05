@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单</title>
+</head>
+<body>
+    <h2>初识表单</h2>
+    <form action="https://www.baidu.com/s" target="_blank" method="get">
+        <input type="text" name="wd">
+        <button>百度一下</button>
+    </form>
+    <hr>
+    <form action="https://search.jd.com/search" target="_blank" method="get">
+        <input type="text" name="keyword">
+        <button>京东购物</button>
+    </form>
+    <hr>
+    <h2>常用控件</h2>
+    <form action="https://search.jd.com/search">
+        <fieldset>
+            <legend>主要信息</legend>
+            <!-- 文本输入框 -->
+            <div>
+                <label for="zhanghu">账户：</label>
+                <input id="zhanghu" type="text" name="account" value="zhangsan" maxlength="10">
+            </div>
+            <!-- 密码输入框 -->
+            <div>
+                <label for="mima">密码：</label>
+                <input id="mima" type="password" name="pwd" value="123" maxlength="6">
+            </div>
+            <!-- 单选框 -->
+            <div>
+                <label>性别：</label>
+                <label for="nan">
+                    <input type="radio" name="gender" value="male" id="nan" checked>男
+                </label>
+                <label for="nv">
+                    <input type="radio" name="gender" value="female" id="nv">女
+                </label>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>附加信息</legend>
+            <!-- 多选框 -->
+            <div>
+                <label>爱好：</label>
+                <label>
+                    <input type="checkbox" name="hobby" value="smoke" checked>抽烟
+                </label>
+                <label>
+                    <input type="checkbox" name="hobby" value="drink">喝酒
+                </label>
+                <label>
+                    <input type="checkbox" name="hobby" value="perm" checked>烫头
+                </label>
+            </div>
+            <!-- 文本域 -->
+            <div>
+                <label for="qita">其他：</label>
+                <textarea id="qita" name="other" cols="20" rows="3"></textarea>
+            </div>
+            <!-- 下拉框 -->
+            <div>
+                <label for="jiguan">籍贯：</label>
+                <select id="jiguan" name="place">
+                    <option value="冀">河北</option>
+                    <option value="鲁">山东</option>
+                    <option value="晋">山西</option>
+                    <option value="粤" selected>广东</option>
+                </select>
+            </div>
+        </fieldset>
+        <!-- 隐藏域 -->
+        <div>
+            <input type="hidden" name="from" value="baidu"><br>
+        </div>
+        <div>
+            <!-- 确认按钮 -->
+            <button type="submit">确认</button>
+            <!-- <input type="submit" value="确认"> -->
+            <!-- 重置按钮 -->
+            <button type="reset">重置</button>
+            <!-- <input type="reset" value="重置"> -->
+            <button type="button">检测账户是否被注册</button>
+        </div>
+    </form>
+
+    <!-- <h2>控件</h2>
+    <label for="text">文本输入框</label>
+    <input type="text" name="text" id="text">
+    <br>
+    <label for="password">密码输入框</label>
+    <input type="password" name="password" id="password">
+    <br>
+    <label for="sex">单元框</label>
+    <input type="radio" name="sex" value="male">男
+    <input type="radio" name="sex" value="female">女
+    <br>
+    <label for="sex">复选框</label>
+    <input type="checkbox" name="hobby" value="movies">电影
+    <input type="checkbox" name="hobby" value="sing">唱歌
+    <input type="checkbox" name="hobby" value="dance">跳舞
+    <br>
+    <label for="sex">隐藏</label>
+    <input type="hidden" name="hidden" value="100">
+    <br>
+    <input type="submit" value="提交按钮">
+    <button type="submit">提交按钮</button>
+    <br>
+    <input type="reset" value="重置按钮">
+    <button type="reset">重置按钮</button>
+    <br>
+    <input type="button" value="普通按钮">
+    <button type="button">普通按钮</button>
+    <br>
+    <textarea name="msg" cols="30" rows="10">文本</textarea>
+    <br>
+    <select name="from">
+        <option value="黑">黑龙江</option>
+        <option value="辽">辽宁</option>
+        <option value="吉">吉林</option>
+        <option value="粤">广东</option>
+    </select> -->
+
+    <!-- <fieldset>
+        <legend>主要信息</legend>
+        <label for="zhanghu">账户：</label>
+        <input id="zhanghu" type="text" name="account" maxlength="10"><br>
+        <label>
+            密码：
+            <input type="password" name="pwd" maxlength="6">
+        </label>
+        <br>
+        性别：
+        <input type="radio" name="gender" value="male" id="nan">
+        <label for="nan">男</label>
+        <label>
+        <input type="radio" name="gender" value="female" id="nv">女
+        </label>
+    </fieldset> -->
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS选择器</title>
+    <style>
+        /* 通配选择器 */
+        * {
+            color: black;
+            font-size: 16px;
+        }
+        /* 元素选择器 */
+        h2 {
+            color: chocolate;
+            font-size: 25px;
+        }
+        h3 {
+            color: green;
+            font-size: 20px;
+        }
+        p {
+            color: red;
+        }
+        h1 {
+            font-size: 35px;
+        }
+        /* 类选择器 */
+        .speak {
+            color: aqua;
+        }
+        .answer {
+            color: orange;
+        }
+        .big {
+            font-size: 35px;
+        }
+        /* ID选择器 */
+        #first {
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>标题1</h1>
+    <br>
+    <h2>标题2-1</h2>
+    <h3>标题3-1</h3>
+    <p class="speak">段落1-1</p>
+    <p class="speak">段落1-2</p>
+    <p class="speak">段落1-3</p>
+
+    <h2>标题2-2</h2>
+    <h3>标题3-2</h3>
+    <p class="answer">段落2-1</p>
+    <p class="answer">段落2-2</p>
+    <p class="answer">段落2-3</p>
+    <p class="big answer">我是大号字体</p>
+    <p id="first" class="answer">我比你更大</p>
+</body>
+</html>

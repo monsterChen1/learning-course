@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片标签，超链接标签</title>
+    <style>
+        img{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <img src="image/3.webp" alt="AI生成图" width="500" height="500">
+    <!-- 超链接——跳转外部网页 -->
+    <a href="https://miaosha.jd.com/">去秒杀</a>
+    <a href="https://www.baidu.com/" target="_blank">百度一下</a>
+
+    <!-- 超链接——跳转到本地网页 -->
+    <a href="class06_HTML文本标签.html">跳转到文本标签</a>
+
+    <!-- 超链接——跳转文件OR触发下载 -->
+    <a href="image/3.webp" target="_blank">看图片</a>
+    <a href="video/FLOWER.mp4" target="_blank">看MV</a>
+    <a href="video/FLOWER.mp4" target="_blank" download="1">下载MV</a>
+
+    <!-- 超链接——跳转锚点 -->
+    <a href="#">回到顶部</a>
+    <a href="">刷新页面</a>
+    <a href="class06_HTML文本标签.html#bdo">跳转到bdo</a>
+
+    <!-- 执行JS代码 -->
+    <a href="javascript:alert(666);">弹窗</a>
+
+    <!-- 超链接——唤起应用 -->
+    <a href="tel:13729588849">电话联系</a>
+    <a href="mailto:870964443@qq.com">邮件联系</a>
+    <a href="sms:13729588849">短信联系</a>
+</body>
+</html>

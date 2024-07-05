@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS常用长度单位</title>
+    <style>
+        /* px em rem */
+        html {
+            font-size: 40px;
+        }
+        .px {
+            /* 第一种长度单位：px */
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+            background-color: skyblue;
+        }
+        .em {
+            /* 第二种长度单位：em（相当于当前元素或其父元素的font-size的倍数） */
+            width: 10em;
+            height: 10em;
+            font-size: 20px;
+            background-color: orange;
+        }
+        .rem {
+            /* 第三种长度单位：rem（相当于根元素的font-size的倍数） */
+            width: 10rem;
+            height: 10rem;
+            font-size: 20px;
+            background-color: chocolate;
+        }
+        /* 第四种长度单位：百分比 (相对于其父元素的百分比) */
+        .container {
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+            background-color: gray;
+        }
+        .inside {
+            width: 50%;
+            height: 50%;
+            font-size: 150%;
+            background-color: green;
+        }
+        .text-indent{
+            font-size: 40px;
+            text-indent: 2em;
+        }
+    </style>
+</head>
+<body>
+   <div class="px">px</div><hr>
+   <div class="em">em</div><hr>
+   <div class="rem">rem</div><hr>
+   <div class="container">
+        <div class="inside">百分比</div>
+   </div>
+   <div class="text-indent">
+    好好学习，天天向上
+   </div>
+</body>
+</html>

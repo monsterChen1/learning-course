@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS解决浮动后的影响</title>
+    <style>
+        .outer {
+            width: 500px;
+            background-color: gray;
+            border: 1px solid black;
+            /* 方案一：父元素设置高度 解决父元素高度塌陷的问题 但是无法解决对后面兄弟的影响 */
+            /* height: 122px; */
+            /* 方案二：父元素设置浮动 可以解决父元素高度塌陷问题，但是同时影响自己后面的兄弟元素*/
+            /* float: left; */
+            /* 方案三：设置内容有溢出 可以解决父元素高度塌陷问题 */
+            /* overflow: hidden; */
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            border: 1px solid black;
+            margin: 10px;
+        }
+        .box1,.box2,.box3 {
+            float: left;
+        }
+        .box4 {
+            /* display: inline-block; */
+            /* 方案四：给所有浮动元素的最后加一个块元素，并清除浮动 */
+            clear: both;
+        }
+        /* 方案五：浮动元素的父元素加伪元素，并清除浮动 */
+        .outer::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <!-- <div class="box box4">4</div> -->
+    </div>
+    <!-- <div style="background-color: orange;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, alias? Voluptas quia facere quibusdam beatae eaque porro sapiente atque harum saepe soluta! Tempore optio fugiat nobis voluptas commodi tenetur. Consectetur, quas ducimus. Excepturi, dolores rerum maiores eius atque nemo repellat nulla iusto facere, quia repellendus aliquam. Aliquam nesciunt eum quasi praesentium eaque, neque quo, magni animi mollitia perferendis reiciendis commodi voluptas. Assumenda similique nostrum nisi nobis? Quia recusandae repellat alias, rerum officia iste fuga architecto nam possimus tenetur quisquam. Exercitationem dolor doloremque sint repellendus aut impedit eos, ut, hic perspiciatis tempore minima eius, veritatis praesentium maxime quos facere alias delectus.</div> -->
+</body>
+</html>

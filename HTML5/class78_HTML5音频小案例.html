@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音频小案例</title>
+    <style>
+        .mask {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.583);
+        }
+        .dialog {
+            position: absolute;
+            width: 400px;
+            height: 200px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            background-color: #ffffff;
+            text-align: center;
+            line-height: 200px;
+            font-size: 40px;
+            color: green;
+        }
+        .play {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <audio id="music" src="audio/天外来物-薛之谦.320.mp3" controls></audio>
+    <div id="mask" class="mask">
+        <div class="dialog">
+            <span class="play" onclick="play()">播放</span>
+        </div>
+    </div>
+
+    <script>
+        function play() {
+            music.play()
+            mask.style.display = "none"
+        }
+    </script>
+</body>
+</html>

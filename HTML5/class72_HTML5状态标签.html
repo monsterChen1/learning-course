@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>状态标签</title>
+    <style>
+        progress {
+            width: 100px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <span>手机电量：</span>
+    <!-- value:当前值 -->
+    <!-- max:最大值 -->
+    <!-- min:最小值 -->
+    <!-- low:最低值 -->
+    <!-- high:当前值 -->
+    <!-- optimum:最优值 -->
+    <meter value="90" max="100" min="0" low="10" high="20" optimum="90"></meter>
+    <span>当前进度：</span>
+    <!-- value:当前值 -->
+    <!-- max:最大值 -->
+    <progress max="100" value="80"></progress>   
+</body>
+</html>

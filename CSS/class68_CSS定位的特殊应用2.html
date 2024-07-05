@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS定位的特殊应用2</title>
+    <style>
+        .outer {
+            width: 800px;
+            height: 800px;
+            background-color: gray;
+            position: relative;
+        }
+        /* 水平垂直居中 */
+        .inner {
+            width: 400px;
+            height: 600px;
+            background-color: orange;
+            font-size: 20px;
+            position: absolute;
+            /* 方案一 */
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            
+            /* 方案二 */
+            /* top: 50%;
+            left: 50%;
+            margin-top: -300px;
+            margin-left: -200px; */
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner">123</div>
+    </div>
+</body>
+</html>

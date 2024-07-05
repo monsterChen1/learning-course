@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>否定伪类选择器</title>
+    <style>
+        /* 否定伪类选择器 */
+        /* class不为fail的元素 */
+        div>p:not(.fail){
+            color: green;
+        }
+        /* 
+        属性选择器
+        div>p:not([title=*]){
+            color: green;
+        } */
+        /*
+        伪类结构选择器
+        div>p:not(:first-child){
+            color: green;
+        }
+        */
+    </style>
+</head>
+<body>
+    <div>
+        <p>99</p>
+        <p>86</p>
+        <p>76</p>
+        <p>68</p>
+        <p class="fail">58</p>
+        <p class="fail">48</p>
+    </div>
+</body>
+</html>

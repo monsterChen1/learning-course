@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>属性选择器</title>
+    <style>
+        /* 具有title属性的元素 */
+        /* [title] {
+            color: orange;
+        } */
+        /* 具有title属性和值为one的元素 */
+        /* [title="one"] {
+            color: red;
+        } */
+        /* 具有title属性和值以o开头的元素 */
+        /* [title^="o"] {
+            color: aqua;
+        } */
+        /* 具有title属性和值以k结尾的元素 */
+        /* [title$="k"] {
+            color: blue;
+        } */
+        /* 具有title属性和值包含o的元素 */
+        /* [title*="o"] {
+            color: blueviolet;
+        } */
+    </style>
+</head>
+<body>
+    <div title="one">属性选择器1</div>
+    <div title="two">属性选择器2</div>
+    <div title="oneo">属性选择器3</div>
+    <div title="oosk">属性选择器4</div>
+</body>
+</html>

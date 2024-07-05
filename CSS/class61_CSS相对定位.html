@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS相对定位</title>
+    <style>
+        .outer {
+            width: 500px;
+            background-color: gray;
+            border: 1px solid black;
+            padding: 20px;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+        }
+        .box1 {
+            background-color: skyblue;
+        }
+        .box2 {
+            background-color: orange;
+            /* 相对定位 */
+            /* 不脱离文档流的 相对于自己原来的位置 */
+            position: relative;
+            /* 可以正值和负值 */
+            /* left、right不能同时设置，同时只有left生效 */
+            left: 100px;
+            /* right: 200px; */
+            /* top、bottom不能同时设置，同时只有top生效 */
+            top: 200px;
+            /* bottom: 200px; */
+
+            /* 都会影响其他元素 */
+            /* 可以设置浮动 但不推荐 */
+            /* float: left; */
+            /* 可以设置margin，但不推荐 */
+            /* margin-top: 200px; */
+        }
+        .box3 {
+            background-color: green;
+            /* 同时开启定位的元素，后写的元素覆盖在先写的元素上 */
+            /* position: relative; */
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+    </div>
+</body>
+</html>

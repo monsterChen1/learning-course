@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS内容溢出</title>
+    <style>
+        /* 内容溢出 */
+        .content {
+            width: 400px;
+            height: 200px;
+            background-color: skyblue;
+            /* overflow: hidden; */
+            /* overflow: visible; */
+            /* overflow: scroll; */
+            overflow: auto;
+            /* 水平方向 */
+            /* overflow-x: hidden; */
+            /* 垂直方向 */
+            /* overflow-y: visible; */
+        }
+        .seciton {
+            width: 800px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae ratione deserunt doloribus sit?
+        Quaerat saepe quo nihil iusto possimus totam quidem, hic ad expedita, provident rem porro quis facilis itaque fuga
+        <div class="seciton">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, laborum! Ut in eligendi cum! Animi sit adipisci obcaecati id corrupti.</div>
+        tenetur? Maxime vero rerum molestiae! A omnis perferendis officiis dignissimos iste? Enim, suscipit quam, sapiente
+        cum nobis delectus itaque porro ad numquam quaerat explicabo placeat accusantium iure? Sit illo quia vero totam!
+        Laboriosam tempore totam eum, nulla cupiditate quos doloribus nisi rerum odio ad corporis maxime consequuntur
+        deserunt cumque vel incidunt. Hic, praesentium veniam deserunt optio reiciendis dignissimos itaque eligendi ut qui
+        sequi expedita, odio esse laudantium molestias voluptatibus.
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复合选择器3</title>
+    <style>
+        /* 相邻兄弟选择器 往后看 */
+        div+p {
+            color: orange;
+        }
+        /* 通用兄弟选择器 往后看 */
+        div~p {
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div>1122</div>
+    <p>123</p>
+    <p>321</p>
+    <p>567</p>
+    <p>765</p>
+</body>
+</html>

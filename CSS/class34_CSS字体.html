@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS字体</title>
+    <style>
+        body{
+            font-size: 28px;
+        }
+        /* 字体大小 font-size */
+        /* 浏览器默认的字体大小为16px，可自定义设置 */
+        .font-block1 {
+            font-size: 40px;
+        }
+        .font-block2 {
+            font-size: 30px;
+        }
+        .font-block3 {
+            font-size: 20px;
+        }
+        .font-block4 {
+            /* 一般浏览器会有最小能接受的字体大小(12px)，可自定义设置 */
+            font-size: 10px;
+        }
+        /* 字体族 font-family */
+        .font-block5 {
+            font-size: 50px;
+            font-family: "报隶-简";
+        }
+        .font-block6 {
+            font-size: 50px;
+            font-family: "娃娃体-简";
+            /* 衬线字体：serif */
+            /* 非衬线字体：sans-serif */
+        }
+        /* 字体风格 font-style */
+        .font-block7 {
+            font-style: normal;
+        }
+        .font-block8 {
+            font-style: italic; /* 推荐 */
+        }
+        .font-block9 {
+            font-style: oblique;
+        }
+        /* 字体粗细 font-weight */
+        /* 取值 */
+        /* lighter，normal，bold，bolder */
+        /* 100～1000,100～300 lighter，400~500 normal，600~100 bold */
+        .font-block10 {
+            font-weight: lighter;
+        }
+        .font-block11 {
+            font-weight: normal;
+        }
+        .font-block12 {
+            font-weight: bold;
+        }
+        .font-block13 {
+            font-weight: bolder;
+        }
+        /* 字体 font */
+        /* 值顺序：最后两位 font-size font-family, 其他顺序随意 */
+        .font-block14 {
+            font: italic bold 50px "娃娃体-简";
+        }
+    </style>
+</head>
+<body>
+    <div>Lorem, ipsum dolor.</div>
+    <div class="font-block1">Lorem, ipsum dolor.</div>
+    <div class="font-block2">Lorem, ipsum dolor.</div>
+    <div class="font-block3">Lorem, ipsum dolor.</div>
+    <div class="font-block4">Lorem, ipsum dolor.</div>
+
+    <div class="font-block5">天道酬勤</div>
+    <div class="font-block6">天道酬勤</div>
+
+    <div class="font-block7">Lorem, ipsum dolor.</div>
+    <div class="font-block8">Lorem, ipsum dolor.</div>
+    <div class="font-block9">Lorem, ipsum dolor.</div>
+
+    <div class="font-block10">Lorem, ipsum dolor.</div>
+    <div class="font-block11">Lorem, ipsum dolor.</div>
+    <div class="font-block12">Lorem, ipsum dolor.</div>
+    <div class="font-block13">Lorem, ipsum dolor.</div>
+
+    <div class="font-block14">Lorem ipsum dolor sit.</div>
+</body>
+</html>

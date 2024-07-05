@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3重复渐变</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+        /* 重复线性渐变 */
+        .box1 {
+            background-image: repeating-linear-gradient(red 50px, yellow 100px, green 150px);
+        }
+        /* 重复径向渐变 */
+        .box2 {
+            background-image: repeating-radial-gradient(red 50px, yellow 100px, green 150px);
+        }
+        .box3 {
+            width: 600px;
+            height: 800px;
+            border: 1px solid black;
+            padding: 20px;
+            margin: 0 auto;
+            background-image: repeating-linear-gradient(transparent 0px, transparent 29px, #333333 30px);
+            background-clip: content-box;
+            margin-bottom: 10px;
+        }
+        .box4 {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-image: radial-gradient(at 80px 80px,white, #333333);
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- 重复渐变 -->
+    <!-- 在没有发生渐变的区域，重新开始渐变，就是重复渐变 -->
+    <div class="box box1">重复线性渐变</div>
+    <div class="box box2">重复径向渐变</div>
+    <!-- 重复渐变小案例 -->
+    <!-- 单行本 -->
+    <div class="box3"></div>
+    <!-- 立体感小球 -->
+    <div class="box4"></div>
+</body>
+</html>

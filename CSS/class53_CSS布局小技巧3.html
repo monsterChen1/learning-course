@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS布局小技巧3</title>
+    <style>
+        /* 布局小技巧3 */
+        /* 子元素为行内元素，行内块元素，让父元素的line-height = height，每个子元素都加上 vertical-align: middle */
+        /* 绝对垂直居中的话 父元素的font-size:0px; */
+        .contanier {
+            width: 400px;
+            height: 400px;
+            background-color: gray;
+            text-align: center;
+            line-height: 400px;
+            font-size: 0px;
+        }
+        .text {
+            font-size: 26px;
+            background-color: orange;
+            vertical-align: middle;
+        }
+        img {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="contanier">
+        <span class="text">出来玩啊？</span>
+        <img src="image/悟空.jpg" alt="">
+    </div>
+</body>
+</html>

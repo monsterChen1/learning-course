@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3伸缩盒模型</title>
+    <style>
+        /* 伸缩项目 */
+        .outer {
+            width: 1000px;
+            height: 600px;
+            background-color: #888888;
+            margin: 0 auto;
+            margin-bottom: 20px;
+
+            /* 将该元素变为了伸缩容器 */
+            /* 仅伸缩容器的子元素成为伸缩项目 */
+            display: flex;
+            /* display: inline-flex; */
+        }
+        .inner {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+
+        /* 主轴与侧轴 */
+        .outer1 {
+            width: 1000px;
+            height: 600px;
+            background-color: #888888;
+            margin: 0 auto;
+            margin-bottom: 20px;
+
+            /* 将该元素变为了伸缩容器 */
+            display: flex;
+
+            /* 主轴方向 */
+            /* 水平从左到右 */
+            flex-direction: row;
+            /* 水平从右到左 */
+            /* flex-direction: row-reverse; */
+            /* 垂直从上到下 */
+            /* flex-direction: column; */
+            /* 垂直从下到上 */
+            /* flex-direction: column-reverse; */
+
+            /* 主轴的换行方式 */
+            /* 默认值 不换行 */
+            /* flex-wrap: nowrap; */
+            /* 换行 */
+            flex-wrap: wrap;
+            /* 反向换行 */
+            /* flex-wrap: wrap-reverse; */
+
+            /* 复合属性 */
+            /* flex-flow: flex-diretion flex-wrap; */
+            /* flex-flow: row wrap; */
+        }
+        .inner1 {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+
+        /* 主轴的对齐方式 */
+        .outer2 {
+            width: 1000px;
+            height: 600px;
+            background-color: #888888;
+            margin: 0 auto;
+            margin-bottom: 20px;
+
+            /* 将该元素变为了伸缩容器 */
+            display: flex;
+
+            /* 主轴方向 */
+            /* 水平从左到右 */
+            flex-direction: row;
+
+            /* 主轴的换行方式 */
+            flex-wrap: wrap;
+
+            /* 主轴的对齐方式 */
+            /* 主轴的起始位置 */
+            /* justify-content: flex-start; */
+            /* 主轴的结束位置 */
+            /* justify-content: flex-end; */
+            /* 居中对齐 */
+            /* justify-content: center; */
+            /* 均匀分布 两端对齐 */
+            justify-content: space-between;
+            /* 均匀分布 两端距离是中间距离的一半 */
+            /* justify-content: space-around; */
+            /* 均匀分布 两端距离与中间距离一致 */
+            /* justify-content: space-evenly; */
+        }
+        .inner2 {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+
+        /* 侧轴对齐方式(一行) */
+        .outer3 {
+            width: 1000px;
+            height: 600px;
+            background-color: #888888;
+            margin: 0 auto;
+            margin-bottom: 20px;
+
+            /* 将该元素变为了伸缩容器 */
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+
+            /* 侧轴的对齐方式 侧轴的起始位置对齐*/
+            align-items: flex-start;
+
+            /* 侧轴的对齐方式 侧轴的结束位置对齐*/
+            /* align-items: flex-end; */
+
+            /* 侧轴的对齐方式 侧轴的中间位置对齐*/
+            /* align-items: center; */
+
+            /* 侧轴的对齐方式 侧轴的起始位置对齐*/
+            /* align-items: flex-start; */
+
+            /* 侧轴的对齐方式 侧轴的基线对齐*/
+            /* align-items: baseline; */
+
+            /* 侧轴的对齐方式 拉伸到整个父容器*/
+            /* align-items: stretch; */
+        }
+        .inner3 {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+        .inner32 {
+            height: 300px;
+            font-size: 80px;
+        }
+        .inner33 {
+            height: 100px;
+        }
+
+        /* 侧轴对齐方式(多行) */
+        .outer4 {
+            width: 1000px;
+            height: 900px;
+            background-color: #888888;
+            margin: 0 auto;
+            margin-bottom: 20px;
+
+            /* 将该元素变为了伸缩容器 */
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+
+            /* 侧轴的对齐方式多行 侧轴的起始位置 */
+            /* align-content: flex-start; */
+
+            /* 侧轴的对齐方式多行 侧轴的结束位置 */
+            /* align-content: flex-end; */
+
+            /* 侧轴的对齐方式多行 侧轴的中间位置 */
+            /* align-content: center; */
+
+            /* 侧轴的对齐方式多行 均匀分布 中间距离是边缘距离的两倍 */
+            align-content: space-around;
+
+            /* 侧轴的对齐方式多行 均匀分布 两段对齐 */
+            /* align-content: space-between; */
+
+            /* 侧轴的对齐方式多行 侧轴的起始位置 */
+            /* align-content: space-evenly; */
+
+            /* 侧轴的对齐方式多行 侧轴的起始位置 */
+            /* align-content: stretch; */
+        }
+        .inner4 {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+        .inner42 {
+            height: 300px;
+        }
+        .inner43 {
+            height: 100px;
+        }
+
+        /* 元素的水平垂直居中 */
+        .outer5 {
+            width: 500px;
+            height: 500px;
+            background-color: gray;
+            margin: 0 auto;
+
+            display: flex;
+
+            /* 方案一 */
+            /* justify-content: center;
+            align-items: center; */
+        }
+        .inner5 {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+
+            /* 方案二 */
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- 伸缩模型 -->
+    <div class="outer">
+        <!-- 伸缩项目 -->
+        <div class="inner">1</div>
+        <div class="inner">2</div>
+        <div class="inner">3</div>
+    </div>
+
+    <!-- 主轴与侧轴 -->
+    <div class="outer1">
+        <div class="inner1">1</div>
+        <div class="inner1">2</div>
+        <div class="inner1">3</div>
+        <div class="inner1">4</div>
+        <div class="inner1">5</div>
+        <div class="inner1">6</div>
+        <div class="inner1">7</div>
+        <div class="inner1">8</div>
+        <div class="inner1">9</div>
+        <div class="inner1">10</div>
+        <div class="inner1">11</div>
+    </div>
+
+     <!-- 主轴的对齐方式 -->
+     <div class="outer2">
+        <div class="inner2">1</div>
+        <div class="inner2">2</div>
+        <div class="inner2">3</div>
+    </div>
+
+    <!-- 侧轴对齐方式(一行) -->
+    <div class="outer3">
+        <div class="inner3 inner31">1</div>
+        <div class="inner3 inner32">2</div>
+        <div class="inner3 inner33">3</div>
+    </div>
+
+    <!-- 侧轴对齐方式(多行) -->
+    <div class="outer4">
+        <div class="inner4 inner41">1</div>
+        <div class="inner4 inner42">2</div>
+        <div class="inner4 inner43">3</div>
+        <div class="inner4 inner44">4</div>
+        <div class="inner4 inner45">5</div>
+        <div class="inner4 inner46">6</div>
+        <div class="inner4 inner47">7</div>
+        <div class="inner4 inner48">8</div>
+        <div class="inner4 inner49">9</div>
+        <div class="inner4 inner410">10</div>
+        <div class="inner4 inner411">11</div>
+    </div>
+
+    <!-- 元素的水平垂直居中 -->
+    <div class="outer5">
+        <div class="inner5"></div>
+    </div>
+</body>
+</html>
