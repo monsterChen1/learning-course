@@ -3,6 +3,6 @@
 
 前端：
 - [x] HTML&CSS
-- [ ] JavaScript
+- [x] JavaScript
 - [ ] TypeScript
 - [ ] Vue
