@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>逻辑运算符</title>
+    <script type="text/javascript">
+        /**
+         * JavaScript中为我们提供三种逻辑运算符
+         * ! 非
+         *  - 可以用来对一个值进行非运算，对一个布尔值进行取反操作
+         *  - 对非布尔值进行非运算，会先将其转换为布尔值然后再取反
+         *  - 可以利用非运算来将其他的数据类型转换为布尔值
+         * 
+         * && 与
+         *  - 对两侧的值进行与运算并返回结果
+         *  - 只有两端的值都为true时，结果才为true。只要有一个值为false，结果则为false
+         *  - 短路规则：如果第一个值为false，则不再检查后面的值
+         * 
+         * || 或
+         *  - 对两侧的值进行或运算并返回结果
+         *  - 只要有一个值为true，结果就返回true。全都为false，结果为false
+         *  - 短路规则：如果第一个值为true，则不再检查后面的值
+         * 
+         * 
+         * **/
+        var a = true;
+        // var a = false;
+        console.log("a = " + a);
+        a = !a;
+        console.log("!a = " + a);
+
+        var b = 10;
+        // var b = 0;
+        console.log("b = " + b);
+        b = !b;
+        console.log("!b = " + b);
+
+        var result = true && true;
+        console.log("result = " + result);
+        result = true && false;
+        console.log("result = " + result);
+        result = false && true;
+        console.log("result = " + result);
+        result = false && false;
+        console.log("result = " + result);
+
+        var result = false || false;
+        console.log("result = " + result);
+        result = true || false;
+        console.log("result = " + result);
+        result = false || true;
+        console.log("result = " + result);
+        result = true || true;
+        console.log("result = " + result);
+
+        /**
+         * 对于非布尔值的情况，会将其转换为布尔值然后进行运算，并返回原值
+         * 
+         * &&
+         *  - 如果两个值都为true，则返回最后一个值的原值
+         *  - 如果值中有false，则返回第一个false的原值
+         * 
+         * ||
+         *  - 如果两个值都为false，则返回最后一个值的原值
+         *  - 如果值中有true，则返回第一个true的原值
+         * 
+        */
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

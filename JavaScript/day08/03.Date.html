@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date</title>
+    <script type="text/javascript">
+        /**
+         * Date对象
+         *
+         * */
+
+        // 创建Date对象
+        var d = new Date();
+        // 输出当前时间
+        console.log(d);
+
+        // 创建一个指定的时间对象
+        // 时间格式: yyyy-MM-dd HH:mm:ss.SSS
+        var d2 = new Date("2019-09-01 12:30:30.350");
+        // var d2 = new Date("09/01/2019 12:30:30");
+        console.log(d2);
+
+        // 获取日期（1-31）
+        var date = d2.getDate();
+        console.log("日期: " + date);
+
+        // 获取星期（0-6）
+        var day = d2.getDay();
+        console.log("星期: " + day);
+
+        // 获取月份（0-11）
+        var month = d2.getMonth();
+        console.log("月份: " + month);
+
+        // 获取年份
+        var fullYear = d2.getFullYear();
+        console.log("年份: " + fullYear);
+        var year = d2.getYear();
+        console.log("年份: " + fullYear);
+
+        // 获取小时
+        var hour = d2.getHours();
+        console.log("小时: " + hour);
+
+        // 获取分钟
+        var minute = d2.getMinutes();
+        console.log("分钟: " + minute);
+
+        // 获取秒数
+        var second = d2.getSeconds();
+        console.log("秒数: " + second);
+
+        // 获取毫秒数
+        var millisecond = d2.getMilliseconds();
+        console.log("毫秒数: " + millisecond);
+
+        // 获取毫秒级时间戳
+        var timestamp = d2.getTime();
+        console.log("时间戳: " + timestamp);
+
+        // 获取时区相差的分钟数
+        var timezone = d2.getTimezoneOffset();
+        console.log("当前时区与标准时间相差的分钟数: " + timezone);
+
+        // 获取当前时间戳
+        var now = Date.now();
+        console.log(now);
+
+        // 指定日期的时间戳
+        var ts = Date.parse("2024-01-01");
+        console.log(ts);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

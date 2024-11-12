@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拖拽</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            let box1 = document.getElementById("box1");
+            // 鼠标按下
+            box1.onmousedown = function(e){
+            
+                e = e || window.event;
+                var ol = e.clientX - box1.offsetLeft;
+                var ot = e.clientY - box1.offsetTop;
+
+                document.onmousemove = function(event){
+                    event = event || window.event;
+                    var left = event.clientX - ol;
+                    var top = event.clientY - ot;
+
+                    box1.style.top = top + "px";
+                    box1.style.left = left + "px";
+                };
+
+                // 鼠标松开
+                document.onmouseup = function(event){
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                };
+                return false;
+            }
+            
+        }
+    </script>
+</head>
+<body>
+
+    <div>22211</div>
+    <div id="box1"></div>
+</body>
+</html>

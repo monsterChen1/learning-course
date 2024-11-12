@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>包装类</title>
+    <script type="text/javascript">
+        /**
+         * 基本数据类型
+         * String Number Boolean Null Undefined
+         * 
+         * 引用数据类型
+         * Object
+         * 
+         * 包装类(封装类)
+         * 
+         * 在JavaScript中为我们提供了三个包装类，通过这三个包装类可以将基本数据类型的数据转换为对象
+         * String(): 可以将基本数据类型字符串转换为String对象
+         * 
+         * Number(): 可以将基本数据类型的数字转换为Number对象
+         * 
+         * Boolean(): 可以将基本数据类型的数字转换为Boolean对象
+         * */
+        var num = new Number(10);
+        console.log("num = " + num + ", type = " + typeof num);
+
+        var str = new String("hello");
+        // var str = new String(true);
+        // var str = new String(10);
+        console.log("str = " + str + ", type = " + typeof str);
+        
+        // var bool = new Boolean(0);
+        var bool = new Boolean(1);
+        console.log("bool = " + bool + ", type = " + typeof bool);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

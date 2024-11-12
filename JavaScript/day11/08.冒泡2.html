@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冒泡2</title>
+    <style type="text/css">
+        #box1 {
+            width: 500px;
+            height: 500px;
+            background-color: greenyellow;
+        }
+        #box2 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            var box1 = document.getElementById("box1");
+            var box2 = document.getElementById("box2");
+            box1.onmousemove = function(event){
+                event.cancelBubble = true;
+            }
+
+            document.onmousemove = function(event){
+                let st = document.body.scrollTop || document.documentElement.scrollTop;
+                let x = event.clientX;
+                let y = event.clientY;
+                box2.style.top = y + st + "px";
+                box2.style.left = x + "px";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+</body>
+</html>

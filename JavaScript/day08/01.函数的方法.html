@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数的方法</title>
+    <script type="text/javascript">
+        function fun(a, b){
+            console.log(this.name); // obj
+            console.log("a = " + a); // a = 2
+            console.log("b = " + b); // b = 3
+        }
+        var obj = {name: "obj"};
+
+        fun.call(obj, 2, 3);
+        fun.apply(obj, [2, 3]);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

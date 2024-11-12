@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关系运算符</title>
+    <script type="text/javascript">
+        /**
+         * 通过关系运算符可以比较两个值之间的大小关系，并返回布尔值
+         * >：大于
+         * >=：大于等于
+         * <：小于
+         * <=：小于等于
+         * 
+         * 
+         **/
+        var result = 5 > 10;
+        console.log("5 > 10: " + result);
+
+        result = 5 > 4;
+        console.log("5 > 4: " + result);
+
+        result = 5 > 5;
+        console.log("5 > 5: " + result);
+
+        result = 5 >= 5;
+        console.log("5 >= 5: " + result);
+
+        result = 5 >= 4;
+        console.log("5 >= 4: " + result);
+
+        result = 4 < 4;
+        console.log("4 < 4: " + result);
+
+        result = 4 <= 4;
+        console.log("4 <= 4: " + result);
+
+        result = 1 > '0';
+        console.log("1 > '0': " + result);
+
+        result = 1 > null;
+        console.log("1 > null: " + result);
+
+        result = 1 > undefined;
+        console.log("1 > undefined: " + result);
+
+        result = 1 > NaN;
+        console.log("1 > NaN: " + result);
+
+        result = 1 > 'lll';
+        console.log("1 > 'lll': " + result);
+
+        result = '11' > '5';
+        console.log("'11' > '5': " + result)
+    </script>
+</head>
+<body>
+</body>
+</html>

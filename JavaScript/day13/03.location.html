@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location</title>
+    <script>
+        window.onload = function(){
+            var btn = document.getElementById("baidu");
+            btn.onclick = function(){
+                location = "https://www.baidu.com";
+                location.assign("https://www.baidu.com");
+            }
+            console.log(location.hash);
+            console.log(location.host);
+            console.log(location.hostname);
+            console.log(location.href);
+            console.log(location.pathname);
+            console.log(location.port);
+            console.log(location.protocol);
+            console.log(location.search);
+
+            var refresh = document.getElementById("refresh");
+            refresh.onclick = function(){
+                // 携带true参数，代表强制清空缓存刷新页面
+                location.reload(true);
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id="baidu">去百度</button>
+    <button id="refresh">刷新</button>
+</body>
+</html>

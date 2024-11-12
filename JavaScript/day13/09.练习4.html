@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习4</title>
+    <style>
+        div{
+            font-size: 30px;
+            text-align: center;
+            line-height: 100px;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+        }
+        #box1 {
+            width: 100px;
+            height: 100px;
+            border: 2px solid red;   
+        }
+        #box2 {
+            width: 100px;
+            height: 100px;
+            border: 2px solid green;
+            top: 150px;
+        }
+        #line {
+            width: 0;
+            border: 1px solid black;
+            height: 1000px;
+            top: 0;
+            left: 1000px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            // 随机的龟兔赛跑
+            var box1 = document.getElementById("box1");
+            var box2 = document.getElementById("box2");
+
+            setTimeout(function(){
+                time1 = parseInt(Math.random() * 1000) % 20;
+                time2 = parseInt(Math.random() * 1000) % 20;
+                move(box1, 1000, time1);
+                move(box2, 1000, time2)
+            }, 1000);
+        };
+
+        function move(obj, target, speed){
+            clearInterval(obj.timer);
+            // 判断现有位置和目标位置的方向，决定speed的取值
+            let now = parseInt(getStyle(obj, 'left'));
+            if(now > target){
+                speed = -speed;
+            }
+
+            obj.timer = setInterval(function(){
+                // 现有位置 加上 移动距离
+                let oldleft = parseInt(getStyle(obj, 'left'));
+                let newleft = oldleft + speed;
+
+                // 不能超过终点的位置
+                if(
+                    (speed > 0 && newleft > target) || 
+                    (speed < 0 && newleft < target)
+                ){
+                    newleft = target;
+                    winner();
+                }
+                obj.style.left = newleft + "px";
+
+                if(newleft === target){
+                    clearInterval(obj.timer);
+                }
+            }, 30);
+        }
+        
+        function getStyle(node, name){
+            var res;
+            try{
+                res = getComputedStyle(node, null)[name];
+            }catch(error){
+                res = node.currentStyle[name];
+            }
+            return res;
+        }
+
+        function winner(){
+            clearInterval(box1.timer);
+            clearInterval(box2.timer);
+            let bl1 = parseInt(getStyle(box1, 'left'));
+            let bl2 = parseInt(getStyle(box2, 'left'));
+            if(bl1 > bl2){
+                alert("兔子获胜");
+            }else if(bl1 < bl2){
+                alert("乌龟获胜");
+            }else{
+                alert("同时冲线");
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- <button id="btn1">box1向左</button>
+    <button id="btn2">box1向右</button>
+    <button id="btn3">box2向左</button>
+    <button id="btn4">box2向右</button>
+    <br><br> -->
+    <div id="box1">兔子</div>
+    <div id="box2">乌龟</div>
+
+    <div id="line"></div>
+</body>
+</html>

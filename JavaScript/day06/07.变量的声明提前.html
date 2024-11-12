@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>变量的声明提前</title>
+    <script type="text/javascript">
+        // 变量的声明提前
+        var a = 123;
+        console.log(a); // 123
+        console.log(b); // undefined
+
+        var b = 23; // var关键字的声明提前
+        // b = 23; // 报错
+        // let b = 23; // 报错
+
+        // 函数的声明提前
+        fun(); // 函数声明创建的函数，会声明提前
+        // fun2(); // 函数表达式没有该特性
+        function fun(){
+            console.log("fun");
+        }
+        var fun2 = function(){
+            console.log("fun2");
+        };
+
+        (function(a){
+            // 在函数中也有声明提前的特性
+            var a = 333; //var关键字声明提前
+            console.log(a);
+            console.log(b);
+            var b = 444;
+
+            // 函数声明也会提前
+            fun3();
+            function fun3(){
+                console.log("fun3");
+            }
+        })();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

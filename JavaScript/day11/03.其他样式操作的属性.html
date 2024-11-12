@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>其他样式操作的属性</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            padding: 10px;
+            border: 10px solid yellow;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            var box1 = document.getElementById("box1");
+            var btn1 = document.getElementById("btn01");
+
+            btn1.onclick = function(){
+                console.log(box1.clientWidth);
+                console.log(box1.offsetWidth);
+            };
+        };
+    </script>
+</head>
+<body>
+    <button id="btn01">点我一下</button>
+    <br/>
+    <div id="box1"></div>
+</body>
+</html>

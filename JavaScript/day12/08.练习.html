@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            top:0;
+            left: 0;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var box = document.getElementById("box1");
+
+            document.onkeydown = function(event){
+                event = event || window.event;
+                
+                // 也可以用offsetLeft 和 offsetTop实现
+                let left = Number.parseInt(box.style.left ? box.style.left : 0);
+                let top = Number.parseInt(box.style.top ? box.style.top : 0);
+                switch(event.keyCode){
+                    case 37:
+                        //左
+                        left -= 10;
+                        left = Math.max(0, left);
+                        break;
+                    case 38:
+                        //上
+                        top -= 10;
+                        top = Math.max(0, top);
+                        break;
+                    case 39:
+                        //右
+                        left += 10;
+                        break;
+                    case 40:
+                        //下
+                        top += 10;
+                        break;
+                    default:
+                        return false;
+                }
+                box.style.left = left + "px";
+                box.style.top = top + "px";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="box1"></div>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习5</title>
+    <style>
+        div{
+            font-size: 30px;
+            text-align: center;
+            line-height: 100px;
+            position: absolute;
+            left: 0;
+        }
+        #box1 {
+            width: 100px;
+            height: 100px;
+            border: 2px solid red;   
+        }
+        #box2 {
+            width: 100px;
+            height: 100px;
+            border: 2px solid green;
+            top: 200px;
+        }
+        #box3 {
+            width: 100px;
+            height: 100px;
+            border: 2px solid blue;
+            top: 350px;
+        }
+        #line {
+            width: 0;
+            border: 1px solid black;
+            height: 1000px;
+            top: 0;
+            left: 800px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var btn1 = document.getElementById("btn1");
+            var btn2 = document.getElementById("btn2");
+            var btn3 = document.getElementById("btn3");
+            var btn4 = document.getElementById("btn4");
+            var btn5 = document.getElementById("btn5");
+
+            var box1 = document.getElementById("box1");
+            var box2 = document.getElementById("box2");
+            var box3 = document.getElementById("box3")
+
+            btn1.onclick = function(){
+                move(box1, 'left', 800, 20);
+            }
+            btn2.onclick = function(){
+                move(box1, 'left', 0, 20);
+            }
+            btn3.onclick = function(){
+                move(box2, 'width', 800, 10);
+            }
+            btn4.onclick = function(){
+                move(box2, 'width', 0, 10);
+            }
+            btn5.onclick = function(){
+                move(box3, 'width', 800, 10, function(){
+                    move(box3, 'height', 400, 10);
+                });
+            }
+        };
+
+        function move(obj, attr, target, speed, callback){
+            clearInterval(obj.timer);
+            // 判断现有位置和目标位置的方向，决定speed的取值
+            let now = parseInt(getStyle(obj, attr));
+            if(now > target){
+                speed = -speed;
+            }
+
+            obj.timer = setInterval(function(){
+                // 现有位置 加上 移动距离
+                let oldleft = parseInt(getStyle(obj, attr));
+                let newleft = oldleft + speed;
+
+                // 不能超过终点的位置
+                if(
+                    (speed > 0 && newleft > target) || 
+                    (speed < 0 && newleft < target)
+                ){
+                    newleft = target;
+                }
+                obj.style[attr] = newleft + "px";
+
+                if(oldleft === target){
+                    clearInterval(obj.timer);
+                    callback && callback()
+                }
+            }, 30);
+        }
+        
+        function getStyle(node, name){
+            var res;
+            try{
+                res = getComputedStyle(node, null)[name];
+            }catch(error){
+                res = node.currentStyle[name];
+            }
+            return res;
+        }
+    </script>
+</head>
+<body>
+    <button id="btn1">box1向左</button>
+    <button id="btn2">box1向右</button>
+    <button id="btn3">box2向左</button>
+    <button id="btn4">box2向右</button>
+    <button id="btn5">百变</button>
+    <br><br>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+
+    <div id="line"></div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>相等运算符</title>
+    <script type="text/javascript">
+        /**
+         * 相等运算符用来比较两个值是否相等
+         *  相等== 和 不等!=
+         *      会自动进行类型的转换
+         *  全等=== 和 不全等!==
+         *      不会自动进行类型的转换
+         * **/
+        var result = 1 == 1;
+        console.log("1 == 1: " + result); //true
+
+        var a = 10;
+        console.log("a == 4: " + (a == 4)); //false
+
+        console.log("'1' == 1: " + ("1" == 1));//true
+
+        // undefined衍生自null 所以两个值相等判断时，会返回true
+        console.log("undefined == null: " + (undefined == null)); // true
+
+        // NaN不与任何值相等，包括它本身
+        console.log("NaN == NaN: " + (NaN == NaN)); //false
+
+        var b = NaN;
+        // 可以通过isNaN()函数来判断一个值是否为NaN
+        console.log("b isNaN: " + isNaN(b));
+
+        console.log("10 != 5: " + (10 != 5));
+        console.log("10 != 10: " + (10 != 10));
+        console.log("'abcd' != 'abcd': " + ("abcd" != "abcd"));
+        console.log("'1' != 1: " + ("1" != 1));
+
+
+        console.log("'123' === 123: " + ('123' === 123));
+        console.log("1 === 1: " + (1 === 1));
+        console.log("null === undefined: " + (null === undefined));
+
+        console.log("'1' !== 1: " + ("1" !== 1));
+        console.log("null !== undefined: " + (null !== undefined));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

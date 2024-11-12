@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基本数据类型和引用数据类型</title>
+    <script type="text/javascript">
+        /**
+         * 
+         * 基本数据类型：`Number`、`String`、`Boolean`、`Null`、`Undefined`
+         * - 引用数据类型：`Object`
+         * - 基本数据类型：变量都是保存到栈内存中的，基本数据类型的值直接在栈内存中存储。值与值之间是互相独立的，修改一个变量不会影响其他的变量
+         * - 引用数据类型：对象是保存在堆内存中的，变量是保存的对象的引用(内存地址)。如果多个变量指向的是同一个对象，此时修改一个变量的属性，会影响其他的变量
+         * - 比较两个变量时，对于基本数据类型，比较的是变量的值。对于引用数据类型比较的是内存地址，地址相同才相同
+         * */
+        var i = 1;
+        var y;
+        y = i;
+        i = 2;
+        console.log(i);
+        console.log(y);
+
+        var obj = {}, obj2;
+        obj.name = "name";
+        obj2 = obj;
+        obj.name = "name1";
+        console.log(obj);
+        console.log(obj2);
+
+
+        var a = 1;
+        var b = 1;
+        console.log(a == b);
+
+        var obj1 = {name:'name'};
+        var obj2 = {name:'name'};
+        console.log(obj1 == obj2);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

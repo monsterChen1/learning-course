@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>强制类型转换</title>
+    <script type="text/javascript">
+        /*
+            强制类型转换
+            - 指将一个数据类型强制转换为其他的数据类型
+        */
+
+        /*
+            将其他数据类型转换为String
+        */
+        // toString()方法
+        var a = 123;
+        var b = a.toString();
+        console.log("a = " + a);
+        console.log("a的数据类型: " + typeof a);
+        console.log("b = " + b);
+        console.log("b的数据类型: " + typeof b);
+
+        var c = true;
+        console.log("c = " + c);
+        c = c.toString();
+        console.log("c的数据类型: " + typeof c);
+
+        var d = null;
+        console.log("d = " + d);
+        // d = d.toString(); 报错
+        console.log("d的数据类型: " + typeof d);
+
+        var e = undefined;
+        console.log("e = " + e);
+        // e = e.toString(); 报错
+        console.log("e的数据类型: " + typeof e);
+
+        // String()函数
+        var f = 123;
+        f = String(f);
+        console.log("f = " + f);
+        console.log("f的数据类型: " + typeof f);
+
+        var g = true;
+        console.log("g = " + g);
+        g = String(g);
+        console.log("g的数据类型: " + typeof g);
+
+        var h = null;
+        console.log("h = " + h);
+        h = String(h);
+        console.log("h的数据类型: " + typeof h);
+
+        var i = undefined;
+        console.log("i = " + i);
+        i = String(i);
+        console.log("i的数据类型: " + typeof i);
+
+        /**
+         * 将其他数据类型转换为Number
+         * 使用Number()函数
+         */
+        var a = "123";
+        var b = "number";
+        var c = "";
+        console.log(Number(a));
+        console.log(Number(b));
+        console.log(Number(c));
+        
+        var d = true;
+        var e = false;
+        var f = null;
+        var g = undefined;
+        console.log(Number(d));
+        console.log(Number(e));
+        console.log(Number(f));
+        console.log(Number(g));
+
+        /*
+        调用paresInt()函数
+        调用paresFloat()函数
+        */
+        var a = "123px";
+        a = parseInt(a);
+        console.log(a);
+
+        var b = "123.345px";
+        b = parseFloat(b);
+        console.log(b);
+
+        /**
+         * 其他数据类型转换为Boolean类型
+         * 调用Boolean()函数
+         **/
+        // Number = Boolean
+        var a = 123;
+        console.log(Boolean(a));
+        a = 0;
+        console.log(Boolean(a));
+        a = NaN;
+        console.log(Boolean(a));
+
+        // String = Boolean
+        var a = "2312";
+        console.log(Boolean(a));
+        a = "";
+        console.log(Boolean(a));
+
+        // null = Boolean
+        var a = null;
+        console.log(Boolean(a));
+
+        // undefined = Boolean
+        var a = undefined;
+        console.log(Boolean(a));
+
+        // object = Boolean
+        var a = {};
+        console.log(Boolean(a));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

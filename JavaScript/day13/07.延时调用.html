@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>延时调用</title>
+    <style>
+        #title {
+            color: red;
+            font-size: 50px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var title = document.getElementById("title");
+            var timer = setTimeout(function(){
+                title.innerText = '瞅你咋滴!!';
+            }, 1000);
+
+            //clearTimeout(timer);
+        }
+    </script>
+</head>
+<body>
+    <h1 id="title">你瞅啥!!</h1>
+</body>
+</html>

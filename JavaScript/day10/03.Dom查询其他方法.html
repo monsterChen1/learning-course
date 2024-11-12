@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom查询其他方法</title>
+    <script type="text/javascript">
+        window.onload = function(){
+            // 获取body标签
+            var body = document.getElementsByTagName("body")[0];
+            console.log(body);
+
+            body = document.body;
+            console.log(body);
+
+            // 获取html根标签
+            var html = document.documentElement;
+            console.log(html);
+
+            // 获取所有标签
+            var all = document.all;
+            all = document.getElementsByTagName("*");
+            console.log(all);
+            console.log(all.length);
+
+            // 获取box1
+            var box = document.getElementsByClassName("box1");
+            console.log(box);
+
+            // 获取box1中的div
+            box = document.querySelector(".box");
+            console.log(box);
+            console.log(box.innerText);
+
+            var div = document.querySelector(".box1 div");
+            console.log(div);
+
+            // 获取box
+            var boxes = document.querySelectorAll(".box");
+            console.log(boxes);
+            
+        }
+    </script>
+</head>
+<body>
+    <div class="box box1">
+        <div>我是box1</div>
+    </div>
+    <div class="box box2">
+        <div>我是box2</div>
+    </div>
+    <div class="box box2">
+        <div>我是box3</div>
+    </div>
+
+    <div></div>
+</body>
+</html>

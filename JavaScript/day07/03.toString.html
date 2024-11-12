@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toString</title>
+    <script type="text/javascript">
+        /**
+         * 构造函数
+         * */
+        function Person(name, age, gender){
+            this.name = "sun";
+            this.age = 18;
+            this.gender = "男";
+        }
+        // 创建对象
+        var per = new Person("sun", 18, "男");
+        // 打印对象，输出对象的toString方法的返回值
+        var result = per.toString();
+        console.log("result = " + result);
+        console.log(per.__proto__.__proto__.hasOwnProperty("toString"));
+
+        // 重写对象的toString方法
+        per.toString = function(){
+            return "toString";
+        }
+        console.log(per.toString());
+
+        // 重新对象原型的tostring
+        Person.prototype.toString = function(){
+            return "toString22";
+        };
+        var per2 = new Person("sun", 18, "男");
+        console.log(per2.toString());
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

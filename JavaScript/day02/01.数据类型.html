@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据类型</title>
+    <script type="text/javascript">
+        /**
+         * 数据类型指的就是字面量的类型
+         * 
+         * 在JavaScript中一共有六种数据类型
+         *  1. String       字符串
+         *  2. Number       数值型
+         *  3. Boolean      布尔型
+         *  4. Null         空值
+         *  5. Undefined    未定义
+         *  6. Object       对象
+         * 
+         * String、Number、Boolean、Null、Undefined属于基本数据类型
+         * Object属性引用数据类型
+         **/
+        
+        /* *
+         * String 字符串
+         * 在JavaScript中字符串需要使用单引号或双引号引起来
+         * 在字符串中使用`\`作为转义字符
+         *      `\'`：单引号
+         *      `\"`：双引号
+         *      `\n`：换行
+         *      `\t`：制表符
+         *      `\\`：反斜杠
+         * */
+        console.log("=======string========");
+        var str = 'aaa';
+        str = "bbb";
+        str = '我说:"aaa"';
+        str = "我说:'bbb'";
+        str = "\"111222\"";
+        console.log(str);
+
+        /**
+         * Number   数值型
+         * - 在JavaScript中所有的数值都是Number类型，包括整数和浮点数（小数）
+         * - 在JavaScript中所有的数值都是Number类型，包括整数和浮点数（小数）
+         * - 在JavaScript中可以表示数值的最大值：`Number.MAX_VALUE`
+         * - Number表示的数值大小是有限的，范围是：
+         *      - `± 1.7976931348623157e+308`
+         *      - 超过了这个范围，则会返回`±Infinity`（正/负无穷）
+         *      - `Infinity`也是属于Number类型
+         * - `NaN`，即非数值（Not a Number）是一个特殊的数值，JavaScript中当对数值进行计算时没有结果返回，则返回`NaN`。`NaN`也属于Number类型
+         * - `Number.MIN_VALUE`大于0的最小值：`5e-324`
+         * - 在JavaScript中进行整数的运算基本可以保证精确。如果进行浮点数的运算，可能会得到一个失真的浮点数。
+         * */
+        console.log("=======Number========");
+        var a = 123;
+        a = 456.789;
+        var b = "123";
+        console.log(a);
+        console.log(b);
+        console.log(Number.MAX_VALUE);
+        console.log(Number.MAX_VALUE * Number.MAX_VALUE);
+        console.log("abc" * "ddd");
+        console.log(0.1 + 0.2);
+
+        /*
+            Boolean 布尔类型
+            - 布尔型也被称为逻辑值类型或者真假值类型
+            - 布尔型只能够取真（`true`）和假`false`两种值
+        */
+        console.log("=======Boolean========");
+        var boolt = true;
+        var boolf = false;
+        console.log(boolt);
+        console.log(boolf);
+
+        /*
+                Null 空值
+                Null类型的值是`null`
+                `null`表示的是一个空的对象，使用typeof检查`null`会返回一个`Object`
+        */
+        console.log("=======null========");
+        var a = null;
+        console.log(a);
+
+        /*
+                Undefined 未定义
+            - Undefined类型只有一个值，即`undefined`
+            - 声明变量但是没有对变量进行赋值或初始化，这个变量的值就是`undefined`
+            - 使用typeof检查没有初始化或没有声明的变量时，都会返回`undefined`
+        */
+        console.log("=======Undefined========");
+        var c;
+        console.log(c);
+
+        /**
+         * 可以使用typeof来检查一个表量的数据类型
+         * 语法：typeof 变量
+         */
+         console.log("=======typeof========");
+        // String类型
+        console.log(typeof str);
+        // Number类型
+        console.log(typeof a);
+        console.log(typeof Infinity);
+        console.log(typeof NaN);
+        // Boolean类型
+        console.log(boolt);
+        // null
+        console.log(typeof null);
+        // undefined
+        console.log(typeof c);
+        console.log(typeof abc);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

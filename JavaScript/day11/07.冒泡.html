@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        #box1 {
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+        }
+        #s1 {
+            background-color: yellow;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            // s1绑定单击事件
+            var s1 = document.getElementById("s1");
+            s1.onclick = function(event){
+                event = event || window.event;
+                alert("我是span的单击响应函数");
+                event.cancelBubble = true;
+                // 取消事件冒泡
+                event.stopPropagation();
+                // event.stopImmediatePropagation();
+                // 取消默认事件
+                // event.preventDefault();
+                // return false;
+            }
+
+            // box1绑定单击事件
+            var box1 = document.getElementById("box1");
+            box1.onclick = function(event){
+                alert("我是box的单击响应函数");
+                event.preventDefault();
+                return false;
+            }
+
+            document.body.onclick = function(event){
+                alert("我是body的单击响应函数");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="box1">
+        我是box1
+        <span id="s1">我是span</span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>条件运算符(三元运算符)</title>
+    <script type="text/javascript">
+        /**
+         * 条件运算符也叫三元运算符
+         * 语法：条件表达式 ? 语句1 : 语句2;
+         * */
+
+        // 条件表达式为true，执行语句1
+        true ? alert("语句1") : alert("语句2");
+        // 条件表达式为false，执行语句2
+        false ? alert("语句1") : alert("语句2");
+
+        var a = 30, b = 43, c = 50;
+
+        var max = a > b ? a : b;
+        console.log("max = " + max);
+        max = max > c ? max : c;
+        console.log("max = " + max);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

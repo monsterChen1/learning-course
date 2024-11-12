@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>return</title>
+    <script type="text/javascript">
+        function fun(){
+            console.log("---start---");
+
+            for(var i = 0; i < 5; i++){
+
+                if(i == 2){
+                    // break: 退出当前循环
+                    // break;
+                    // continue: 跳过本次循环
+                    // continue;
+                    // return: 退出函数并放回值
+                    return i;
+                }
+
+                console.log(i);
+            }
+
+            console.log("---end---");
+        }
+        fun();
+        
+        // 函数的返回值可以是任意的数据类型
+        function ret(){
+
+            //基本数据类型
+            // return 1;
+            // return "hello";
+            // return true;
+            // return null;
+            // return undefined; // 默认返回值
+
+            // 引用数据类型
+            return {name: "name"};
+            // return function(){
+            //     console.log("function");
+            // }
+        }
+
+        console.log(ret());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

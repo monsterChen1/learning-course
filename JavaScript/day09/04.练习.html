@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #outer {
+            width: 500px;
+            margin: 50px auto;
+            background: greenyellow;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <span id="index"></span>/<span id="len"></span>
+        <img src="image/1.jpg" alt="冰棍">
+        <button id="prev">上一张</button>
+        <button id="next">下一张</button>
+    </div>
+
+    <script type="text/javascript">
+        // 页面加载完成后执行
+        window.onload = function(){
+            var src = ["image/1.jpg", "image/2.jpg", "image/3.jpg", "image/4.jpg", "image/5.jpg"];
+            // 获取图片元素节点对象
+            var img = document.getElementsByTagName("img")[0];
+            // 获取按钮元素节点对象
+            var prev = document.getElementById("prev");
+            var next = document.getElementById("next");
+            // 获取元素对象
+            var ind = document.getElementById("index");
+            var len = document.getElementById("len");
+
+            // 设置起始索引
+            var index = 0;
+
+            // 设置图片数量
+            len.innerHTML = src.length;
+            ind.innerHTML = index + 1;
+
+            prev.onclick = function(){
+                index--;
+                if(index < 0){
+                    index = src.length - 1;
+                }
+                img.src = src[index];
+                ind.innerHTML = index + 1;
+            };
+            next.onclick = function(){
+                index++;
+                if(index > src.length - 1){
+                    index = 0;
+                }
+                img.src = src[index];
+                ind.innerHTML = index + 1;
+            };
+        };
+    </script>
+</body>
+</html>

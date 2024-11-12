@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM查询</title>
+    
+</head>
+<body>
+    <h1>标题一</h1>
+    <button id="btn">按钮</button>
+    <input type="text" name="wenben" id="wenben">
+
+    <script type="text/javascript">
+        // DOM查询
+        // 根据id属性获取元素节点对象
+        var btn = document.getElementById('btn');
+        console.log(btn);
+
+        // 根据标签获取元素节点对象
+        // 返回类数组对象
+        var tag_h1 = document.getElementsByTagName('h1');
+        console.log(tag_h1);
+
+        // 元素.id 元素.type
+        // 元素.className
+
+        // 根据name属性获取元素节点对象
+        // 返回类数组对象
+        var name = document.getElementsByName("wenben");
+        console.log(name);
+
+    </script>
+</body>
+</html>

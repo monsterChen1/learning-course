@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用Dom操作css</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            var box1 = document.getElementsByClassName("box1")[0];
+            console.log(box1);
+            box1.style.width = "500px";
+            box1.style.height = "500px";
+            box1.style.backgroundColor = "green";
+        }
+    </script>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>

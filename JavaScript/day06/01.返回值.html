@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>返回值</title>
+    <script type="text/javascript">
+        /**
+         * 创建一个函数，用来计算三个数的和
+         * 
+         * */
+        function sum(a, b, c){
+            // console.log(a + b + c);
+
+            return a + b + c;
+
+            // return后的语句不执行
+            // console.log("return");
+        }
+
+        // 调用函数
+        // var result = sum(1, 2, 3);
+        var result = sum(4, 7, 8);
+        console.log(result);
+
+        // return 默认返回undefined
+        function voidd(){
+            return ;
+        }
+        console.log(voidd());
+
+
+        // 练习
+        function isOdd(num){
+            // if(num % 2 == 0) return true;
+            // return false;
+
+            return (num % 2) == 0;
+        }
+        console.log(isOdd(3));
+        console.log(isOdd(2));
+
+        // 函数的实参可以是任意的数据类型
+        // 练习
+        function circle(r){
+            return 3.14 * Math.pow(r, 2);
+        }
+        console.log(circle(10));
+        console.log(circle(5));
+
+        // 练习
+        function outputInfo(info){
+            console.log(info.name, info.age);
+        }
+        outputInfo({name:"name", age: 18});
+
+        function fun_param(param){
+            console.log(param);
+        }
+        fun_param(circle);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

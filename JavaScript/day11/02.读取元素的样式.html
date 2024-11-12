@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>读取元素的样式</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            // 读取样式
+            var box1 = document.getElementById("box1");
+            var btn1 = document.getElementById("btn01");
+            btn1.onclick = function(){
+                console.log(box1.style.width);
+                // 只能IE使用
+                // console.log(box1.currentStyle.width);
+                var obj = getComputedStyle(box1, null);
+                console.log(obj.width);
+                console.log(getStyle(box1, "width"))
+            };
+
+        };
+
+        function getStyle(node, name){
+            var res;
+            try{
+                res = getComputedStyle(node, null)[name];
+            }catch(error){
+                res = node.currentStyle[name];
+            }
+            return res;
+        }
+    </script>
+</head>
+<body>
+    <button id="btn01">点我一下</button>
+    <br/>
+    <div id="box1"></div>
+</body>
+</html>

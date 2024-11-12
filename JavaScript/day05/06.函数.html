@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数</title>
+    <script type="text/javascript">
+        /**
+         * - 函数也是一个对象，也具有普通对象的功能
+         * - 函数中可以封装一些代码，在需要的时候可以去调用函数来执行这些代码
+         * - 使用`typeof`检查一个函数时会返回`function`
+         * 
+         * */
+        // 创建函数对象
+        var fun_name = new Function();
+
+        // 声明函数
+        function fun_name(param1, param2){
+            // statement 
+        }
+
+        // 函数表达式
+        var fun_name = function(param1, param2){
+            // statement 
+        }
+        console.log(fun_name);
+        console.log(typeof fun_name);// function
+
+
+        // 调用函数
+        fun_name(1, 2);
+
+        /**
+         * 定义两个数和的函数
+         * */
+        function sum(x, y){
+            return x + y;
+        }
+
+        console.log(sum(1,2));
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

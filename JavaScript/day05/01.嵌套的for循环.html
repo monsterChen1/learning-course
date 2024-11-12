@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>嵌套的for循环</title>
+    <script type="text/javascript">
+        // 嵌套的for循环
+        for(var x = 1; x <= 10; x++){
+            for(var y = 1; y <= x; y++){
+                document.write('*&nbsp;');
+            }
+            document.write("<br/>");
+        }
+        
+        document.write("<br/>");
+        for(var x = 1; x <= 10; x++){
+            for(var y = 1; y<= 10; y++){
+                document.write('*&nbsp;');
+            }
+            document.write("<br/>");
+        }
+
+        document.write("<br/>");
+        for(var x = 10; x > 0; x--){
+            for(var y = 1; y <= x; y++){
+                document.write("*&nbsp;");
+            }
+            document.write("<br/>");
+        }
+
+        // 99乘法表
+        for(var x = 1; x < 10; x++){
+            for(var y = 1; y <= x; y++){
+                document.write('<span>' + y + '*' + x + '='+ (x * y) + '</span>');
+            }
+            document.write("<br/>");
+        }
+    </script>
+    <style>
+        span {
+            display: inline-block;
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

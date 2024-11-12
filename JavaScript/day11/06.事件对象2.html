@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>div跟随鼠标</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+
+            let div = document.getElementById("box");
+            document.body.onmousemove = function(event){
+                let st = document.body.scrollTop || document.documentElement.scrollTop;
+
+                let x = event.clientX;
+                let y = event.clientY;
+
+                div.style.left = x + "px";
+                div.style.top = y + st + "px";
+            }
+        }
+    </script>
+</head>
+<body style="height: 1000px;">
+    <div id="box" class="box"></div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拖拽2</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+        #box2 {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            position: absolute;
+            top: 200px;
+            left: 100px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            let box1 = document.getElementById("box1");
+            let box2 = document.getElementById("box2");
+            draggable(box1);
+            draggable(box2);
+        }
+        function draggable(obj){
+            obj.onmousedown = function(e){
+                obj.setCapture && obj.setCapture();
+
+                e = e || window.event;
+                var ol = e.clientX - obj.offsetLeft;
+                var ot = e.clientY - obj.offsetTop;
+
+                document.onmousemove = function(event){
+                    event = event || window.event;
+                    var left = event.clientX - ol;
+                    var top = event.clientY - ot;
+
+                    obj.style.top = top + "px";
+                    obj.style.left = left + "px";
+                }
+
+                document.onmouseup = function(event){
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                    obj.releaseCapture && obj.releaseCapture();
+                };
+
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <h1 class="title">结构</h1>
+        <ul class="nav">
+            <li name="first">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <div class="body">
+            <h2>你好</h2>
+            <p>好</p>
+            <p>好！！</p>
+        </div>
+    </div>
+    <script type="text/javascript">
+        // 输出获取到节点的信息
+        function nodeInfo(node){
+            console.log(node);
+            // 获取节点内的HTML结构
+            // console.log(node.innerHTML);
+            // 获取节点内的文本信息
+            console.log(node.innerText);
+        }
+
+        // 输出获取到的节点类数组信息
+        function nodesInfo(nodes){
+            console.log(nodes);
+            for(let i = 0; i < nodes.length; i++){
+                console.log(nodes[i]);
+                // console.log(nodes[i].innerHTML);
+                console.log(nodes[i].innerText);
+            }
+        }
+
+        // 获取id值为container的元素
+        var container = document.getElementById("container");
+        nodeInfo(container);
+
+        // 获取div的元素组
+        var divs = document.getElementsByTagName("div");
+        nodesInfo(divs);
+
+        // 获取name属性值为first的元素组
+        var first = document.getElementsByName("first");
+        nodesInfo(first);
+        
+        // 获取class值为title的元素组
+        var className = document.getElementsByClassName("title");
+        nodesInfo(className);
+
+        // 获取Container后代中的h1元素
+        var tagH1 = container.getElementsByTagName("h1");
+        nodesInfo(tagH1);
+
+        // 获取container所有的子节点(包含空的文本节点)
+        var childnodes = container.childNodes
+        console.log(childnodes);
+
+        // 获取container所有的子元素
+        var children = container.children
+        console.log(children);
+
+        // 获取container第一个子节点
+        var firstnode = container.firstChild
+        console.log(firstnode);
+
+        // 获取container第一个子元素
+        var firstEle = container.firstElementChild;
+        console.log(firstEle);
+
+        // 获取container最后一个子节点
+        var lastchild = container.lastChild
+        console.log(lastchild);
+
+        // 获取container最后一个子元素
+        var lastele = container.lastElementChild;
+        console.log(lastele);
+
+        var nav1 = document.getElementsByClassName('nav')[0];
+
+        // 获取nav的父节点
+        var parent = nav1.parentNode;
+        console.log(parent);
+        
+        // 获取nav的前一个子节点
+        var pre = nav1.previousSibling;
+        console.log(pre);
+
+        // 获取nav的前一个子元素
+        var preEle = nav1.previousElementSibling;
+        console.log(preEle);
+
+        // 获取nav的后一个子节点
+        var next = nav1.nextSibling;
+        console.log(next);
+
+        // 获取nav的后一个子元素
+        var nextEle = nav1.nextElementSibling;
+        console.log(nextEle);
+        
+
+
+    </script>
+</body>
+</html>

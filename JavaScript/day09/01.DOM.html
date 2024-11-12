@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <script type="text/javascript">
+        // 文档节点 document
+        console.log(document);
+
+
+        // 获取元素对象 button
+        var btn = document.getElementById("btn");
+        console.log(btn);
+
+        // 修改button中的文本内容
+        btn.innerHTML = "点我一下!";
+    </script>
+</body>
+</html>

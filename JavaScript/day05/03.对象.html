@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象</title>
+    <script type="text/javascript">
+        /**
+         * 对象是一种复合数据类型，在对象中可以保存多个不同数据类型的属性
+         * 对象的分类
+         *  - 内建对象：由ES标准中定义的对象，在任何的ES的实现中都可以使用
+         *  - 宿主对象：由JS的运行环境提供的对象
+         *  - 自定义对象：开发中创建的对象
+         * 
+         * */
+        // 创建对象
+        // 使用new关键字调用的函数，是构造函数constructor
+        // 构造函数是专门用来创建对象的函数
+        var obj = new Object();
+        // var obj = {};
+        console.log(typeof obj); //object
+
+        // 向对象中添加属性 对象.属性名 = 属性值;
+        obj.name = "hello";
+        obj.gender = "man";
+        obj.age = 18;
+        obj["phone"] = "000";
+        console.log(obj);
+
+        // 读取对象中的属性
+        console.log(obj.name);
+        console.log(obj["age"]);
+
+        // 删除对象中的属性
+        delete obj.phone;
+        delete obj.age;
+        console.log(obj.phone);
+        console.log(obj.age);
+
+        // 使用`in`检查对象中是否含有指定属性
+        // 如果对象中存在该属性，则返回true，不存在则返回false
+        console.log("name" in obj);
+        console.log("phone" in obj);
+
+        // 使用对象字面量，在创建对象时直接向对象中添加属性
+        var obj2 = {
+            name: "name",
+            age: 18
+        };
+        console.log(obj2);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

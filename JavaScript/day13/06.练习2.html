@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习2</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var box = document.getElementById("box");
+            var keycode = 0;
+            var speed = 10;
+            setInterval(function(){
+                switch(keycode){
+                    case 37:
+                        box.style.left = (box.offsetLeft - speed < 0 ? 0 : box.offsetLeft - speed) + "px";
+                        break;
+                    case 38:
+                        box.style.top = (box.offsetTop - speed < 0 ? 0 : box.offsetTop - speed) + "px";
+                        break;
+                    case 39:
+                        box.style.left = box.offsetLeft + speed + "px";
+                        break;
+                    case 40:
+                        box.style.top = box.offsetTop + speed + "px";
+                        break;
+                }
+            }, 30);
+
+            document.onkeydown = function(event){
+                event = event || window.event;
+                keycode = event.keyCode;
+                if(event.ctrlKey){
+                    speed = 20;
+                }else{
+                    speed = 10;
+                }
+            }
+            document.onkeyup = function(event){
+                event = event || window.event;
+                keycode = 0;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

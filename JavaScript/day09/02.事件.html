@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件</title>
+    <script type="text/javascript">
+        // 页面加载完后，执行事件
+        window.onload = function(){
+            alert("页面加载完成了");
+        }
+    </script>
+</head>
+<body>
+    <!-- <button id="btn" onclick="alert('aaa')">按钮</button> -->
+    <button id="btn">按钮</button>
+    <script type="text/javascript">
+        /**
+         * 事件就是用户和浏览器之间的交互行为
+         * 
+         * */
+
+        // 获取按钮对象
+        var btn = document.getElementById('btn');
+
+        // 可以为按钮的对应事件绑定处理函数的形势来响应事件
+        btn.onclick = function(){
+            alert("绑定事件了");
+        };
+
+    </script>
+</body>
+</html>

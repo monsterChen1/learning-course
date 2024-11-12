@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象</title>
+    <script type="text/javascript">
+        /**
+         * 创建对象
+         * */
+        var obj = {
+            name: 'name',
+            age: 18,
+            gender: "man",
+            sayName: function(){
+                console.log(this.name);
+            }
+        };
+
+        var obj1 = {
+            name: 'name1',
+            age: 28,
+            gender: "woman",
+            sayName: function(){
+                console.log(this.name);
+            }
+        };
+
+        var obj2 = {
+            name: 'name2',
+            age: 38,
+            gender: "man",
+            sayName: function(){
+                console.log(this.name);
+            }
+        };
+
+        /**
+         * 使用工厂方法创建对象
+         * */
+        function createPerson(name, age, gender){
+            // 创建新的对象
+            var obj = new Object();
+
+            // 向对象中添加属性
+            obj.name = name;
+            obj.age = age;
+            obj.gender = gender;
+            obj.sayName = function(){
+                console.log(this.name);
+            }
+
+            return obj;
+        }
+        var obj3 = createPerson("name3", 28, 'man');
+        var obj4 = createPerson("name4", 38, 'woman');
+        var obj5 = createPerson("name5", 48, 'woman');
+        obj3.sayName();
+        obj4.sayName();
+        obj5.sayName();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

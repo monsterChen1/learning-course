@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>break和continue</title>
+    <script type="text/javascript">
+        // 可以为循环语句创建一个label,来标识当前的循环
+        // label_name:循环语句
+        // 使用break语句时，可以在break后跟着一个label，这样break将会结束指定的循环，而不是最近的
+        // break label_name;
+        outer:
+        for(var x = 10; x > 0; x--){
+            for(var y = 1; y <= x; y++){
+                // 
+                break outer;
+                document.write("*&nbsp;");
+            }
+            document.write("<br/>");
+        }
+
+        // continue label_name;
+        outer:
+        for(var x = 10; x > 0; x--){
+            for(var y = 1; y <= x; y++){
+                continue outer;
+                document.write("*&nbsp;");
+            }
+            document.write("<br/>");
+        }
+
+        // 质数
+        console.time("num");
+        for(var i = 1; i <= 10000; i++){
+            var res = true;
+            for(var o = 2; o <= Math.sqrt(i); o++){
+                if(i % o == 0){
+                    res = false;
+                    break;
+                }
+            }
+            if(res){
+                // console.log(i);
+            }
+        }
+        console.timeEnd("num");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
