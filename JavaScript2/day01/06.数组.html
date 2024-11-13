@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组</title>
+</head>
+<body>
+    <script>
+        // 数组和变量的区别：一个变量一次只能保存一个值，数组可以一次保存多个值
+        // 定义数组
+        // 数组可以存储任意的数据类型
+        let arr = [1, 2, 3, 4, 'abc', [11,22]];
+
+        // 数组取值
+        // 数组下标从0开始
+        console.log(arr);
+        console.log(arr[0]);
+        console.log(arr[4]);
+        console.log(arr[5][0]);
+
+        // 数组的长度
+        console.log(arr.length);
+
+        // 案例
+        let day = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日",];
+        console.log(day[6]);
+        console.log(day.length);
+    </script>
+</body>
+</html>

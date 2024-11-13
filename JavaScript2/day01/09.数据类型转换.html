@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据类型转换</title>
+</head>
+<body>
+    <script>
+        // 数值类型转换
+        let a = "1.23abd22";
+        // 需要全为数值
+        console.log(Number(a)); // NaN
+        // 转换为整数数值，舍去字符串
+        console.log(parseInt(a)); // 1
+        // 转换为浮点型数值，舍去字符串
+        console.log(parseFloat(a)); // 1.23
+
+        // 字符串类型转换
+        let b = 234;
+        console.log(String(b));
+        console.log(b.toString());
+        console.log(String(null));
+        console.log(String(undefined));
+        console.log(String(NaN));
+        console.log(NaN.toString());
+    </script>
+</body>
+</html>

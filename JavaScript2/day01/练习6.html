@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习6</title>
+</head>
+<body>
+    <script>
+        // 计算园的面积
+        // 对话框输入圆的半径，然后算出圆的面积
+        const PI = 3.14;
+        let r = parseFloat(prompt("请输入园的半径:"));
+        if(!r){
+            document.write("输入无效的数值");
+        }else{
+            let q = PI * Math.pow(r, 2);
+            document.write(q);
+        }
+    </script>
+</body>
+</html>
