@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习1</title>
+    <style>
+        table, td, th {
+            border: 2px solid blue;
+            text-align: center;
+        }
+        table {
+            border-collapse: collapse;
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <table ></table>
+    <script>
+        let name = prompt("请输入商品名称:");
+        let price = parseFloat(prompt("请输入商品单价:"));
+        let num = parseInt(prompt("请输入商品数量:"));
+        let address = prompt("请输入收货地址:");
+        let total = price * num;
+
+        document.write(`
+        <table>
+            <thead>
+                <th>商品名称</th>
+                <th>商品价格</th>
+                <th>商品数量</th>
+                <th>总价</th>
+                <th>收货地址</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>${name}</td>
+                    <td>${price}</td>
+                    <td>${num}</td>
+                    <td>${total}</td>
+                    <td>${address}</td>
+                </tr>
+            </tbody>
+        </table>
+        `);
+
+    </script>
+</body>
+</html>

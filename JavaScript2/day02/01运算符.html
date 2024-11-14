@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>运算符</title>
+</head>
+<body>
+    <script>
+        // 赋值运算符
+        let a = 1;
+        console.log(a += 1); // 等同于 a = a + 1
+        console.log(a -= 1); // 等同于 a = a - 1
+        console.log(a *= 2); // 等同于 a = a * 2
+        console.log(a /= 2); // 等同于 a = a / 2
+        console.log(a %= 3); // 等同于 a = a % 3
+
+        // 一元运算符
+        let b = 2;
+        let c = -2;
+        // 正负值
+        console.log(+b);
+        console.log(-c);
+        // 自增 自减
+        console.log(++b); // 先加 后赋值
+        console.log(b++); // 先赋值 后加
+        console.log(b);
+        console.log(--b); // 先减 后赋值
+        console.log(b--); // 先赋值 后减
+        console.log(b);
+
+        // 比较运算符
+        let d = 3;
+        let e = 4;
+        console.log(d > e); // 大于
+        console.log(d < e); // 小于
+        console.log(d >= e); // 大于等于
+        console.log(d <= e); // 小于等于
+        console.log(d == e); // 等于
+        console.log(d != e); // 不等于
+        console.log(d === e); // 全等于
+
+        // 逻辑运算符
+        console.log(true && false); // 与，全为true，才为true
+        console.log(true || false); // 或，有true，则为true
+        console.log(!true); // 非true, 则false
+
+        // 条件运算符 三元运算符
+        console.log(true ? 1 : 2);
+        console.log(false ? 1 : 2);
+    </script>
+</body>
+</html>
