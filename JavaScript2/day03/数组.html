@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组</title>
+</head>
+<body>
+    <script>
+        // 声明数组
+        // 字面量声明
+        let arr = [1, 2, 3, 4, 5];
+        // 构造函数声明
+        let arr1 = new Array(1, 2, 3, 4, 5);
+        console.log(arr, arr1);
+
+        // 遍历数组
+        // for循环
+        let arr2 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+        for(let i = 0; i < arr2.length; i++){
+            console.log(arr2[i]);
+        }
+
+        // forEach
+        arr2.forEach((value, index, arr) => {
+            console.log(value, index, arr);
+        });
+
+        // 操作数组
+        let arr3 = [];
+        // 末端插入元素
+        arr3.push("hello", "world");
+        console.log(arr3);
+        // 首端插入元素
+        arr3.unshift("1", "2");
+        console.log(arr3);
+
+        // 删除数组
+        // 末端删除元素
+        arr3.pop();
+        console.log(arr3);
+        // 首端删除元素
+        arr3.shift();
+        console.log(arr3);
+        // 指定位置删除
+        arr3.splice(0, 1);
+        console.log(arr3);
+
+        // 修改元素
+        arr3[0] = "3";
+        console.log(arr3);
+    </script>
+</body>
+</html>
