@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习3</title>
+</head>
+<body>
+    <script>
+        // 1
+        function getSec(second){
+            let hour = parseInt(second / 3600 % 24);
+            let min = parseInt(second / 60 % 60);
+            let s = parseInt(second % 60);
+
+            hour = hour >= 10 ? hour : `0${hour}`;
+            min = min >= 10 ? min : `0${min}`;
+            s = s >= 10 ? s : `0${s}`;
+            return `${hour}:${min}:${s}`;
+        }
+        let second = +prompt('请输入秒数');
+        console.log(getSec(second));
+    </script>
+</body>
+</html>

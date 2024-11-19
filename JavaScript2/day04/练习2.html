@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习2</title>
+</head>
+<body>
+    <script>
+        // 1
+        function getMax(x, y){
+            return x > y ? x : y;
+        }
+        console.log(getMax(1, 2));
+
+        // 2
+        function getMaxArr(arr){
+            let max = arr[0];
+            for(let i = 1; i < arr.length; i++){
+                if(arr[i] > max){
+                    max = arr[i];
+                }
+            }
+            return max;
+        }
+        console.log(getMaxArr([2,3,10,50]));
+
+        // 3
+        function getMinArr(arr){
+            let min = arr[0];
+            for(let i = 1; i < arr.length; i++){
+                if(arr[i] < min){
+                    min = arr[i];
+                }
+            }
+            return min;
+        }
+        console.log(getMinArr([1,2,3,10,50]));
+
+    </script>
+</body>
+</html>
