@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象</title>
+</head>
+<body>
+    <script>
+        // 先定义对象
+        // let 对象名 = {};
+        // let 对象名 = new Object();
+
+        // 对象的属性和方法
+        let person = {
+            name: 'monster',
+            age: 18,
+            sex: 'man',
+            work: function(){
+                console.log(1111);
+            }
+        };
+
+        let goods = {
+            brand: '小米(MI)',
+            name: '小米 小米10青春版',
+            num: 100012816024,
+            weight: '0.55kg',
+            address: '中国大陆'
+        };
+
+        // 操作对象
+        // 获取对象属性
+        console.log(goods.brand);
+
+        // 增加或修改对象属性和方法
+        goods.price = 3299;
+        console.log(goods.price);
+        goods.price = 4299;
+        console.log(goods.price);
+        goods.wea = function(){
+            return true;
+        }
+        
+        // 删除对象的属性
+        delete goods.price;
+
+        // 调用对象的方法
+        person.work();
+
+        // 遍历对象
+        for(let k in goods){
+            console.log(`${k}: ${goods[k]}`);
+        }
+
+    </script>
+</body>
+</html>

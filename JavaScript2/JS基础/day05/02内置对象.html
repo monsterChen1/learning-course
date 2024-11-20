@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>内置对象</title>
+</head>
+<body>
+    <script>
+        // 内置对象：Math
+        // Math.random 生成0～1之间的随机数
+        // Math.floor 向下取整
+
+        // 应用：
+        let arr = ['赵云', '黄忠', '关羽', '张飞', '马超', '刘备', '曹操'];
+        let random = Math.floor(Math.random() * arr.length);
+        // document.write(arr[random]);
+
+        let len = arr.length;
+        for(let i = 0; i < len; i++){
+            let ran = Math.floor(Math.random() * arr.length);
+            // console.log(ran);
+            document.write(`${arr[ran]}<br>`);
+            arr.splice(ran, 1);
+            // console.log(arr);
+        }
+
+        let num = Math.floor(Math.random() * 11);
+        console.log(num);
+        while(true){
+            let nump = +prompt("请输入数字");
+            if(num > nump){
+                alert('数字猜小了，继续猜');
+            }else if(num < nump){
+                alert('数字猜大了，继续猜');
+            }else{
+                alert('猜对了');
+                break;
+            }
+        }
+
+        function getRandomColor(flag){
+            let color = [];
+            if(flag){
+                let arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'];
+                for(let i = 0; i < 6; i++){
+                    color.push(arr[Math.floor(Math.random() * 16)]);
+                }
+                return `#${color.join('')}`;
+            }else{
+                for(let i = 0; i < 3; i++){
+                    color.push(Math.floor(Math.random() * 256));
+                }
+                return `rgb(${color.join()})`;
+            }
+        }
+        document.write(`<div style="width:100px;height:100px;margin:5px;background-color:${getRandomColor(true)};"></div>`);
+        document.write(`<div style="width:100px;height:100px;margin:5px;background-color:${getRandomColor(false)};"></div>`);
+    </script>
+</body>
+</html>
