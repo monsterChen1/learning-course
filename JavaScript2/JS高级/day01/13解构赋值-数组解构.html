@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解构赋值</title>
+</head>
+<body>
+    <script>
+        // 解构赋值
+        // 数组解构
+        // const arr = [100, 60, 80];
+        // const max = arr[0]; //最大值
+        // const min = arr[1]; //最小值
+        // const avg = arr[2]; //平均值
+        // console.log(max, min, avg);
+
+        // 解构赋值语法
+        const [max, min, avg] = [100, 60, 80];
+        console.log(max, min, avg);
+
+        // 交换两个变量的值
+        let a = 2;
+        let b = 3;
+        [a, b] = [b, a];
+        console.log(a, b);
+    
+        // let [, c, , d] = [1, 2, 3, 4];
+        // console.log(c, d);
+
+        // let [c, d, e, f, g, h, ...j] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        // console.log(c, d, e, f, g, h, j);
+
+        // let [c, [d, e]] = [1, [2, 3]];
+        // console.log(c, d, e);
+
+        // c = 3, d = 7
+        let [,[,c], , ,[d]] = [1, [2, 3], [4, 5], 6, [7, 8, 9]];
+        console.log(c, d);
+
+        
+    </script>
+</body>
+</html>
