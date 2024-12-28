@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>展开运算符</title>
+</head>
+<body>
+    <script>
+        // 1. 在构造数组时，将其他数组或字符串展开
+        let arr1 = [3, 4];
+        let arr2 = [5, 6];
+        let arr = [100, 200, ...arr1, ...arr2];
+        console.log(arr);
+
+        // 展开字符串
+        let str = "length";
+        console.log(...str);
+
+        // 2. 为函数传递参数
+        function fn(...a){
+            for(let i = 0; i < arguments.length; i++){
+                console.log(arguments[i]);
+            }
+            console.log(a);
+        }
+        fn(...arr);
+        
+        // 3. 展开对象
+        let obj1 = {
+            name: 'monster',
+            sex: 'man',
+            age: 27
+        };
+        
+        let obj = {
+            name: 'csy',
+            height: 173,
+            age: 30,
+            ...obj1
+        };
+        console.log(obj1);
+    </script>
+</body>
+</html>

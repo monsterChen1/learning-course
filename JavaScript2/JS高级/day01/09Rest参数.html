@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest参数</title>
+</head>
+<body>
+    <script>
+        // Rest参数允许将一个不定数量的参数表示为一个数组
+        // 语法: ...[形参]
+        // Rest参数是一个数组
+        function sum(...arr){
+            console.log(arr);
+        }
+
+        sum(1, 2, 3, 4, 5);
+        sum('a', 2, 'c');
+
+        // Rest参数必须放在参数列表的末尾
+        function fn(a, b, ...c){
+            console.log(a, b, c);
+        }
+        fn(1,2,3,4);
+        fn(1,2,3,4,5,6);
+    </script>
+</body>
+</html>

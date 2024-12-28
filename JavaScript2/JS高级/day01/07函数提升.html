@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数提升</title>
+</head>
+<body>
+    <script>
+        // 函数提升是指函数在声明之前即可被调用
+        fn();
+        // fun();
+
+        function fn(){
+            console.log(123);
+        }
+
+        // 表达式的声明方式 函数不提升
+        var fun = function(){
+            console.log(123);
+        }
+    </script>
+</body>
+</html>

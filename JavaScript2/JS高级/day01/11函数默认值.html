@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数默认值</title>
+</head>
+<body>
+    <script>
+        function sum(x, y = 4){
+            return x + y;
+        }
+
+        console.log(sum(1));
+        console.log(sum(2, 5));
+    </script>
+</body>
+</html>

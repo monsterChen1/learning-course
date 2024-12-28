@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作用域链</title>
+</head>
+<body>
+    <script>
+        let a = 1;
+        function fn1(){
+            // let a = 2;
+            function fn2(){
+                // a = 3;
+                // 先在当前作用域中找
+                // 没有就逐级向父级作用域中找直到全局作用域
+                console.log(a);
+            }
+            fn2();
+        }
+        fn1();
+    </script>
+</body>
+</html>

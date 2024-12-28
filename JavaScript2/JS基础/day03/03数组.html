@@ -46,6 +46,30 @@
         arr3.splice(0, 1);
         console.log(arr3);
 
+        let arr4 = [1, 2, 3, 4, 5];
+        // 截取指定下标的数组
+        console.log(arr4.slice(1,4));
+        // 合并数组
+        console.log(arr4.concat([6, 7, 8]));
+        // 查找指定元素的下标
+        console.log(arr4.indexOf(4));
+        console.log(arr4.indexOf(7));
+        // 查找指定元素
+        console.log(arr4.includes(4));
+        console.log(arr4.includes(7));
+
+        // 按照指定分隔符合并数组元素
+        console.log(arr4.join('|'));
+
+        // 按照指定分隔符分隔字符串
+        let str = "1,2,3,4,5";
+        console.log(str.split(","));
+
+        // 排序
+        console.log(arr4.sort());
+        // 反序
+        console.log(arr4.reverse());
+
         // 修改元素
         arr3[0] = "3";
         console.log(arr3);

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭头函数</title>
+</head>
+<body>
+    <button id="btn1">按钮1</button>
+    <button id="btn2">按钮2</button>
+    <script>
+        // 语法
+        let fn1 = function(){}
+        let fn2 = () => {}
+
+        let fn3 = function(x){
+            return x + x;
+        }
+        let fn4 = x => {
+            return x + x;
+        }
+
+        let fn5 = function(x, y){
+            return x + y;
+        }
+        let fn6 = (x, y) => x + y;
+
+        // 返回对象 需要加括号
+        let fn7 = x => ({name: x});
+
+        // 箭头函数中的this
+        document.getElementById('btn1').onclick = function(){
+            console.log(this); // button Element
+        }
+        document.getElementById('btn2').onclick = () => {
+            console.log(this); // window
+        }
+
+        // 没有arguments
+        function fn(x, y){
+            console.log(arguments);
+        }
+        fn(1,2,3,4);
+        // 可以使用Rest参数获取实参，剩余参数
+        let fn8 = (...params) => {
+            //console.log(arguments);
+            console.log(params);
+        };
+        fn8(1,2,3,4);
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>闭包</title>
+</head>
+<body>
+    <script>
+        // 闭包函数 内层函数使用外层函数的变量
+        function outer(){
+            let count = 1;
+            function inner(){
+                count++;
+                console.log(`计数: ${count}`);
+            }
+            //inner();
+            return inner;
+        }
+
+        const fun = outer();
+        fun(); // 2
+        fun(); // 3
+
+    </script>
+</body>
+</html>

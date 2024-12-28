@@ -10,12 +10,12 @@
         // 计算园的面积
         // 对话框输入圆的半径，然后算出圆的面积
         const PI = 3.14;
-        let r = parseFloat(prompt("请输入园的半径:"));
+        let r = parseFloat(prompt("请输入圆的半径:"));
         if(!r){
             document.write("输入无效的数值");
         }else{
             let q = PI * Math.pow(r, 2);
-            document.write(q);
+            document.write("圆的面积: " + q);
         }
     </script>
 </body>

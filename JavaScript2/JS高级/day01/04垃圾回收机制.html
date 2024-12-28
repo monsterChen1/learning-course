@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>垃圾回收机制</title>
+</head>
+<body>
+    <script>
+        // 全局变量在页面关闭时被回收
+        let a = 100;
+        let c = 200;
+        function fn(){
+            // 局部变量，在不使用时被回收
+            let d = 300;
+            let e = 400;
+        }
+        fn();
+
+        // 内存的生命周期
+        // 内存分配
+        // 内存使用
+        // 内存回收
+
+        // 垃圾回收算法：引用计数法、标记删除法
+        // 引用计数法
+        // let obj = {
+        //     name: 'monster'
+        // };
+        // let obj2 = obj;
+        // obj = null;
+        // obj2 = null;
+        // 引用技术为0，对象被删除
+
+        // 嵌套引用 对象无法被删除
+        // let obj = {};
+        // let obj2 = {};
+        // obj.a = obj2;
+        // obj2.a = obj;
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>变量提升</title>
+</head>
+<body>
+    <script>
+        // 使用var声明的变量，可以在变量声明之前被访问，值为undefined
+        console.log(a);
+        var a;
+        // let a = 1; // 会顶掉 var的声明
+
+        // 使用let const声明的变量，没有变量提升特性
+        // console.log(b); // 异常
+        // console.log(c); // 异常
+        let b;
+        const c = 1;
+        
+    </script>
+</body>
+</html>

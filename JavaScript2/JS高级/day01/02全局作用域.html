@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全局作用域</title>
+</head>
+<body>
+    <script>
+        // script标签声明的变量是全局作用域
+        let a = 10;
+        function fn(){
+            // 局部作用域能使用全局作用域的变量
+            console.log(a);
+        }
+        fn();
+
+        // 全局作用域 全局变量
+        window.c = 300;
+        e = 400;
+        console.log(c);
+        console.log(e);
+
+        function fn1(){
+            let a = 9;
+            console.log(a);
+        }
+        fn1();
+        console.log(a);
+    </script>
+</body>
+</html>
