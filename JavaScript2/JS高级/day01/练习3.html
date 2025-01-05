@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习3</title>
+</head>
+<body>
+    <script>
+        // 1
+        let pig = {
+            name: '佩奇',
+            age: 6
+        };
+        // let {name, age} = pig;
+        // console.log(name, age);
+
+        // 2
+        let {name: uname, age} = pig;
+        console.log(uname, age);
+
+        // 3
+        let goods = [
+            {
+                goodsName: '小米',
+                price: 1999
+            },
+        ]
+        let [{goodsName, price}] = goods;
+        console.log(goodsName, price);
+        
+    </script>
+</body>
+</html>

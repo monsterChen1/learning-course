@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解构赋值 对象解构</title>
+</head>
+<body>
+    <script>
+        // 对象解构
+        // let {name, sex, age, ...other} = {
+        //     name: 'monster',
+        //     sex: 'male',
+        //     age: 23,
+        //     height: 175,
+        //     weight: 80
+        // };
+        // console.log(name, sex, age, other);
+
+        // 对象解构 赋值对象内方法
+        // let {takeOn, takeOff} = {
+        //     takeOn: function(){
+        //         return true;
+        //     },
+        //     takeOff: function(){
+        //         return false;
+        //     }
+        // };
+        // console.log(takeOn, takeOff);
+
+        // 找不到对应的属性，则为undefined
+        // let {color, type, ele} = {
+        //     type: 'html',
+        //     ele: 'h1',
+        // };
+        // console.log(color, type, ele);
+
+        // 新的变量名
+        // let {username: uname, ssex} = {
+        //     username: 'monster',
+        //     ssex: 'male'
+        // }
+        // console.log(uname, ssex);
+
+        // 复杂的对象解构
+        // let person = {
+        //     uname: 'zs',
+        //     age: 34,
+        //     dog: {
+        //         dname: '汪仔',
+        //         dage: 3
+        //     },
+        //     cat: {
+        //         cname: '小花',
+        //         cage: 2
+        //     }
+        // };
+        // let {uname, dog: {dname}, cat: {cname}} = person;
+        // console.log(uname, dname, cname);
+
+        // 数组对象解构
+        // let pig = [{
+        //     pname: '佩奇',
+        //     page: 6
+        // }];
+        // let [{pname, page}] = pig;
+        // console.log(pname, page);
+
+        // 多级对象解构
+        // let pig = {
+        //     name: '佩奇',
+        //     family: {
+        //         mother: '猪妈妈',
+        //         father: '猪爸爸',
+        //         sister: '乔治'
+        //     },
+        //     age: 6
+        // };
+        // let {name, family: {mother, father, sister}} = pig;
+        // console.log(name, mother, father, sister);
+
+        // 多级对象解构
+        // let people = [{
+        //     name: '佩奇',
+        //     family: {
+        //         mother: '猪妈妈',
+        //         father: '猪爸爸',
+        //         sister: '乔治'
+        //     },
+        //     age: 6
+        // }];
+        // let [{name, family: {mother, father, sister}}] = people;
+        // console.log(name, mother, father, sister);
+
+    </script>
+</body>
+</html>

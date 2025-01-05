@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组的方法</title>
+</head>
+<body>
+    <script>
+        // 数组的方法
+
+        // forEach
+        // 遍历数组的元素
+        [4, 5, 6, 7].forEach((item, index, self) => {
+            // 元素
+            console.log(item);
+            // 索引下标
+            console.log(index);
+            // 数组本身
+            console.log(self);
+        });
+
+        // filter
+        // 过滤数组的元素
+        let arr = [4, 5, 6, 7];
+        let result = arr.filter((item, index, self) => {
+            return item >= 6;
+        });
+        // 简写
+        // let result = arr.filter(item => item >= 6);
+        console.log(result);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习4</title>
+</head>
+<body>
+    <script>
+        // 多级对象解构
+        let msg = {
+            "code": 200,
+            "msg": "获取新闻列表成功",
+            "data": [
+                {
+                    "id": 1,
+                    "title": "5G商用自己，三大运营商收入下降",
+                    "count": 58
+                },
+                {
+                    "id": 2,
+                    "title": "国际媒体头条速览",
+                    "count": 55
+                },
+                {
+                    "id": 3,
+                    "title": "乌克兰和俄罗斯持续冲突",
+                    "count": 1669
+                },
+            ]
+        };
+
+        // 1
+        // let {data} = msg;
+        // console.log(data);
+
+        // 2
+        // function render({data}){
+        //     console.log(data);
+        // }
+        // render(msg);
+
+        // 3
+        function render({ data: myData }){
+            console.log(myData);
+        }
+        render(msg);
+
+        let arr = ['name', 1, 'age'];
+        // function fun([x, y, z]){
+        //     console.log(x, y, z);
+        // }
+        // fun(arr);
+        
+        // function fun(x, y, z){
+        //     console.log(x, y, z);
+        // }
+        // fun(...arr);
+    </script>
+</body>
+</html>
