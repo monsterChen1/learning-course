@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object方法</title>
+</head>
+<body>
+    <script>
+        let obj = {
+            name: 'monster',
+            age: 22,
+            sex: 'man'
+        };
+        console.log(Object.keys(obj));
+        console.log(Object.values(obj));
+
+        let opt = {
+            name: 'pink',
+            age: 23
+        }
+        Object.assign(obj, opt);
+        console.log(obj);
+    </script>
+</body>
+</html>

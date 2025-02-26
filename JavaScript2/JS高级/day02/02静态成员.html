@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>静态成员</title>
+</head>
+<body>
+    <script>
+        function Person(address){
+            this.address = address;
+
+            this.play = function(){
+                console.log("黑神话·悟空");
+            }
+        }
+        // 实例成员
+        // 实例对象的属性和方法
+        let zs = new Person("广州");
+        console.log(zs);
+        zs.play();
+
+        // 静态成员
+        // 构造函数的属性和方法
+        Person.username = "张三";
+        Person.work = function(){
+            console.log('牛马');
+        }
+        console.log(Person.username);
+        console.log(Person.work);
+        Person.work();
+    </script>
+</body>
+</html>

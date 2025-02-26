@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>构造函数</title>
+</head>
+<body>
+    <script>
+        // 构造函数
+        // 创建对象
+        // 1. 使用对象字面量创建对象
+        let o1 = {
+            name: 'monster'
+        };
+        console.log(o1);
+
+        // 2. 使用new Object创建对象
+        let o2 = new Object({
+            name: 'peter'
+        });
+        console.log(o2);
+
+        // 3. 使用构造函数创建对象
+        // 构造函数：是一种特殊的函数，主要用来初始化对象
+        // 可以用过构造函数来快速创建多个类似的对象
+
+        // 实例化过程
+        // 1. 创建新的对象
+        // 2. 构造函数this指向新的对象
+        // 3. 执行构造函数代码，修改this，添加新的属性
+        // 4. 返回新对象
+        function Person(name, age, gender){
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+        }
+        let Peppa = new Person('佩奇', 6, '女');
+        console.log(Peppa);
+
+        // 无参数
+        let a = new Person;
+        console.log(a);
+
+        // 返回值为引用类型时，返回该对象值
+        function Pig(name, age){
+            this.name = name;
+            this.age = age;
+            // return 'a'; //返回值为基本数据类型时，无效
+            return {bookName: "斗破苍穹"}
+        }
+        let book = new Pig();
+        console.log(book);
+        
+
+    </script>
+</body>
+</html>
