@@ -9,41 +9,42 @@
     <script>
         let str = 'pink,red,color';
 
-        // length属性
+        // length属性 字符串的长度
         console.log(str.length);
 
-        // split方法
+        // split方法 根据指定的字符分隔字符串
         let arr = str.split(',');
         console.log(arr);
 
-        // substring方法
+        // substring方法 截取字符串
         let sub1 = str.substring(2); // 从下标2的位置开始到字符结尾
         let sub2 = str.substring(2, 6); // 从下标2的位置开始到下标6的位置结束(不包含下标6)
         console.log(sub1, sub2);
 
-        // startsWith方法
+        // startsWith方法 是否以某字符开头
         let str1 = "monster";
         let res = str1.startsWith("mon"); // true
         let re = str1.startsWith("ll"); // false
         console.log(res, re);
 
-        // includes方法
+        // includes方法 是否包含某字符
         let res1 = str1.includes("ster");
         let re1 = str1.includes("no");
         console.log(res1, re1);
 
         // toUpperCase方法 toLowerCase方法
+        // 转换为大写 转换为小写
         let str2 = "UserName";
         let supper = str2.toUpperCase();
         let lower = str2.toLowerCase();
         console.log(supper, lower);
 
-        // indexOf方法
+        // indexOf方法 是否包含某字符
         let index1 = str1.indexOf("on");
         let index2 = str1.indexOf("no");
         console.log(index1, index2);
 
-        // endsWith方法
+        // endsWith方法 是否以某字符结尾
         let res2 = str1.endsWith("ster");
         let re2 = str1.endsWith("rr");
         console.log(res2, re2);

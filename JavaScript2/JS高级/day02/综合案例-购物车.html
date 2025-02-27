@@ -161,13 +161,13 @@
                     <img src="${item['picture']}" alt="">
                     <p class="name">${item['name']} ${gift_html}</p>
                     <p class="spec">${sku}</p>
-                    <p class="price">${item['price']}</p><p class="count">x${item['count']}</p>
-                    <p class="sub-total">${total}</p>
+                    <p class="price">${item['price'].toFixed(2)}</p><p class="count">x${item['count']}</p>
+                    <p class="sub-total">${total.toFixed(2)}</p>
                 </div>
             `;
         });
         list[0].innerHTML = html;
-        amount[0].innerText = sum / 100;
+        amount[0].innerText = (sum / 100).toFixed(2);
       </script>
 </body>
 </html>
