@@ -25,29 +25,38 @@
         let str1 = "monster";
         let res = str1.startsWith("mon"); // true
         let re = str1.startsWith("ll"); // false
+        let r = str1.startsWith("o", 1); // true 从1位置判断是否以某字符开头
         console.log(res, re);
 
         // includes方法 是否包含某字符
-        let res1 = str1.includes("ster");
-        let re1 = str1.includes("no");
+        let res1 = str1.includes("ster"); // true
+        let re1 = str1.includes("no"); // false
         console.log(res1, re1);
 
         // toUpperCase方法 toLowerCase方法
         // 转换为大写 转换为小写
         let str2 = "UserName";
-        let supper = str2.toUpperCase();
-        let lower = str2.toLowerCase();
+        let supper = str2.toUpperCase(); // USERNAME
+        let lower = str2.toLowerCase(); // username
         console.log(supper, lower);
 
         // indexOf方法 是否包含某字符
-        let index1 = str1.indexOf("on");
-        let index2 = str1.indexOf("no");
+        let index1 = str1.indexOf("on"); // true
+        let index2 = str1.indexOf("no"); // false
         console.log(index1, index2);
 
         // endsWith方法 是否以某字符结尾
-        let res2 = str1.endsWith("ster");
-        let re2 = str1.endsWith("rr");
+        let res2 = str1.endsWith("ster"); // true
+        let re2 = str1.endsWith("rr"); // false
+        let r2 = str1.endsWith("t", 5); // true 先截取5个字符，判断是否以某字符结尾
         console.log(res2, re2);
+        
+        // trim方法 去除两边空白
+        console.log("  11s  ".trim());
+        // trimStart 去除左边空白
+        console.log("  11s  ".trimStart());
+        // trimStart 去除右边空白
+        console.log("  11s  ".trimEnd());
     </script>
 </body>
 </html>
