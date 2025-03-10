@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>instanceof运算符</title>
+</head>
+<body>
+    <script>
+        function People(){
+            this.eat = function(){}
+        }
+        function Man(name, age){
+            this.name = name;
+            this.age = age;
+        }
+
+        Man.prototype = new People();
+        Man.prototype.constructor = Man;
+        let m = new Man("monster", 22);
+        console.log(m);
+        console.log(m instanceof Man); //true
+        console.log(m instanceof People); // true
+        console.log(m instanceof Object); // true
+        console.log(m instanceof String); // false
+
+    </script>
+</body>
+</html>

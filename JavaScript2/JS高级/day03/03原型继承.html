@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原型继承</title>
+</head>
+<body>
+    <script>
+        // 原型继承
+        function People(){
+            this.head = 1,
+            this.eyes = 2,
+            this.leg = 2,
+            this.say = function(){},
+            this.eat = function(){}
+        }
+
+        function Man(){}
+        Man.prototype = new People();
+        Man.prototype.constructor = Man;
+        Man.prototype.somking = function(){};
+        let m = new Man();
+        console.log(m);
+
+        function Woman(){
+            this.bady = function(){}
+        }
+        Woman.prototype = new People();
+        Woman.prototype.constructor = Woman;
+        let w = new Woman();
+        console.log(w);
+    </script>
+</body>
+</html>

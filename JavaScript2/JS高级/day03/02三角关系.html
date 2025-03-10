@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三角关系</title>
+</head>
+<body>
+    <script>
+        // 声明构造函数
+        function Pig(name, age){
+            this.name = name;
+            this.age = age;
+        }
+
+        // 向原型对象上加方法
+        Pig.prototype.say = function(){}
+        Pig.prototype.eat = function(){}
+
+        // 利用原型对象的constructor找到构造函数
+        console.log(Pig.prototype.constructor);
+
+        // 实例化
+        let obj = new Pig('佩奇', 23);
+        console.log(obj);
+
+        // 非标准方法：实例对象通过__proto__找到原型对象
+        console.log(obj.__proto__);
+
+        // 标准方法：通过Object.getPrototypeOf方法获取原型对象
+        console.log(Object.getPrototypeOf(obj));
+
+    </script>
+</body>
+</html>

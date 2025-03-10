@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通过构造函数创建对象</title>
+</head>
+<body>
+    <script>
+        // 存在浪费内存的问题
+        function Pig(name, age){
+            this.name = name;
+            this.age = age;
+            this.say = function(){
+                console.log(`我是${this.name}`);
+            }
+        }
+        let obj1 = new Pig('佩奇', 19);
+        let obj2 = new Pig('佩佩', 25);
+        console.log(obj1, obj2);
+        obj1.say();
+        obj2.say();
+
+        // 原型对象
+        function Person(name, age){
+            this.name = name;
+            this.age = age;
+        }
+        Person.prototype.say = function(){
+            console.log(`我是${this.name}`);
+        }
+
+        let obj3 = new Person('piny', 22);
+        let obj4 = new Person('monster', 29);
+        console.log(obj3, obj4);
+        obj3.say();
+        obj4.say();
+
+    </script>
+</body>
+</html>
