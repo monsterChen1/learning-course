@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this指向</title>
+</head>
+<body>
+    <h1>this</h1>
+    <script>
+        // 普通函数
+        // 1. 全局中的this
+        console.log(this); // window
+
+        // 2. 普通函数中的this
+        function fn(){
+            console.log(this); // window
+        }
+        fn(); // window.fn(); window调用了fn，所以this执行window
+
+        // 3. 定时器中的this
+        setTimeout(function(){
+            console.log(this); // window
+        }, 100);
+
+        // 4. 事件处理函数中的this
+        document.body.addEventListener('click', function(e){
+            console.log(this); // this指向事件源 这里是body的DOM对象
+        });
+
+        // 5. 构造函数、对象方法和原型对象的方法中的this
+        function Dog(){
+            this.age = 20;
+            this.say = function(){
+                console.log(this); // 实例对象
+            }
+        }
+        new Dog().say();
+
+        Dog.prototype.eat = function(){
+            console.log(this); // 实例对象
+        }
+        new Dog().eat();
+
+        // 6. 静态方法中的this
+        function Pig(){ }
+        Pig.say = function(){
+            console.log(this); // 构造函数
+        }
+        Pig.say();
+
+    </script>
+</body>
+</html>

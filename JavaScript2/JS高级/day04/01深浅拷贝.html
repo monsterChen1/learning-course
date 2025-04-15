@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深浅拷贝</title>
+</head>
+<body>
+    <script>
+        // 浅拷贝 拷贝的是地址
+        let obj1 = {
+            name: 'zs',
+            age: 20
+        };
+
+        let obj2 = {};
+
+        // 属性的拷贝
+        // obj2.name = obj1.name;
+        // obj2.age = obj1.age;
+        // 
+
+        // 循环拷贝
+        // for(let key in obj1){
+        //     obj2[key] = obj1[key];
+        // }
+        
+
+        // 展开运算符
+        // obj2 = {...obj1};
+
+        // Object.assign方法
+        // Object.assign(obj2, obj1);
+        
+        // obj2.age = 21;
+        // console.log(obj1, obj2);
+
+        // 深拷贝 拷贝的是对象，不是地址
+
+        // 通过递归实现深拷贝
+        let obj3 = {
+            name: 'zs',
+            familly: {
+                father: 'a',
+                mother: 'b',
+                sister: {
+                    name: 'zz',
+                    age: 21
+                }
+            }
+        };
+        function deepCopy(obj){
+            let copy = {};
+            for(let k in obj){
+                if(obj[k] instanceof Object){
+                    copy[k] = deepCopy(obj[k]);
+                }else{
+                    copy[k] = obj[k];
+                }
+            }
+            return copy;
+        }
+        let obj4 = deepCopy(obj3);
+        obj4.age = 22;
+        console.log(obj3, obj4);
+
+        // 利用递归函数实现深拷贝
+        function fn(obj, copy){
+            for(let key in obj){
+                if(Array.isArray(obj[key])){
+                    copy[key] = [];
+                    fn(obj[key], copy[key]);
+                }else if(obj[k] instanceof Object){
+                    copy[key] = {};
+                    fn(obj[key], copy[key]);
+                }else{
+                    copy[key] = obj[key];
+                }
+            }
+        }
+
+
+        // 使用JSON实现深拷贝
+        let o_str = JSON.stringify(obj3);
+        let obj5 = JSON.parse(o_str);
+        obj5.name = "ss";
+        console.log(obj3, obj5);
+
+    </script>
+</body>
+</html>

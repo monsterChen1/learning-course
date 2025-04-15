@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>异常处理</title>
+</head>
+<body>
+
+    <script>
+        // throw抛出异常
+        function sum(x, y){
+            if(!x || !y){
+                throw new Error('参数异常');
+            }
+            
+            return x + y;
+        }
+        // sum(); // 中断执行，程序发生异常
+
+        // try..catch..finally 捕获异常
+        try{
+            sum();
+        }catch(error){
+            console.log(error);
+            console.log(error.message);
+        }finally{
+            console.log('finally');
+        }
+
+        // 断电调试
+        let arr = [10, 25, 64];
+        let add = 0;
+        arr.forEach(item => {
+            debugger;
+            console.log(item);
+            add += item;
+            console.log(add);
+        });
+    </script>
+</body>
+</html>

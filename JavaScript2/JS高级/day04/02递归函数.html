@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>递归函数</title>
+</head>
+<body>
+    <script>
+        // 计算一个数的阶乘
+        function fn(n){
+            if(n === 0){
+                return 1;
+            }
+            return n * fn(n-1);
+        }
+        console.log(fn(5));
+        console.log(fn(10));
+
+        function fn1(n){
+            if(n === 0){
+                return 0;
+            }else if(n === 1){
+                return 1;
+            }
+            return fn1(n - 1) + fn1(n - 2)
+        }
+        console.log(fn1(7));
+        console.log(fn1(9));
+    </script>
+</body>
+</html>

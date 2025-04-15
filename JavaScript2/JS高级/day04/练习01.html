@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习01</title>
+</head>
+<body>
+    <script>
+        var age = 10;
+        let obj = {
+            age: 20,
+            say: () => {
+                console.log(this.age); // 10
+            },
+            eat: function(){
+                let fn = () => {
+                    console.log(this.age); // 20
+                }
+                fn();
+            },
+            walk: () => {
+                function fn(){
+                    console.log(this.age); // 10
+                }
+                fn();
+            }
+        };
+        obj.say();
+        obj.eat();
+        obj.walk();
+    </script>
+</body>
+</html>

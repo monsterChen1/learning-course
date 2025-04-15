@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>改变this的指向</title>
+</head>
+<body>
+    <script>
+        // call方法
+        let obj = {
+            age: 20,
+            name: 'obj',
+        };
+        function fn(x, y){
+            console.log(this.name);
+            console.log(x, y);
+        }
+        fn.call(obj, 10, 20);
+
+        // apply方法
+        fn.apply(obj, [20, 30]);
+
+        // bind方法
+        let fn1 = fn.bind(obj, 30, 40);
+        fn1();
+    </script>
+</body>
+</html>
