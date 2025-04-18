@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="never" />
+  <title>练习2</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      width: 1200px;
+      margin: 0 auto;
+    }
+
+    .video video {
+      width: 100%;
+      padding: 20px 0;
+    }
+
+    .elevator {
+      position: fixed;
+      top: 280px;
+      right: 20px;
+      z-index: 999;
+      background: #fff;
+      border: 1px solid #e4e4e4;
+      width: 60px;
+    }
+
+    .elevator a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      text-align: center;
+      color: #999;
+    }
+
+    .elevator a.active {
+      color: #1286ff;
+    }
+
+    .outline {
+      padding-bottom: 300px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="video">
+      <video src="https://v.itheima.net/LapADhV6.mp4" controls></video>
+    </div>
+  </div>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script> -->
+  <script>
+    let video = document.querySelector('video');
+    // 每隔一秒 记录播放时间
+    video.addEventListener('timeupdate', throttle(function(){
+        // console.log(video.currentTime);
+        localStorage.setItem('videoTime', video.currentTime);
+    }, 1000));
+    function throttle(fn, t){
+        let timer = null;
+        return function(){
+            if(!timer){
+                timer = setTimeout(function(){
+                    fn();
+                    timer = null;
+                }, t);
+            }
+        }
+    }
+
+    // 页面加载完成后，加载记录的播放时间
+    video.addEventListener('loadeddata', function(){
+        video.currentTime = localStorage.getItem('videoTime') || 0;
+    })
+    // console.log(video);
+
+  </script>
+</body>
+
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>节流</title>
+    <title>节流防抖</title>
     <style>
         #box{
             width: 100px;
@@ -31,23 +31,37 @@
         //     }
         // }
 
+        // 节流
+        // function throttle(fn, t){
+        //     let timer;
+        //     return function(){
+        //         if(!timer){
+        //             timer = setTimeout(function(){
+        //                 fn();
+        //                 timer = null;
+        //             }, t);
+        //         }
+                
+        //     }
+        // }
+
         // box.addEventListener('mousemove', throttle(function(){
         //     box.innerHTML = i++
         // }, 500));
 
         // 防抖
-        function debounce(fn, t = 500){
-            let timeId;
-            return function(){
-                if(timeId) clearTimeout(timeId);
-                timeId = setTimeout(function(){
-                    fn();
-                }, t);
-            }
-        }
-        box.addEventListener('mousemove', debounce(function(){
-            box.innerHTML = i++;
-        }, 500));
+        // function debounce(fn, t = 500){
+        //     let timeId;
+        //     return function(){
+        //         if(timeId) clearTimeout(timeId);
+        //         timeId = setTimeout(function(){
+        //             fn();
+        //         }, t);
+        //     }
+        // }
+        // box.addEventListener('mousemove', debounce(function(){
+        //     box.innerHTML = i++;
+        // }, 500));
 
     </script>
 </body>

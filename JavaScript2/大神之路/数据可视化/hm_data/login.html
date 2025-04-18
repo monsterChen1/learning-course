@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+</head>
+<body>
+    <h2>登录</h2>
+    <div id="box">
+        <form action="post" id="loginForm">
+            <label for="username">用户名</label>
+            <input type="text" name="username" id="username"><br>
+            <label for="password">密码</label>
+            <input type="password" name="password" id="password"><br>
+            <button id="loginBtn" type="button">登录</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/form-serialize@latest"></script>
+    <script>
+        axios.defaults.baseURL = 'http://ajax-api.itheima.net'
+        document.querySelector('#loginBtn').addEventListener('click', async e => {
+            let formObj = serialize(document.querySelector('#loginForm'), {hash: true});
+            //console.log(formObj); // {username: 'mmm', password: '123'}
+
+            let {username = '', password = ''} = formObj;
+            // console.log(username, password);
+            if(username.length < 2 || username.length > 30){
+                alert("用户名在2-30个字符之间");
+                return false;
+            }else if( password.length < 6 || password.length > 30){
+                alert("密码在6-30个字符之间");
+                return false;
+            }else{
+                try{
+                    const {data: res} = await axios({
+                        url: '/login',
+                        method: 'POST',
+                        data: formObj,
+                    });
+                    //
+                    alert("登录成功");
+
+                    // console.log(res);
+                }catch(err){
+                    let {response: {data, status}} = err;
+                    // console.log(data, status);
+                    if(status == 400){
+                        alert(`${data['message']}`);
+                        return false;
+                    }
+                    // console.log(err);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
