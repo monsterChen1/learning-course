@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原生JS请求</title>
+</head>
+<body>
+    <script>
+        let domain = "http://ajax-api.itheima.net";
+        // 使用Fetch方法完成API请求
+        // 定义请求头
+        const headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+
+        // 定义请求数据
+        let post = {
+            username: 'monster1689',
+            password: 'monster1689'
+        };
+        // 表单数据
+        // let form = new FormData();
+        // form.append('username', 'monster1689');
+        // form.append('password', 'monster1689');
+        // 注册实例
+        fetch(`${domain}/register`, {
+            method: "POST",
+            headers: headers,
+            body: JSON.stringify(post),
+            credentials: 'include'
+        }).then(response => {
+            if(!response.ok){
+                throw new Error(`${response.status}|${response.statusText}`);
+            }
+            return response.json();
+        }).then(json => {
+            alert(json.message);
+        }).catch(error => {
+            console.log(error.message);
+        })
+
+        // 使用XMLHttpRequest API请求
+        const xhr = new XMLHttpRequest();
+        let data;
+        try{
+            // 登录请求
+            // 初始化请求
+            xhr.open('POST', `${domain}/login`, true);
+
+            // 设置请求头
+            xhr.setRequestHeader('Content-Type', 'application/json');
+
+            // 设置监听时间
+            // 状态发生改变
+            xhr.addEventListener('readystatechange', function(){
+                if(xhr.readyState === 4 && xhr.status === 200){
+                    console.log('接口请求成功');
+                }
+            });
+
+            // 请求成功后执行
+            xhr.addEventListener('load', function(){
+                data = JSON.parse(xhr.responseText);
+                alert(data.message);
+                localStorage.setItem('token', data.data.token);
+            });
+
+            // 请求发生错误
+            xhr.addEventListener('error', function(){
+                console.log('请求发生错误', xhr.error);
+            });
+
+            // 请求中止
+            // xhr.addEventListener('abort', function(){});
+
+            // 请求超时
+            // xhr.addEventListener('timeout', function(){});
+
+            // 请求开始时触发
+            // xhr.addEventListener('loadstart', function(){});
+
+            // 接受请求时持续触发
+            // xhr.addEventListener('progress', function(){});
+
+            // 请求完成或中止后触发，无论成功与否
+            // xhr.addEventListener('loadend', function(){});
+
+            xhr.send(JSON.stringify(post));
+        }catch(error){
+            console.log(error.message);
+        }
+
+
+    </script>
+</body>
+</html>

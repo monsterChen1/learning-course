@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX传参</title>
+</head>
+<body>
+    <!-- 引入axios文件 -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        axios.defaults.baseURL = 'http://ajax-base-api-t.itheima.net';
+        axios({
+            url: '/api/getbooks',
+            method: 'GET',
+            params: {
+                // id: 3,
+                bookname: "西游记",
+                // author: '吴承恩',
+                // publisher: "人民出版社",
+            }
+        }).then(result => {
+            console.log(result);
+        });
+    </script>
+</body>
+</html>

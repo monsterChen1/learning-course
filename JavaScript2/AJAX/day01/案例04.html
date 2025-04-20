@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>案例04</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css
+    ">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8">
+                <!-- 数据表格 -->
+                <table class="table table-bordered table-striped table-dark table-hover text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col">id</th>
+                            <th scope="col">书名</th>
+                            <th scope="col">作者</th>
+                            <th scope="col">出版社</th>
+                            <th scope="col">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr>
+                            <th scope="row">1</th>
+                            <td>西游记</td>
+                            <td>吴承恩</td>
+                            <td>人民文学出版社</td>
+                            <td><button type="button" class="btn btn-link btn-sm btn-del">删除</button></td>
+                        </tr> -->
+                    </tbody>
+            
+                </table>
+            </div>
+            <div class="col-sm-4">
+                <!-- 筛选表单 -->
+                <div class="card text-white bg-secondary stick-top">
+                    <div class="card-header">筛选图书</div>
+                    <form class="card-body bg-light" id="selectForm">
+                        <!-- 书名 -->
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepnd">
+                                <span class="input-group-text">书名</span>
+                            </div>
+                            <input type="text" id="sel_bookname" name="bookname" class="form-control" placeholder="请输入图书名称">
+                        </div>
+                        <!-- 作者 -->
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepnd">
+                                <span class="input-group-text">作者</span>
+                            </div>
+                            <input type="text" id="sel_author" name="author" class="form-control" placeholder="请输入作者名字">
+                        </div>
+                        <!-- 出版社 -->
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepnd">
+                                <span class="input-group-text">出版社</span>
+                            </div>
+                            <input type="text" id="sel_publisher" name="publisher" class="form-control" placeholder="请输入出版社名称">
+                        </div>
+                        <!-- 筛选按钮 -->
+                        <button type="submit" class="btn btn-dark" id="selectBtn">筛选</button>
+                    </form>
+                </div>
+
+                <!-- 添加表单 -->
+                <div class="card text-white bg-secondary stick-top">
+                    <div class="card-header">添加图书</div>
+                    <form class="card-body bg-light" id="addForm">
+                        <!-- 书名 -->
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepnd">
+                                <span class="input-group-text">书名</span>
+                            </div>
+                            <input type="text" id="bookname" name="bookname" class="form-control" placeholder="请输入图书名称">
+                        </div>
+                        <!-- 作者 -->
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepnd">
+                                <span class="input-group-text">作者</span>
+                            </div>
+                            <input type="text" id="author" name="author" class="form-control" placeholder="请输入作者名称">
+                        </div>
+                        <!-- 出版社 -->
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepnd">
+                                <span class="input-group-text">出版社</span>
+                            </div>
+                            <input type="text" id="publisher" name="publisher" class="form-control" placeholder="请输入出版社名称">
+                        </div>
+                        <!-- 筛选按钮 -->
+                        <button type="submit" class="btn btn-dark" id="addBtn">增加</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 引入axios文件 -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        let tbody = document.querySelector('tbody');
+        // 网页加载后 加载全部数据
+        axios.defaults.baseURL = 'http://ajax-base-api-t.itheima.net';
+        axios({
+            url: '/api/getbooks',
+            method: 'GET'
+        }).then(result => {
+            let {data, status} = result;
+            if(status !== 200){
+                throw new Error("请求错误" + status);
+            }
+
+            let {data: list, message} = data;
+            tbody.innerHTML = loadData(list);
+        });
+
+        // 筛选绑定点击事件
+        let selectBtn = document.querySelector('#selectBtn');
+        selectBtn.addEventListener('click', function(e){
+            // 去除默认行为
+            e.preventDefault();
+
+            let bookname = document.querySelector('#sel_bookname').value;
+            let author = document.querySelector('#sel_author').value;
+            let publisher = document.querySelector('#sel_publisher').value;
+
+            let select = {};
+            if(bookname) select['bookname'] = bookname;
+            if(author) select['author'] = author;
+            if(publisher) select['publisher'] = publisher;
+
+            axios({
+                url: '/api/getbooks',
+                method: 'GET',
+                params: select
+            }).then(result => {
+                let {data, status} = result;
+                if(status !== 200){
+                    throw new Error("请求错误" + status);
+                }
+
+                let {data: list, message} = data;
+                tbody.innerHTML = loadData(list);             
+            });
+        });
+
+        // 增加按钮绑定事件
+        let addBtn = document.querySelector('#addBtn');
+        addBtn.addEventListener('click', function(e){
+            // 取消默认事件
+            e.preventDefault();
+
+            // 获取表单的值
+            let bookname = document.querySelector('#bookname').value;
+            let author = document.querySelector('#author').value;
+            let publisher = document.querySelector('#publisher').value;
+            if(!bookname){
+                alert("请输入书名");
+                return false;
+            }
+            if(!author){
+                alert("请输入作者");
+                return false;
+            }
+            if(!publisher){
+                alert("请输入出版社");
+                return false;
+            }
+            axios({
+                url: '/api/addbook',
+                method: 'POST',
+                data: {
+                    bookname,
+                    author,
+                    publisher
+                }
+            }).then(result => {
+                let {status, data} = result;
+                if(status !== 200){
+                    throw new Error('添加图书失败');
+                }
+
+                alert(`${data.status}|${data.msg}`);
+                selectBtn.click();
+            });
+        });
+
+        // 通过父级tbody进行事件委托
+        tbody.addEventListener('click', function(e){
+            // 取消默认事件
+            e.preventDefault();
+
+            let nodeName = e.target.nodeName;
+            let className = e.target.className;
+            // 删除按钮绑定事件
+            if(nodeName == 'BUTTON' && className.split(' ').includes('btn-del')){
+                let id = e.target.dataset.id;
+                axios({
+                    url: '/api/delbook',
+                    method: 'DELETE',
+                    params: {
+                        id
+                    }
+                }).then(result => {
+                    let {status, data} = result;
+                    if(status !== 200){
+                        throw new Error("图书删除失败");
+                    }
+
+                    let {status: code, msg} = data;
+                    alert(`${code}|${msg}`);
+                    selectBtn.click();
+                });
+            }
+            return false;
+        });
+
+        function loadData(data){
+            let str = '';
+            if(data.length === 0){
+                str = `<tr><td colspan=5>无数据</td></tr>`;
+            }else{
+                data.forEach(item => {
+                    let {id, bookname, author, publisher} = item;
+                    str += `<tr>
+                        <th scope="row">${id}</th>
+                        <td>${bookname}</td>
+                        <td>${author}</td>
+                        <td>${publisher}</td>
+                        <td><button data-id="${id}" type="button" class="btn btn-link btn-sm btn-del">删除</button></td>
+                    </tr>`;
+                });
+            }
+            return str;
+        }
+    </script>
+
+</body>
+</html>

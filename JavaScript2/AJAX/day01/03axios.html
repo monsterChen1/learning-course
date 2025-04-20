@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>axios</title>
+</head>
+<body>
+    <!-- 引入axios文件 -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        axios.defaults.baseURL = 'http://ajax-api.itheima.net';
+        // 获取图书列表
+        axios({
+            method: 'get',
+            url: '/api/books',
+        }).then(res => {
+            let {status, statusText, data} = res;
+
+            if(status !== 200){
+                throw new Error(`${status}|${statusText}`)
+            }
+            
+            let {data: list, message} = data;
+            console.log(list, message);
+        });
+    </script>
+</body>
+</html>

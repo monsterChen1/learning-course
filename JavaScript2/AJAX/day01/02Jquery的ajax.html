@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery的ajax</title>
+</head>
+<body>
+    <!-- 引入Jquery文件 -->
+     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+     <script>
+        let domain = 'http://ajax-api.itheima.net';
+        // 查询图书列表
+        $.get(`${domain}/api/books`, function(res){
+            console.log(res);
+        });
+
+        // 添加图书
+        // $.post(`${domain}/api/books`, {
+        //     bookname: 'monster',
+        //     author: 'monster',
+        //     publisher: 'monster'
+        // }, function(res){
+        //     console.log(res);
+        // })
+
+        // 删除图书
+        // $.ajax({
+        //     url: `${domain}/api/books/2`,
+        //     type: 'DELETE',
+        //     success: function(res){
+        //         console.log(res);
+        //     }
+        // });
+     </script>
+
+</body>
+</html>

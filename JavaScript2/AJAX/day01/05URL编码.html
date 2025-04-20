@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL编码</title>
+</head>
+<body>
+    <script>
+        let str = "嘻嘻嘻";
+        // URL编码
+        let code = encodeURI(str);
+        console.log(code);
+
+        // URL解码
+        let word = decodeURI(code);
+        console.log(word);
+    </script>
+</body>
+</html>
