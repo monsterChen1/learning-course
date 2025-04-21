@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文件上传</title>
+</head>
+<body>
+    <!-- 指定上传图片文件类型 -->
+    <input type="file" name="file" id="uploader" accept="image/*"><br>
+    <button>提交</button>
+    <!-- 引入axios文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script>
+        axios.defaults.baseURL = "http://ajax-api.itheima.net";
+
+        document.querySelector('button').addEventListener('click', e => {
+
+            let fileList = document.querySelector('#uploader').files;
+            console.log(fileList);
+
+            let formData = new FormData();
+            formData.append('avatar', fileList[0]);
+
+            axios({
+                url: '/api/file',
+                method: 'POST',
+                data: formData,
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            }).then(result => {
+                console.log(result);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单AJAX提交</title>
+</head>
+<body>
+    <form>
+        <div>
+            <span>用户名：</span>
+            <input id="username" type="text" name="username">
+        </div>
+        <div>
+            <span>密码：</span>
+            <input id="password" type="password" name="password">
+        </div>
+        <div>
+            <button id="submit">提交</button>
+        </div>
+    </form>
+
+    <!-- 引入axios文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script>
+        // 使用form提交
+        document.querySelector('form').addEventListener('submit', e => {
+            e.preventDefault();
+
+            let username = document.querySelector('#username').value;
+            let password = document.querySelector('#password').value;
+
+            axios({
+                url: 'http://ajax-api.itheima.net/api/data',
+                method: 'POST',
+                data: {
+                    username,
+                    password
+                }
+            }).then(result => {
+                console.log(result);
+                console.log(result.status);
+                console.log(result.data);
+            });
+        });
+
+
+        //使用button提交
+        // document.querySelector('#submit').addEventListener('click', e => {
+        //     e.preventDefault();
+
+        //     let username = document.querySelector('#username').value;
+        //     let password = document.querySelector('#password').value;
+
+        //     axios({
+        //         url: 'http://ajax-api.itheima.net/api/data',
+        //         method: 'POST',
+        //         data: {
+        //             username,
+        //             password
+        //         }
+        //     }).then(result => {
+        //         console.log(result);
+        //         console.log(result.status);
+        //         console.log(result.data);
+        //     });
+        // });
+    </script>
+</body>
+</html>
