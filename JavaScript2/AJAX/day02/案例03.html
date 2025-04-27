@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>聊天机器人</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 头部 Header 区域 -->
+        <div class="header">
+            <h3>小思同学</h3>
+            <img src="img/person01.png" alt="icon" />
+        </div>
+        <!-- 中间 聊天内容区域 -->
+        <div class="main">
+            <ul class="talk_list" style="top: 0px;" id="talk_list">
+                <li class="left_word">
+                    <img src="img/person01.png" /> <span>嗨，最近想我没有？</span>
+                </li>
+                <li class="right_word">
+                    <img src="img/person02.png" /> <span>没有</span>
+                </li>
+            </ul>
+            <div class="drag_bar" style="display: none;">
+                <div class="drager ui-draggable ui-draggable-handle" style="display: none; height: 412.628px;"></div>
+            </div>
+        </div>
+        <!-- 底部 消息编辑区域 -->
+        <div class="footer">
+            <img src="img/person02.png" alt="icon" />
+            <input type="text" placeholder="说的什么吧..." class="input_txt" id="ipt" />
+            <input type="button" value="发 送" class="input_sub" id="btnSend" />
+        </div>
+    </div>
+    <script type="text/javascript" src="js/scroll.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script>
+        axios.defaults.baseURL = 'http://ajax-api.itheima.net';
+        let myMain = document.querySelector('.main');
+        let myUL = document.querySelector('#talk_list');
+        let myInput = document.querySelector('#ipt');
+        document.querySelector('#btnSend').addEventListener('click', e => {
+
+            let msg = myInput.value;
+
+            if(msg.length > 0){
+                let str = `<li class="right_word">
+                    <img src="img/person02.png" /> <span>${msg}</span>
+                </li>`;
+                myUL.innerHTML += str;
+                myInput.value = '';
+                myMain.scrollTop = myUL.scrollHeight;
+
+                axios({
+                    url: '/api/robot',
+                    method: 'GET',
+                    params: {
+                        spoken: msg
+                    }
+                }).then(res => {
+                    let {status, statusText, data} = res;
+
+                    if(status !== 200){
+                        alert('机器人响应失败');
+                        return false;
+                    }
+
+                    let {data: result, message} = data;
+                    
+                    let botStr = `<li class="left_word">
+                        <img src="img/person01.png" /> <span>${result.info.text}</span>
+                    </li>`;
+                    myUL.innerHTML += botStr;
+                    myMain.scrollTop = myUL.scrollHeight;
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
