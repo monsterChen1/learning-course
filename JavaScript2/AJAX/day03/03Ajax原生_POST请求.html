@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax原生_POST请求</title>
+</head>
+<body>
+    <script>
+        // 实例化 XMLHttpRequest对象
+        let xhr = new XMLHttpRequest();
+
+        // 初始化请求
+        xhr.open('POST', 'http://ajax-api.itheima.net/api/data');
+
+        // 设置请求头 JSON数据结构
+        // xhr.setRequestHeader('Content-Type', 'application/json');
+
+        // 配置请求数据
+        // xhr.send(JSON.stringify({
+        //     username: 'monster',
+        //     password: '123456'
+        // }));
+
+        // 设置请求体 URL数据体
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.send("username=monster&password=123456");
+
+        // 接收响应结果
+        xhr.addEventListener('load', function(){
+            let data = JSON.parse(xhr.responseText);
+            console.log(data);
+        });
+    </script>
+</body>
+</html>

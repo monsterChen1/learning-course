@@ -1,0 +1,10 @@
+{
+    "username": "monster",
+    "age": 10,
+    "bool": true,
+    "ob": null,
+    "ar": [10, 2, 3],
+    "obb": {
+        "1": 23
+    }
+}

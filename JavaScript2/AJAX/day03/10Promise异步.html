@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise异步</title>
+</head>
+<body>
+    <script>
+        let p = new Promise((resolve, reject) => {
+            setTimeout(function(){
+                let arr = ["1", "203", "501", "898", "777"];
+                let rand = Math.floor(Math.random() * arr.length);
+                resolve(arr[rand]);
+            }, 2000);
+        });
+
+        p.then(res => {
+            console.log(res);
+        }).catch(err => {
+            console.error(err);
+        });
+        console.log("你好");
+    </script>
+</body>
+</html>

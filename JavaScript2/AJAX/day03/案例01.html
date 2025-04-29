@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>案例01</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333333;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 980px;
+            margin: 0 auto;
+        }
+
+        .top {
+            display: flex;
+            width: 100%;
+            height: 80px;
+            align-items: center;
+            justify-content: space-around;
+            position: relative;
+        }
+
+        .top>li {
+            text-align: center;
+        }
+
+        .top>li>a {
+            border-bottom: 1px solid transparent;
+        }
+
+        .top>li:hover>a {
+            border: #27ba9b;
+            color: 27ba9b;
+        }
+
+        .top>li:hover>.sub {
+            opacity: 1;
+            transform: scale(1, 1);
+        }
+
+        .sub {
+            position: absolute;
+            left: 0;
+            top: 80px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            height: 100px;
+            opacity: 0;
+            transform: scale(1, 0);
+            transform-origin: top center;
+            transition: all 0.3s .1s;
+        }
+        
+        .sub li {
+            width: 120px;
+            text-align: center;
+        }
+
+        .sub li a {
+            display: block;
+            font-size: 14px;
+            padding-top: 8px;
+        }
+
+        .sub li a span {
+            display: block;
+        }
+
+        .sub li a img {
+            width: 60px;
+            height: 60px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul class="top">
+            <!-- <li>
+                <a href="javascript:;">首页</a>
+                <ul class="sub">
+                    <li>
+                        <a href="javascript:;">
+                            <span>砂锅厨具</span>
+                            <img src="" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </li> -->
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <!-- 理解后的实现 -->
+    <script>
+        let topUl = document.querySelector('.top');
+        axios.defaults.baseURL = 'http://ajax-api.itheima.net';
+        axios({
+            url: '/api/category/top',
+            method: 'GET'
+        }).then(({ data }) => {
+            let arr = [];
+            let htmlStr = '';
+            data.data.forEach(item => {
+                htmlStr += `<li data-id="${item.id}"><a href="javascript:;">${item.name}</a></li>`;
+                let p = axios({
+                    url: '/api/category/sub',
+                    method: 'GET',
+                    params: {
+                        id: item.id
+                    }
+                });
+                arr.push(p);
+            });
+            topUl.innerHTML = htmlStr;
+
+            return Promise.all(arr);
+        }).then(data => {
+                data.forEach(item => {
+                    let {data: list} = item;
+                    let liNode = document.querySelector(`li[data-id="${list.data.id}"]`);
+                    let htmlStr = '<ul class="sub">';
+                    list.data.children.forEach(i => {
+                        htmlStr += `<li>
+                                        <a href="javascript:;">
+                                            <span>${i.name}</span>
+                                            <img src="${i.picture}" alt="">
+                                        </a>
+                                    </li>`;
+                    });
+                    htmlStr += '</ul>';
+                    liNode.innerHTML += htmlStr;
+                });
+            });;
+    </script>
+
+
+</body>
+</html>

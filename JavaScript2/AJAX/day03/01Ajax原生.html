@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax原生</title>
+</head>
+<body>
+    <script>
+        // 实例化XMLHttpRequest对象
+        let xhr = new XMLHttpRequest();
+
+        // 初始化请求
+        // 获取省份接口
+        xhr.open('GET', 'http://ajax-api.itheima.net/api/province');
+
+        // 监听请求成功事件
+        xhr.addEventListener('load', function(){
+            data = JSON.parse(xhr.responseText);
+            console.log(data);
+        });
+
+        // 发送请求
+        xhr.send();
+    </script>
+</body>
+</html>

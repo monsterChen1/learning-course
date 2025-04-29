@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise类方法</title>
+</head>
+<body>
+    <script>
+        // all 方法
+        // 全部都为成功状态
+        Promise.all([
+            new Promise((resolve, reject) => {
+                setTimeout(function(){ resolve(10) }, 1000);
+            }),
+            new Promise((resolve, reject) => {
+                setTimeout(function(){ resolve(20) }, 2000);
+            }),
+            new Promise((resolve, reject) => {
+                setTimeout(function(){ resolve(30) }, 3000);
+            })
+        ]).then(arr => {
+            console.log(arr); // [10, 20, 30]
+        });
+
+        // 一个为reject状态 只返回reject的结果
+        Promise.all([
+            new Promise((resolve, reject) => {
+                setTimeout(function(){ resolve(10) }, 1000);
+            }),
+            new Promise((resolve, reject) => {
+                setTimeout(function(){ resolve(20) }, 2000);
+            }),
+            new Promise((resolve, reject) => {
+                setTimeout(function(){ reject(30) }, 3000);
+            })
+        ]).then(arr => {
+            console.log(arr); 
+        }).catch(err => {
+            console.log(err); // 30
+        });
+
+        // allSettled
+        // 会记录每一个Promise对象的执行状态和执行结果
+        Promise.allSettled([
+            new Promise((resolve, reject) => {
+                setTimeout(function(){ resolve(10) }, 1000);
+            }),
+            new Promise((resolve, reject) => {
+                setTimeout(function(){ resolve(20) }, 2000);
+            }),
+            new Promise((resolve, reject) => {
+                setTimeout(function(){ reject(30) }, 3000);
+            })
+        ]).then(arr => {
+            console.log(arr); 
+            //[ {status: 'fulfilled', value: 10}, {status: 'fulfilled', value: 20}, {status: 'rejected', value: 30}]
+        });
+
+        // race
+        // 返回第一个成功的结果
+        Promise.race([
+            new Promise((resolve, reject) => {
+                setTimeout(function(){ reject(10) }, 1000);
+            }),
+            new Promise((resolve, reject) => {
+                setTimeout(function(){ resolve(20) }, 2000);
+            }),
+            new Promise((resolve, reject) => {
+                setTimeout(function(){ reject(30) }, 3000);
+            })
+        ]).then(arr => {
+            console.log(arr);
+        }).catch(err => {
+            console.log(err); // 10
+        });
+
+        // any
+        // 返回第一个成功的结果
+        Promise.any([
+            new Promise((resolve, reject) => {
+                setTimeout(function(){ reject(10) }, 1000);
+            }),
+            new Promise((resolve, reject) => {
+                setTimeout(function(){ resolve(20) }, 2000);
+            }),
+            new Promise((resolve, reject) => {
+                setTimeout(function(){ reject(30) }, 3000);
+            })
+        ]).then(arr => {
+            console.log(arr);
+        }).catch(err => {
+            console.log(err); // 10
+        });
+    </script>
+</body>
+</html>

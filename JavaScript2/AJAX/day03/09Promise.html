@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<body>
+    <script>
+        let p = new Promise((resolve, reject) => {
+            // resolve("成功的结果");
+            reject(new Error("失败的结果"));
+        });
+
+        p.then(res => {
+            console.log(res);
+        }).catch(err => {
+            console.error(err);
+        });
+    </script>
+</body>
+</html>

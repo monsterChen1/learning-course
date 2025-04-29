@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>同步异步</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script>
+        // 1 2 666 7 5 10 9 4
+        // 点击网页时 输出 8
+        // 异步：定时器 axios请求 事件
+        console.log(1);
+        if(true){
+            console.log(2);
+        }else{
+            console.log(3);
+        }
+        setTimeout(() => {
+            console.log(4);
+        }, 1000);
+        const fn = () => {
+            console.log(5);
+        }
+        for(let i = 0; i < 3; i++){
+            console.log(6);
+        }
+        console.log(7);
+        fn();
+        document.addEventListener('click', () => {
+            console.log(8);
+        });
+        axios({
+            url: 'http://ajax-api.itheima.net/api/province',
+            method: 'GET'
+        }).then(() => {
+            console.log(9);
+        });
+        console.log(10);
+    </script>
+</body>
+</html>

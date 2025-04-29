@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>
+    <script>
+        let obj = {
+            username: 'monster',
+            age: 16,
+            sex: '男'
+        };
+        // 对象 ==> JSON字符串
+        // {"username":"monster","age":16,"sex":"男"}
+        console.log(JSON.stringify(obj));
+
+        // JSON字符串 ==> 对象
+        let str = '{"username":"monster","age":16,"sex":"男"}';
+        console.log(JSON.parse(str));
+    </script>
+</body>
+</html>

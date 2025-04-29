@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11Promise三种状态</title>
+</head>
+<body>
+    <script>
+        let p = new Promise((resolve, reject) => {
+            // 实例化创建Promise对象时, 为Pending准备状态
+
+            // 调用resolve回调时，为fulfilled成功状态
+            // resolve("成功的结果");
+
+            // 调用rejected回调时，为rejected失败状态
+            // reject(new Error("失败的结果"));
+        });
+        console.log(p);
+
+        p.then(res => {
+            console.log(res);
+        }).catch(err => {
+            console.error(err);
+        });
+    </script>
+</body>
+</html>

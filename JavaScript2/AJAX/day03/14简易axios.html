@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简易axios</title>
+</head>
+<body>
+    <script> 
+        function toAjax(method, url, data, callback){
+            return new Promise((resolve, reject) => {
+                let xhr = new XMLHttpRequest();
+                method = method.toUpperCase();
+                let json, dataType = '';
+                
+                if(method === 'GET'){
+                    dataType = 'application/x-www-form-urlencoded';
+                    let queryStr = new URLSearchParams();
+                    for(let key in data){
+                        queryStr.append(key, data[key]);
+                    }
+                    url += '?' + queryStr.toString();
+                }else if(method === 'POST'){
+                    dataType = 'application/json';
+                    json = JSON.stringify(data);
+                }else{
+                    throw new Error('Method invalid');
+                }
+                xhr.open(method, url);
+                xhr.setRequestHeader('Content-Type', dataType);
+                xhr.send(json);
+
+                xhr.addEventListener('load', () => {
+                    resolve(JSON.parse(xhr.responseText));
+                });
+            });  
+        }
+    </script>
+
+    <script>
+        function axios(opt){
+            return new Promise((resolve, reject) => {
+                let xhr = new XMLHttpRequest();
+                let method = opt.method.toUpperCase();
+                let url = opt.url;
+                let bodyStr = '';
+
+                if(opt.params){
+                    let queryStr = new URLSearchParams();
+                    for(let key in opt.params){
+                        queryStr.append(key, opt.params[key]);
+                    }
+                    url += '?' + queryStr.toString();
+                }
+
+                xhr.open(method, url);
+
+                let dataType = 'url';
+                if(opt.headers){
+                    for(let key in opt.headers){
+                        if('content-type' == key.toLowerCase() && 'application/json' == opt.headers[key]){
+                            dataType = 'json';
+                        }
+                        xhr.setRequestHeader(key, opt.headers[key]);
+                    }
+                }else{
+                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                }
+
+                if(opt.data){
+                    if(dataType == 'json'){
+                        bodyStr = JSON.stringify(opt.data);
+                    }else{
+                        let usp = new URLSearchParams();
+                        for(let key in opt.data){
+                            usp.append(key, opt.data[key]);
+                        }
+                        bodyStr = usp.toString();
+                    }
+                }
+
+                xhr.send(bodyStr);
+
+                xhr.addEventListener('load', () => {
+                    let res = JSON.parse(xhr.responseText);
+                    if(xhr.status >= 200 && xhr.status <= 400){
+                        resolve(res);
+                    }else{
+                        reject(res);
+                    }      
+                });
+
+                xhr.addEventListener('error', () => {
+                    reject(new Error('网络异常'));
+                });
+            });
+        }
+
+        // GET请求
+        axios({
+            url: 'http://ajax-api.itheima.net/api/city',
+            method: 'GET',
+            params: {
+                pname: '广东省'
+            }
+        }).then(res => {
+            console.log(res);
+        });
+
+        // POST请求
+        axios({
+            url: 'http://ajax-api.itheima.net/api/data',
+            method: 'POST',
+            data: {
+                pname: '广东省'
+            },
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(res => {
+            console.log(res);
+        });
+
+        axios({
+            url: 'http://ajax-api.itheima.net/api/login',
+            method: 'POST',
+            data: {
+                username: 'admin',
+                password: '12345',
+            },
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(res => {
+            console.log(res);
+        }).catch(err => {
+            console.log(err);
+        });
+    </script>
+</body>
+</html>
