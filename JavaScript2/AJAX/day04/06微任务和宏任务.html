@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>微任务和宏任务</title>
+</head>
+<body>
+    <script>
+        // JavaScript空闲时，才会执行任务队列
+        // 任务队列有包含微任务队列 和 宏任务队列
+        // 先执行微任务队列，后执行宏任务对象
+        // 1 4 3 2
+        console.log(1);
+
+        // 宏任务
+        setTimeout(() => {
+            console.log(2); 
+        }, 0);
+
+        // 微任务
+        let p = new Promise((resolve, reject) => {
+            resolve(3);
+        });
+
+        p.then(res => {
+            console.log(res);
+        })
+
+        console.log(4);
+    </script>
+</body>
+</html>

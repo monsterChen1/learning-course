@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注意事项</title>
+</head>
+<body>
+    <script>
+        // 1. await必须用在被async修饰的函数内，函数内无await，则async可省略
+        // function myFun(){
+        //     let res = await 1;
+        // }
+        // myFun();
+
+        // 2. async修饰的函数为异步函数，在函数内，遇到await会等待停止代码往下执行，但不影响函数外的继续执行代码
+        // console.log(0);
+        // async function myFun(){
+        //     console.log(1);
+        //     const result = await 2;
+        //     console.log(result);
+        //     console.log(3);
+        // }
+        // console.log(4);
+        // myFun();
+        // console.log(5);
+
+        // 3.await后面一般跟Promise对象，如果是非Promise对象，则等待所有同步代码执行后，把此结果作为成功的结果使用。如果是Promise对象，则等待Promise返回成功结果并使用
+        // let p = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         resolve("成功的值");
+        //     }, 2000);
+        // });
+
+        // const myFun = async () => {
+        //     const res1 = await p;
+        //     console.log(res1);
+        //     const res2 = await 10;
+        //     console.log(res2);
+        // }
+        // myFun();
+
+        // 4.await不能捕获失败结果，需要使用try...catch关键字捕获
+        // let p = new Promise((resolve, reject) => {
+        //     reject(new Error("发生异常"));
+        // });
+
+        // const myFun = async () => {
+        //     try{
+        //         const res1 = await p;  
+        //     }catch(err){
+        //         console.error(err);
+        //     }
+        // }
+        // myFun();
+    </script>
+</body>
+</html>

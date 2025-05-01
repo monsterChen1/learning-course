@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async/await</title>
+</head>
+<body>
+    <script>
+        // asyn函数的声明和使用
+        async function fun(param){
+            if(param == 0){
+                throw new Error("值为0");
+            }
+            return param;
+        }
+        fun(0).then(res => {
+            console.log(res);
+        }).catch(err => {
+            console.log(err);
+        })
+
+        // await关键字的使用
+        async function fun1(param){
+            let p = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve(1);
+                }, 1000);
+            });
+
+            console.log("等待");
+            let result = await p;
+            console.log(result);
+        }
+        fun1();
+    </script>
+</body>
+</html>

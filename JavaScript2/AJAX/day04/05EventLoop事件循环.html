@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventLoop事件循环</title>
+</head>
+<body>
+    <script>
+        // 1 2 666 5 10 7 4
+        console.log(1);
+        if(true){
+            console.log(2);
+        }else{
+            console.log(3);
+        }
+        setTimeout(() => {
+            console.log(4);
+        }, 1000);
+        function myFn(){
+            console.log(5);
+        }
+        for(let i = 0; i < 3; i++){
+            console.log(6);
+        }
+        myFn();
+        setTimeout(() => {
+            console.log(7);
+        }, 0);
+        const youFn = () => {
+            console.log(8);
+        }
+        document.addEventListener('click', () => {
+            console.log(9);
+        });
+        const obj = {
+            name: '老刘'
+        }
+        console.log(10);
+    </script>
+</body>
+</html>

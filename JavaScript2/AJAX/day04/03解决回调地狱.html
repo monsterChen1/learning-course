@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用async/await解决回调地狱</title>
+</head>
+<body>
+    <script>
+        function toAjax(method, url, data){
+            return new Promise((resolve, reject) => {
+                let xhr = new XMLHttpRequest();
+                method = method.toUpperCase();
+                let json, dataType = '';
+                
+                if(method === 'GET'){
+                    dataType = 'application/x-www-form-urlencoded';
+                    let queryStr = new URLSearchParams();
+                    for(let key in data){
+                        queryStr.append(key, data[key]);
+                    }
+                    url += '?' + queryStr.toString();
+                }else if(method === 'POST'){
+                    dataType = 'application/json';
+                    json = JSON.stringify(data);
+                }else{
+                    throw new Error('Method invalid');
+                }
+                xhr.open(method, url);
+                xhr.setRequestHeader('Content-Type', dataType);
+                xhr.send(json);
+
+                xhr.addEventListener('load', () => {
+                    resolve(JSON.parse(xhr.responseText));
+                });
+
+                xhr.addEventListener('error', () => {
+                    reject(xhr.error);
+                });
+            });  
+        }
+        
+        const getListFn = async () => {
+            let proList = await toAjax('GET', 'http://ajax-api.itheima.net/api/province', {});
+            
+            let pname = proList.data[18];
+            let ctList = await toAjax('GET', 'http://ajax-api.itheima.net/api/city', { pname });
+            
+            let cname = ctList.data[12];
+            let arList = await toAjax('GET', 'http://ajax-api.itheima.net/api/area', { pname, cname });
+            console.log(arList);
+        }
+
+        getListFn();
+    </script>
+</body>
+</html>
