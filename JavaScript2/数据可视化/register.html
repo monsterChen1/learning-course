@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册页面</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+<body class="application application-offset">
+    <div class="container-fluid container-application">
+        <div class="main-content position-relative">
+            <div class="page-content">
+                <div class="min-vh-100 py-5 d-flex align-items-center">
+                    <div class="w-100">
+                        <div class="row justify-content-center">
+                            <div class="col-sm-8 col-lg-4">
+                                <div class="card shadow zindex-100 mb-0">
+                                    <div class="card-body px-md-5 py-5">
+                                        <div class="mb-5">
+                                            <h6 class="h3">注册</h6>
+                                        </div>
+                                        <span class="clearfix"></span>
+                                        <form role="form" autocomplete="off">
+                                            <div class="form-group">
+                                                <label class="form-control-label">账号</label>
+                                                <div class="input-group input-group-merge">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i class="bibi-person"></i></span>
+                                                    </div>
+                                                    <input class="form-control" type="text" name="username" id="input-email" placeholder="请输入账号">
+                                                </div>
+                                            </div>
+                                            <div class="form-group mb-4">
+                                                <div class="d-flex align-items-center justify-content-center">
+                                                    <div> 
+                                                        <label class="form-control-label">密码</label>
+                                                    </div>
+                                                    <div class="mb-2">
+                                                        <a href="javascript:;" class="small text-muted text-underline-dashed border-primary">忘记密码</a>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group input-group-merge">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i class="bibi-person"></i></span>
+                                                    </div>
+                                                    <input class="form-control" type="password" name="password" id="input-password" placeholder="请输入密码">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">
+                                                            <a href="javascript:;" data-toggle="password-text" data-target="#input-password"><i class="bibi-eye-fill text-blue"></i></a>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mt-4">
+                                                <button id="btn-register" type="button" class="btn btn-sm btn-info btn-icon btn-blue rounded-pill">
+                                                    <span class="btn-inner--text">注册</span>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="card-footer px-md-5">
+                                        <small>已经注册?</small>
+                                        <a href="./login.html" class="small font-weight-bold text-blue">去登录吧</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- toast -->
+    <div class="position-fixed top-0 start-50 pt-4" style="z-index: 999;transform: translateX(-50%);">
+        <div id="myToast" class="toast bg-rgba">
+            <div class="toast-body">提示消息</div>
+        </div>
+    </div>
+
+
+    <script src="./js/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/form-serialize@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-7ymO4nGrkm372HoSbq1OY2DP4pEZnMiA+E0F3zPr+JQQtQ82gQ1HPY3QIVtztVua" crossorigin="anonymous"></script>
+</body>
+</html>
