@@ -75,5 +75,58 @@
             </nav>
         </div>
     </div>
+
+    <!-- toast -->
+    <div class="position-fixed top-0 start-50 pt-4" style="z-index: 999;transform: translateX(-50%);">
+        <div id="myToast" class="toast bg-rgba">
+            <div class="toast-body">提示消息</div>
+        </div>
+    </div>
+
+    <script src="./js/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/form-serialize@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        axios.defaults.baseURL = 'http://ajax-api.itheima.net'
+        let toastBox = document.querySelector('#myToast');
+        const toast = new bootstrap.Toast(toastBox, {
+            animate: true,
+            autohide: true,
+            delay: 3000
+        });
+
+        // 权限拦截
+        let token = localStorage.getItem('token');
+        if(!token){
+            toastBox.innerHTML = '请先登录!';
+            toast.show();
+            setTimeout(() => {
+                location.href = './login.html';
+            }, 2000);
+        }
+
+        // 显示登录用户名
+        let uname = localStorage.getItem('username');
+        // document.querySelector('#uName').innerHTML = uname;
+
+        // 退出登录
+        // document.querySelector('#logout').addEventListener('click', () => {
+        //     localStorage.clear();
+        //     location.href = './login.html';
+        // });
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            let res = await axios({
+                url: '/dashboard',
+                headers: {
+                    'Authorization': token
+                },
+                method: 'GET'
+            });
+            console.log(res);
+        });
+    </script>
 </body>
 </html>

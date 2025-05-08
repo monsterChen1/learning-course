@@ -105,19 +105,22 @@
             }else{
                 try{
                     let res = await axios({
-                        header: {
+                        headers: {
                             'Content-Type': 'application/json'
                         },
                         url: '/login',
                         method: 'POST',
                         data: formObj
                     });
-
-                    let { data: { data: info } } = res;
-                    localStorage.setItem('token', info.token);
+                    // console.log(res);
+                    let { data: { data: info, message } } = res;
                     // console.log(info);
-                    toastBox.innerHTML = data.message;
+                    toastBox.innerHTML = message;
                     toast.show();
+
+                    localStorage.setItem('token', info.token);
+                    localStorage.setItem('username', info.username);
+                    location.href = './index.html';
                 }catch(err){
                     // console.dir(err);
                     let {response: { status, data: {message}}} = err;
