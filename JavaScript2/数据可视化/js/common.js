@@ -25,6 +25,7 @@ axios.interceptors.request.use(
 axios.interceptors.response.use(
     (response) => response.data,
     (err) => {
+        // 权限拦截
         if(err.response.status === 401){
             localStorage.clear();
             location.href = './login.html';

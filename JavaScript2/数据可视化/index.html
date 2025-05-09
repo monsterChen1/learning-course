@@ -120,9 +120,6 @@
         document.addEventListener('DOMContentLoaded', async () => {
             let res = await axios({
                 url: '/dashboard',
-                headers: {
-                    'Authorization': token
-                },
                 method: 'GET'
             });
             console.log(res);
