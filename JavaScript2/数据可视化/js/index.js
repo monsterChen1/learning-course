@@ -354,7 +354,7 @@ document.addEventListener('DOMContentLoaded', async (e) => {
    ];
    let arr = data.provinceData.map(obj => {
     return {
-        name: obj.name.replace(/省|自治区|壮族自治区|回族自治区|维吾尔自治区/g, ''),
+        name: obj.name.replace(/省|自治区|壮族|回族|维吾尔/g, ''),
         value: obj.value
     }
    });
@@ -420,7 +420,7 @@ document.addEventListener('DOMContentLoaded', async (e) => {
             name: '籍贯分布',
             type: 'map',
             geoIndex: 0,
-            data: arr
+            data: dataList.concat(arr)
         }
     ]
    });
