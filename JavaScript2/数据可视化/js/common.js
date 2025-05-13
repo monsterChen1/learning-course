@@ -3,6 +3,21 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.add("sidenav-pinned");
     document.body.classList.add("ready");
   }, 200);
+
+  // 显示当前用户的用户名
+  let userSpan = document.querySelector('#userSpan');
+  if(userSpan){
+    userSpan.innerHTML = localStorage.getItem('username');
+  }
+
+  // 退出登录
+  let logoutBtn = document.querySelector('#logout');
+  if(logoutBtn){
+    logoutBtn.addEventListener('click', (e) => {
+        localStorage.clear();
+        location.href = './login.html';
+    });
+  }
 });
 
 // toast弹窗
