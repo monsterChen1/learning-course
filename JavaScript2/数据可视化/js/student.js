@@ -32,8 +32,7 @@ const modal = new bootstrap.Modal(document.querySelector('#modal'), {
     keyboard: false
 });
 
-// 页面加载完成后执行
-document.addEventListener('DOMContentLoaded', async (e) => {
+(async() => {
     loadData();
 
     //加载省份列表
@@ -41,7 +40,11 @@ document.addEventListener('DOMContentLoaded', async (e) => {
         url: '/api/province'
     });
     loadOption('province', selectProv, provinceList.data);
-});
+})();
+// // 页面加载完成后执行
+// document.addEventListener('DOMContentLoaded', async (e) => {
+    
+// });
 
 // 省市区联动
 selectProv.addEventListener('change', async (e) => {
