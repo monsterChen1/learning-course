@@ -15,6 +15,7 @@ const apiObj = {
 
 server.on('request', (req, res) => {
     // 获取头条新闻
+    res.setHeader('Access-Control-Allow-Origin', '*');
     if(req.url in apiObj){
         let apiUrl = apiObj[req.url];
         axios({
