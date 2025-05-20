@@ -6,3 +6,7 @@ const b = 20;
 export const fn = () => {
     console.log('这是一个函数');
 };
+
+export default {
+    a, b, fn
+};
