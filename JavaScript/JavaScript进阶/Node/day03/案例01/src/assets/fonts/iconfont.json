@@ -1,0 +1,23 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "44797200",
+      "name": "足球",
+      "font_class": "zuqiu",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "44797202",
+      "name": "瑜伽",
+      "font_class": "yuqie",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    }
+  ]
+}

@@ -7,5 +7,5 @@ axios({
 
     document.querySelector('#myUL').innerHTML = res.data.map(book => {
         return `<li>${book.name} - ${book.author}</li>`;
-    });
+    }).join('');
 });
