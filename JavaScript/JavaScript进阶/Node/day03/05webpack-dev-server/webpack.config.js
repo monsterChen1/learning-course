@@ -1,9 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { plugins } = require('../案例01/webpack.config');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -13,14 +13,24 @@ module.exports = {
         port: 3000,
         open: true
     },
-    plugins: [new HtmlWebpackPlugin({
-        template: './public/index.html'
-    })],
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './public/index.html'
+        }),
+        new MiniCssExtractPlugin({
+            filename: './css/[name].css'
+        })
+    ],
     module: {
         rules: [
             {
                 test: /\.css$/i,
-                use: ["style-loader", "css-loader"]
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    //"style-loader", 
+                    "css-loader", 
+                    'postcss-loader'
+                ]
             }
         ]
     }
