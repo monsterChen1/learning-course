@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改元素属性</title>
+</head>
+<body>
+    <img src="./images/bg01.jpg" alt="">
+
+    <script>
+        // 获取图片的src属性
+        const img = document.querySelector('img');
+        // 输出图片的完整URL
+        console.log(img.src); 
+        setTimeout(() => {
+            img.src = "./images/1.webp"; // 修改图片的src属性
+        }, 1000);
+    </script>
+</body>
+</html>

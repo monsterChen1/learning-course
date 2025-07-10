@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>操作元素样式</title>
+    <style>
+        .large {
+            font-size: 30px;
+        }
+        .border-small {
+            border: 1px solid #000;
+        }
+        .normal {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div>样式</div>
+    <script>
+        const div = document.querySelector('div');
+        // 通过style修改样式
+        // 修改文字颜色为红色
+        div.style.color = 'red';
+
+        // 通过className修改样式
+        div.className = 'large normal';
+
+        // 通过classList添加样式
+        // div.classList.add('border-small');
+        // 通过classList移除样式
+        // div.classList.remove('large');
+        // 切换样式
+        div.classList.toggle('normal'); 
+        // 检查是否包含某个类
+        console.log(div.classList.contains('large')); 
+
+        // console.log(div.classList, div.className);
+    </script>
+</body>
+</html>

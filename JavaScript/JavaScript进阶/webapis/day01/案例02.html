@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>案例02</title>
+</head>
+<body>
+    <img src="" alt="">
+    <script>
+        const img = document.querySelector('img');
+        setInterval(() => {
+            const index = Math.floor(Math.random() * 6) + 1;
+            console.log(index);
+            // 设置图片的src属性
+            img.src = `./images/${index}.webp`;
+        }, 1000);
+    </script>
+</body>
+</html>

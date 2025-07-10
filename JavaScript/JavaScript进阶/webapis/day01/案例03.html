@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>案例03</title>
+
+</head>
+<body>
+    
+    <script>
+        const body = document.querySelector('body');
+
+        setInterval(() => {
+            // 随机生成1-10之间的数字
+            const index = Math.floor(Math.random() * 10) + 1;
+            // 设置背景图片
+            body.style.backgroundImage = `url(./images/desktop_${index}.jpg)`;
+            // 设置背景图片不重复
+            body.style.backgroundRepeat = 'no-repeat'; 
+        }, 1000);
+    
+    </script>
+</body>
+</html>

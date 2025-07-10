@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>一等奖名单：</h1>
+    <strong>xxx</strong>
+
+    <h2>二等奖名单：</h2>
+    <b></b>
+
+    <script>
+        const person = ['武晓康', '刘红池', '彭宇航', '王锋', '徐蓬博', '老段'];
+
+        const index = Math.floor(Math.random() * person.length);
+        // const name = person[index];
+        const name = person.splice(index, 1)[0]; // 从数组中删除并获取随机名字
+
+        const index2 = Math.floor(Math.random() * person.length);
+        const name2 = person.splice(index2, 1)[0]; // 从数组中删除并获取随机名字
+
+        document.querySelector('strong').innerHTML = name;
+        document.querySelector('b').innerHTML = name2;
+
+    </script>
+</body>
+</html>
