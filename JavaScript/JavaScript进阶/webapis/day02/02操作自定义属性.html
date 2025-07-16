@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02操作自定义属性</title>
+</head>
+<body>
+    <div data-age="23" data-name="happy"></div>
+    <script>
+        const div = document.querySelector('div');
+        // 获取自定义属性
+        console.log(div.dataset);
+        // 获取自定义属性
+        console.log(div.dataset.age); // 23
+        console.log(div.dataset.name); // happy
+
+        div.dataset.sex = '男';
+        console.log(div.dataset.sex); // 男
+    </script>
+</body>
+</html>

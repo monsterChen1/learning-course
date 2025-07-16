@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01操作表单元素</title>
+</head>
+<body>
+    <input type="text" name="" id="" value="哈哈"><br><br>
+    <input type="button" value="注册">
+    <input type="checkbox" name="" id="" value="1">同意
+    <input type="button" value="提交">
+    <script>
+        // 操作表单元素属性
+        const input = document.querySelector('input');
+        // 获取input的value属性
+        console.log(input.value);
+        // 修改input的value属性
+        input.value = '你好，世界！';
+        const btn = document.querySelector('input[type="button"]');
+        // 获取按钮的value属性
+        console.log(btn.value);
+
+        const checkbox = document.querySelector('input[type="checkbox"]');
+        // 获取checkbox的value属性
+        console.log(checkbox.value);
+        // 修改checkbox的checked属性
+        checkbox.checked = true
+        // 获取checkbox的选中状态
+        console.log(checkbox.checked); 
+
+        const btn1 = document.querySelectorAll('input[type="button"]')[1];
+        // 修改按钮的disabled属性
+        btn1.disabled = true;
+        // 获取按钮的disabled属性
+        console.log(btn1.disabled);
+
+    </script>
+</body>
+</html>
