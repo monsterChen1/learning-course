@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05事件类型</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <input type="text" name="" id="">
+    <script>
+        let div = document.querySelector('div');
+        // 鼠标进入事件
+        div.addEventListener('mouseenter', () => {
+            div.style.backgroundColor = 'pink';
+        });
+        // 鼠标离开事件
+        div.addEventListener('mouseleave', () => {
+            div.style.backgroundColor = 'red';
+        });
+
+        let input = document.querySelector('input');
+        // 获得焦点事件
+        input.addEventListener('focus', () => {
+            input.style.backgroundColor = 'yellow';
+        });
+        // 失去焦点事件
+        input.addEventListener('blur', () => {
+            input.style.backgroundColor = '';
+        });
+
+        // 键盘按下事件
+        input.addEventListener('keydown', (e) => {
+            console.log('按下了键盘', e.keyCode);
+        });
+        // 键盘抬起事件
+        input.addEventListener('keyup', (e) => {
+            console.log('抬起了键盘', e.keyCode);
+        });
+        // 输入内容事件
+        input.addEventListener('input', (e) => {
+            console.log('输入内容', e.data);
+        })
+    </script>
+</body>
+</html>

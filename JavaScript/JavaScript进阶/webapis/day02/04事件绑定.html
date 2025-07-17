@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04事件绑定</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            box-sizing: border-box;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <div id="box2"></div>
+    <script>
+        // 事件绑定（事件监听/注册事件）
+        // 事件三要素
+        // 1. 事件源：触发事件的元素
+        // 2. 事件类型：事件的种类，如click、mouseover等
+        // 3. 事件处理函数：当事件发生时执行的函数
+
+        // DOML2语法：dom对象.addEventListener(事件类型, 事件处理函数);
+        const box = document.querySelector('#box');
+        box.addEventListener('click', () => {
+            box.style.backgroundColor = 'red';
+        });
+        // 都可以执行
+        box.addEventListener('click', () => {
+            box.innerHTML = '点击了';
+        });
+
+        // DOML0语法：dom对象.on事件类型 = 事件处理函数
+        const box2 = document.querySelector('#box2');
+        box2.onclick = function() {
+            box2.style.backgroundColor = 'green';
+        }
+        // 注意：DOML0语法会覆盖之前的事件处理函数
+        // box2.onclick = function() {
+        //     box2.style.backgroundColor = 'yellow';
+        // }
+    </script>
+</body>
+</html>

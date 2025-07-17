@@ -131,11 +131,50 @@
         const p = document.querySelector('.slider-footer p');
         const footer = document.querySelector('.slider-footer');
         const indicatorLi = document.querySelectorAll('.slider-indicator li');
-        setInterval(() => {
+        const interv = 1500;
+        let timer = setInterval(() => {
             ++index;
             if(index > sliderData.length - 1) {
                 index = 0;
             }
+            updateSlider(index);
+        }, interv);
+
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+
+        prevBtn.addEventListener('mouseenter', () => {
+            clearInterval(timer);
+        });
+        prevBtn.addEventListener('mouseleave', () => {
+            timer = setInterval(() => {
+                ++index;
+                if(index > sliderData.length - 1) {
+                    index = 0;
+                }
+                updateSlider(index);
+            }, interv);
+        });
+        nextBtn.addEventListener('mouseenter', () => {
+            clearInterval(timer);
+        });
+        nextBtn.addEventListener('mouseleave', () => {
+            timer = setInterval(() => {
+                ++index;
+                if(index > sliderData.length - 1) {
+                    index = 0;
+                }
+                updateSlider(index);
+            }, interv);
+        });
+        prevBtn.addEventListener('click', () => {
+            updateSlider(--index < 0 ? sliderData.length - 1 : index);
+        });
+        nextBtn.addEventListener('click', () => {
+            updateSlider(++index > sliderData.length - 1 ? 0 : index);
+        });
+
+        function updateSlider(index) {
             const item = sliderData[index];
             img.src = item.url;
             p.innerText = item.title;
@@ -145,7 +184,7 @@
             activeLi.classList.toggle('active');
             const toActiveLi = document.querySelector(`.slider-indicator li:nth-child(${index + 1})`);
             toActiveLi.classList.toggle('active');
-        }, 2000);
+        }
     </script>
 </body>
 

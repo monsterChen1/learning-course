@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>案例03</title>
+    <style>
+        .banner {
+            height: 60px;
+            background-color: pink;
+        }
+        span {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            float: right;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <span>X</span>
+    </div>
+    <script>
+        // 关闭广告
+        const banner = document.querySelector('.banner');
+        const span = document.querySelector('.banner span');
+        span.addEventListener('click', function(){
+            banner.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
