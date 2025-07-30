@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01环境对象this</title>
+</head>
+<body>
+    <script>
+        console.log(this); // 在浏览器环境中，this指向window对象
+
+        function fn(){
+            console.log(this); // 在函数内部，this指向调用该函数的对象
+        }
+        fn(); // 调用函数，this指向全局对象window
+
+        setInterval(function(){
+            console.log(this); // 在setInterval中，this仍然指向全局对象window
+        }, 1000);
+
+        let obj = {
+            name: 'xx',
+            fn: function() {
+                console.log(this); // 在对象方法中，this指向调用该方法的对象
+            }
+        };
+        obj.fn(); // 调用对象方法，this指向obj对象
+
+    </script>
+</body>
+</html>

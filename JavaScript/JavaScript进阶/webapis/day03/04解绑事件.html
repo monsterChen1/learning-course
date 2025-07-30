@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解绑事件</title>
+</head>
+<body>
+    <input type="button" value="按钮">
+    <script>
+        let btn = document.querySelector('input');
+        // L0点击事件
+        // btn.onclick = function() {
+        //     console.log('按钮被点击了');
+        // };
+        // 解绑事件
+        // btn.onclick = null;
+
+        console.dir(btn);
+
+        // L1点击事件
+        function fn() {
+            console.log('按钮被点击了');
+        }
+        btn.addEventListener('click', fn);
+        // L1解绑事件
+        btn.removeEventListener('click', fn);
+    </script>
+</body>
+</html>

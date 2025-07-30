@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>案例03</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 100%;
+            height: 2000px;
+        }
+        .nav{
+            width: 100%;
+            height: 50px;
+            background-color: red;
+            position: fixed;
+            top: 0;
+            display: none;
+        }
+        .box{
+            width: 100px;
+            height: 300px;
+            background-color: blue;
+        }
+        .back-to {
+            width: 100px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            background-color: orange;
+            position: fixed;
+            bottom: 100px;
+            right: 100px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+        <div class="nav"></div>
+
+        <div class="back-to">返回顶部</div>
+    </div>
+
+    <script>
+        // 页面加载事件
+        document.addEventListener('DOMContentLoaded', function() {
+            const nav = document.querySelector('.nav');
+            const backTo = document.querySelector('.back-to');
+
+            window.addEventListener('scroll', function(){
+                if (document.documentElement.scrollTop >= 300){
+                    nav.style.display = 'block';
+                    backTo.style.display = 'block';
+                }else{
+                    nav.style.display = 'none';
+                    backTo.style.display = 'none';
+                }
+            });
+
+            backTo.addEventListener('click', function(){
+                document.documentElement.scrollTop = 0;
+                // window.scrollTo(document.documentElement.scrollTop, 0);
+            });
+        });
+    </script>
+</body>
+</html>

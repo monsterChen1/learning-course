@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02回调函数</title>
+</head>
+<body>
+    <button>按钮</button>
+    <script>
+        // 回调函数
+        let btn = document.querySelector('button');
+        btn.addEventListener('click', function() {
+            console.log('按钮被点击了');
+        });
+
+        // 回调函数
+        setInterval(function() {
+            console.log('每隔一秒执行一次');
+        }, 1000);
+    </script>
+</body>
+</html>

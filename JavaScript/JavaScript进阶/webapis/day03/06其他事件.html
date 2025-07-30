@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>其他事件</title>
+    <style>
+        div{
+            height: 3000px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        window.addEventListener('load', function() {
+            console.log('页面加载完成');
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM内容加载完成');
+        });
+        document.addEventListener('scroll', function(e){
+            const div = document.querySelector('div');
+            console.log('页面滚动了', this.documentElement.scrollTop);
+        });
+    </script>
+</body>
+</html>
