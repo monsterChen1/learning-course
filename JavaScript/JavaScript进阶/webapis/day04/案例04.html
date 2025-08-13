@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>案例04</title>
+</head>
+<body>
+    <div id="time"></div>
+    <script>
+        const box = document.getElementById('time');
+
+        // 获取当前时间并格式化
+        // 格式化为 YYYY-MM-DD HH:mm:ss
+        function getTime(){
+            const dt = new Date();
+            let year = dt.getFullYear();
+            let month = dt.getMonth() + 1;
+            let day = dt.getDate();
+            let hour = dt.getHours();
+            let minute = dt.getMinutes();
+            let second = dt.getSeconds();
+            return `${year}-${fullZero(month)}-${fullZero(day)} ${fullZero(hour)}:${fullZero(minute)}:${fullZero(second)}`
+        }
+        
+        // 补零函数
+        function fullZero(num){
+            return num < 10 ? `0${num}` : num;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            box.innerHTML = `当前时间：${getTime()}`;
+
+            setInterval(() => {
+                box.innerHTML = `当前时间：${getTime()}`;
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

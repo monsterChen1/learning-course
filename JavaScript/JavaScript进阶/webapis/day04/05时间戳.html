@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时间戳</title>
+</head>
+<body>
+    <script>
+        const dt = new Date(); // 获取当前时间
+        let ts1 = dt.getTime(); // 获取当前时间戳
+        let ts2 = +dt; // 获取当前时间戳
+        let ts3 = Date.now(); // 获取当前时间戳
+        console.log(ts1, ts2, ts3);
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日期对象</title>
+</head>
+<body>
+    <script>
+        // 实例化日期对象
+        let dt = new Date();
+
+        // 获取年份
+        let year = dt.getFullYear();
+
+        // 获取月份
+        let month = dt.getMonth() + 1;
+
+        // 获取日期
+        let day = dt.getDate();
+
+        // 获取小时
+        let hour = dt.getHours();
+
+        // 获取分钟
+        let minute = dt.getMinutes();
+
+        // 获取秒数
+        let second = dt.getSeconds();
+        
+        console.log(`当前时间：${year}-${month}-${day} ${hour}:${minute}:${second}`);
+
+        
+        // console.log(dt.toDateString());
+        // console.log(dt.toLocaleString());
+        // console.log(dt.toLocaleTimeString());
+    </script>
+</body>
+</html>

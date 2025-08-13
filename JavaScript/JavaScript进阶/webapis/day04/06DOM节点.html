@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM节点</title>
+</head>
+<body>
+    <div id="parent">
+        <span>span</span>
+        <div id="box1">
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </div>
+        <div id="box2">
+            xx
+        </div>
+    </div>
+    <script>
+        // 父节点找子节点
+        const parent = document.querySelector('#parent');
+        console.dir(parent.children);
+
+        // 子节点找父节点
+        const box1 = document.querySelector('#box1');
+        console.dir(box1.parentNode);
+
+        // 找兄弟节点
+        // 获取前一个
+        console.dir(box1.previousElementSibling);
+        // 获取后一个
+        console.dir(box1.nextElementSibling);
+    </script>
+</body>
+</html>

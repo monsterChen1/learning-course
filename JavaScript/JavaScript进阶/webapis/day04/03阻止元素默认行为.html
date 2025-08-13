@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阻止元素默认行为</title>
+</head>
+<body>
+    <a href="https://www.baidu.com">百度</a>
+    <form action="">
+        <input type="text">
+        <input type="submit" value="提交">
+    </form>
+    <script>
+        const a = document.querySelector('a');
+        a.addEventListener('click', function(e){
+            console.log('点击了链接');
+            e.preventDefault(); // 阻止默认行为
+        });
+
+        const btn = document.querySelector('input[type="submit"]');
+        btn.addEventListener('click', function(e){
+            e.preventDefault(); // 阻止默认行为
+        });
+
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function(e){
+            e.preventDefault(); // 阻止默认行为
+        });
+            
+    </script>
+</body>
+</html>

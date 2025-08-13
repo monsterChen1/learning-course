@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>案例05</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        // 设置下班时间
+        const endTime = new Date(`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()} 18:30:00`); 
+        const div = document.querySelector('div');
+        function countDown() {
+            // 获取当前时间
+            let ts = +new Date();
+            let endTs = +endTime;
+            const interval = endTs - ts;
+            
+            let hour = Math.floor(interval / (1000 * 60 * 60)); // 计算小时
+            let minute = Math.floor(interval % (1000 * 60 * 60) / (1000 * 60)); // 计算分
+            // let minute = Math.floor((interval % (1000 * 60 * 60))); // 计算分钟
+            let second = Math.floor((interval % (1000 * 60)) / 1000); // 计算秒
+            div.innerHTML = `距离下班还有 ${hour} 小时 ${minute} 分钟 ${second} 秒`;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            countDown(); // 页面加载时立即执行一次倒计时
+            setInterval(countDown, 1000); // 每秒执行一次倒计时
+        });
+    </script>    
+</body>
+</html>

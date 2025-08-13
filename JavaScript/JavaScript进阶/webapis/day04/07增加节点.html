@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>增加节点</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // 创建节点
+        const box = document.createElement('div');
+        box.innerText = '盒子'
+        // 添加节点
+        document.body.appendChild(box);
+
+        const ul = document.createElement('ul');
+        const li = document.createElement('li');
+        li.innerText = '1';
+        ul.appendChild(li);
+        // 指定元素的前面插入
+        document.body.insertBefore(ul, box);
+    </script>
+</body>
+</html>

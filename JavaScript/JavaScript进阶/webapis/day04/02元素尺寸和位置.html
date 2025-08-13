@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02元素尺寸和位置</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            border: 10px solid greenyellow;
+            padding: 3px;
+            /* margin: 20px; */
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        const box = document.querySelector('.box');
+
+        box.clientWidth; // 包括内边距，但不包括边框和外边距
+        box.clientHeight; // 包括内边距，但不包括边框和外边距
+
+        // 获取元素的尺寸
+        const boxWidth = box.offsetWidth; // 包括边框和内边距
+        const boxHeight = box.offsetHeight; // 包括边框和内边距
+
+        // 获取元素的位置
+        const boxTop = box.offsetTop; // 相对于最近的定位祖先元素的顶部距离
+        const boxLeft = box.offsetLeft; // 相对于最近的定位祖先元素的
+
+        console.dir(box);
+        console.log(boxWidth, boxHeight, boxTop, boxLeft);
+
+        console.log(box.getBoundingClientRect())
+    </script>
+</body>
+</html>
