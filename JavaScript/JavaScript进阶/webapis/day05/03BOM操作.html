@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM操作</title>
+</head>
+<body>
+    <script>
+        // window对象 顶级对象
+        console.dir(window);
+        
+        // alert方法 window对象中的方法
+        // 弹出警告框
+        // window.alert("Hello, World!");
+
+        // window对象的属性和方法
+        // 可以省略window
+        // alert("Hello, World!");
+
+        // location对象 window对象中的属性
+        // console.dir(window.location);
+        console.dir(location);
+        // 获取URL地址
+        console.log(location.href);
+        // URL携带的参数包含?
+        console.log(location.search);
+        // Hash包含#
+        console.log(location.hash);
+        setTimeout(() => {
+            // 页面跳转
+            // location.href = "https://www.baidu.com";
+            // location.assign("https://www.baidu.com");
+            // 页面刷新
+            // location.reload();
+            // 强制刷新
+            // location.reload(true);
+        }, 1000);
+
+        // 获取浏览器信息
+        console.dir(navigator.userAgent);
+        
+        // 前进
+        history.forward();
+        history.go(1)
+
+        // 后退
+        history.back();
+        history.go(-1);
+    </script>
+</body>
+</html>

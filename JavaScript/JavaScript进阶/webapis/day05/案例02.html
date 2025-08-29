@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>案例02</title>
+    <style>
+        a {
+            color: red;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.baidu.com">支付成功<span>10</span>秒后自动跳转</a>
+    <script>
+        let a = document.querySelector('a');
+        let span = a.querySelector('span');
+        let num = 10;
+        let timers = setInterval(() => {
+            num--;
+            span.innerText = num;
+            if(num == 0){
+                clearInterval(timers);
+                location.href = a.href;
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

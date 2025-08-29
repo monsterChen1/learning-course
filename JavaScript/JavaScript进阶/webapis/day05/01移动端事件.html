@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01移动端时间</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        let div = document.querySelector('div');
+        // touchstart 手指按下
+        div.addEventListener('touchstart', function(e){
+            console.log('手指按下', e);
+        });
+
+        // touchend 手指离开
+        div.addEventListener('touchend', function(e){
+            console.log('手指离开', e);
+        });
+
+        // touchmove 手指移动
+        div.addEventListener('touchmove', function(e){
+            console.log('手指移动', e);
+        });
+    </script>
+</body>
+</html>

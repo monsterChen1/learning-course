@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本地存储</title>
+</head>
+<body>
+    <script>
+       // localStorage
+       // 存储数据
+    //    localStorage.setItem('name', 'monster');
+       
+       // 获取数据
+    //    console.log(localStorage.getItem('name'));
+
+       // 删除数据
+    //    localStorage.removeItem('name');
+
+    // 清空所有数据
+    // localStorage.clear();
+
+    // sessionStorage
+    // 存储数据
+    // sessionStorage.setItem('name', 'monster');
+
+    // 获取数据
+    //    console.log(sessionStorage.getItem('name'));
+
+       // 删除数据
+    //    sessionStorage.removeItem('name');
+
+    // 清空所有数据
+    // sessionStorage.clear();
+
+
+    // 复制数据类型的存储
+    let obj = {
+        name: 'monster',
+        age: 28,
+        sex: '男'
+    };
+    localStorage.setItem('user', JSON.stringify(obj));
+
+    let user = JSON.parse(localStorage.getItem('user'));
+    console.log(user);
+    </script>
+</body>
+</html>
