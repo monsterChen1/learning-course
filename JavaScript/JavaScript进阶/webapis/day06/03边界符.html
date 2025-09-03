@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>边界符</title>
+</head>
+<body>
+    <script>
+        // ^ 以什么开头
+        let reg1 = /^http/;
+        let str1 = 'https://www.baidu.com';
+        console.log(reg1.test(str1)); // true
+
+        // $ 以什么结尾
+        let reg2 = /png$/;
+        let str2 = 'http://www.baidu.com/logo.png';
+        console.log(reg2.test(str2)); // true
+
+        // 精确匹配
+        let reg3 = /^abc$/;
+        let str3 = 'abc';
+        console.log(reg3.test(str3)); // true
+        let str4 = 'abcc';
+        console.log(reg3.test(str4)); // false
+    </script>
+</body>
+</html>

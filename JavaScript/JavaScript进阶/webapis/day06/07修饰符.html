@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修饰符</title>
+</head>
+<body>
+    <script>
+        // 修饰符
+        // i 忽略大小写
+        let reg = /a/i;
+        console.log(reg.test('A')); // true
+
+        // g 全局匹配
+        let reg2 = /a/g;
+        let str = 'a12axssdadda';
+        console.log(reg2.exec(str)); 
+        console.log(reg2.exec(str));
+        console.log(reg2.exec(str));
+        console.log(reg2.exec(str));
+        console.log(reg2.exec(str)); // null
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则表达式</title>
+</head>
+<body>
+    <script>
+        // 定义正则表达式
+        // const reg = /正则表达式/;
+
+        // test方法 - 查找正则表达式与指定字符串是否匹配
+        let reg1 = /abc/;
+        console.log(reg1.test('abc')); // true
+        console.log(reg1.test('adc')); // false
+        console.log(reg1.test('a1b2c3aabbccabc334')); // true
+
+        // exec方法 - 指定字符串中执行搜索匹配
+        let reg2 = /a/;
+        console.log(reg2.exec('banana')); // [ 'a', index: 1, input: 'banana', groups: undefined ]
+        console.log(reg2.exec('ben')); // null
+    </script>
+</body>
+</html>

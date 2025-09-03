@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>量词符</title>
+</head>
+<body>
+    <script>
+        // + 代表前面的字符可以出现1次或多次
+        let reg1 = /^a+$/;
+        let str1 = 'aaaa';
+        console.log(reg1.test(str1)); // true
+
+        // * 代表前面的字符可以出现0次或多次
+        let reg2 = /^a*$/;
+        let str2 = '';
+        console.log(reg2.test(str2)); // true
+
+        // ? 代表前面的字符可以出现0次或1次
+        let reg3 = /^a?$/;
+        let str3 = 'aaa';
+        console.log(reg3.test(str3)); // false
+
+        // {n} 代表前面的字符可以出现n次
+        let reg4 = /^a{3}$/;
+        let str4 = 'aaa';
+        console.log(reg4.test(str4)); // true
+
+        // {n,} 代表前面的字符可以出现至少n次
+        let reg5 = /^a{2,}$/;
+        let str5 = 'aaaaa';
+        console.log(reg5.test(str5)); // true
+
+        // {n,m} 代表前面的字符可以出现至少n次，至多m次
+        let reg6 = /^a{2,4}$/;
+        let str6 = 'aaaaa';
+        console.log(reg6.test(str6)); // false
+    </script>
+</body>
+</html>

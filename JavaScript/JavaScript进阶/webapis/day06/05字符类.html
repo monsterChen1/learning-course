@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符类</title>
+</head>
+<body>
+    <script>
+        // 字符类
+        // [] 字符集合
+        let reg1 = /[ab]/;
+        console.log(reg1.test('ab')); // true
+        console.log(reg1.test('a')); // true
+        console.log(reg1.test('b')); // true
+        console.log(reg1.test('c')); // false
+        console.log(reg1.test('abcdees')); // true
+        console.log(reg1.test('accc')); // true
+        console.log(reg1.test('bccc')); // true
+
+        // [a-z] 字符范围
+        let reg2 = /[a-e]/;
+        console.log(reg2.test('a')); // true
+        console.log(reg2.test('b')); // true
+        console.log(reg2.test('f')); // false
+
+        // [^] 非字符集合
+        let reg3 = /[^a-e]/;
+        console.log(reg3.test('a')); // false
+        console.log(reg3.test('b')); // false
+        console.log(reg3.test('f')); // true
+
+
+        // . 除换行符外的任意字符
+        let reg4 = /./;
+        console.log(reg4.test('a')); // true
+        console.log(reg4.test('1')); // true
+        console.log(reg4.test('%')); // true
+        console.log(reg4.test('')); // false
+        console.log(reg4.test('\n')); // false
+        console.log(reg4.test('\r\n')); // false
+    </script>
+</body>
+</html>

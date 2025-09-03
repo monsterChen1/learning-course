@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>敏感词替换</title>
+</head>
+<body>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <input type="button" value="提交">
+    <div></div>
+    <script>
+        const sensitiveWords = ['激情', 'sb'];
+        const text = document.querySelector('textarea');
+        const btn = document.querySelector('input');
+        btn.addEventListener('click', function(){
+            let content = text.value;
+
+            let sestr = sensitiveWords.join('|');
+            let reg = new RegExp(sestr, 'g');
+            content = content.replace(reg, '**');
+            
+            document.querySelector('div').innerText = content;
+        });
+    </script>
+</body>
+</html>

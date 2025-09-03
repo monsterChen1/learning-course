@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>预定义类</title>
+</head>
+<body>
+    <script>
+        // 预定义类
+        // \d 代表数字
+        let reg = /\d/;
+        console.log(reg.test('abc')); // false
+        console.log(reg.test('1abc')); // true
+
+        // \D 代表非数字
+        let reg2 = /\D/;
+        console.log(reg2.test('123')); // false
+        console.log(reg2.test('a123')); // true
+
+        // \w 代表字母、数字、下划线
+        let reg3 = /\w/;
+        console.log(reg3.test('!@#')); // false
+        console.log(reg3.test('a!@#')); // true
+
+        // \W 代表非字母、数字、下划线
+        let reg4 = /\W/;
+        console.log(reg4.test('abc')); // false
+        console.log(reg4.test('abc!')); // true
+
+        // \s 代表空白字符
+        let reg5 = /\s/;
+        console.log(reg5.test('abc')); // false
+        console.log(reg5.test('abc ')); // true
+        console.log(reg5.test('\t\n\r\f\v')); // true
+
+        // \S 代表非空白字符
+        let reg6 = /\S/;
+        console.log(reg6.test('    ')); // false
+        console.log(reg6.test('   a')); // true
+    </script>
+</body>
+</html>
