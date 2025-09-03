@@ -202,6 +202,11 @@
     const code = document.querySelector('.code');
     code.addEventListener('click', function(e){
         e.preventDefault();
+        if(!verifyPhone(phoneItem.value)){
+            alert('请先输入正确的手机号');
+            return false;
+        }
+        
         if(this.disabled === true) return false;
 
         let ts = 5;
