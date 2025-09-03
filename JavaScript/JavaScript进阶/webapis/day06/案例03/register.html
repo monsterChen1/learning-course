@@ -253,6 +253,11 @@
         verifyconfirm(this.value);
     });
     
+
+    const checkItems = form.querySelector('.icon-queren');
+    checkItems.addEventListener('click', function(){
+        this.classList.toggle('icon-queren2');
+    });
     // 提交表单
     const submit = form.querySelector('.submit');
     submit.addEventListener('click', function(e){
@@ -286,6 +291,12 @@
 
         if(!verifyconfirm(confirm)){
             alert('两次密码输入不一致');
+            return false;
+        }
+
+        let check = form.querySelector('.icon-queren2');
+        if(!check){
+            alert('请同意用户服务协议');
             return false;
         }
 
