@@ -30,6 +30,15 @@
         };
         obj.sayName();
 
+        function fun(){
+            console.log(this);
+            console.log(arguments);
+            console.log(Array.isArray(arguments));
+            console.log(arguments.length);
+            console.log(arguments[0]);
+            console.log(arguments.callee);
+        }
+        fun("hello", true);
 
     </script>
 </head>
