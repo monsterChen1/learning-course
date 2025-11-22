@@ -5,7 +5,8 @@ const getArraySum = arr => {
     arr.forEach(item => sum += item);
     return sum;
 }
-
+// module.exports 指向一个空对象
+// exports 指向 module.exports
 module.exports = {
     url: baseURL,
     getSum
