@@ -1,4 +1,12 @@
-import * as echarts from 'echarts'
+import './css/index.css';
+import './less/index.less';
+import './assets/image/avator.jpeg';
+import * as echarts from 'echarts';
+import imgUrl from './assets/image/avator.jpeg';
+
+let thir = document.querySelector('#thir');
+thir.style.height = '100px';
+thir.style.backgroundImage = `url(${imgUrl})`;
 
 let main = document.querySelector('#main');
 let demo = echarts.init(main);
