@@ -8,7 +8,8 @@ module.exports = {
     // 出口文件
     output: {
         path: path.join(__dirname, 'dist'), // 出口路径（必须是绝对路径）
-        filename: 'bundle.js' // 出口文件名
+        filename: 'js/bundle.js', // 出口文件名
+        assetModuleFilename: 'images/[hash:8][ext]' // 资源文件名
     },
     // 开发服务器配置
     devServer: {
