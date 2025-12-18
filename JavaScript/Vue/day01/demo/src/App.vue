@@ -18,7 +18,8 @@
     <div v-bind="divAttr"></div>
 
     <!-- v-on -->
-    <button @click="toSum(2, 3)">叠加</button>
+    <div>商品数量：{{ num }}</div>
+    <button @click="toAdd(2)">加2</button>
 </div>
 </template>
 
@@ -39,12 +40,16 @@ export default {
       divAttr: {
         id: "myDiv",
         title: "这是一个div元素"
-      }
+      },
+      num: 11
     }
   },
   methods: {
     toSum(x, y) {
       return x + y;
+    },
+    toAdd(x){
+      this.num += x;
     }
   }
 }
