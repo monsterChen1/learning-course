@@ -20,6 +20,10 @@
     <!-- v-on -->
     <div>商品数量：{{ num }}</div>
     <button @click="toAdd(2)">加2</button>
+
+    <!-- 练习 -->
+    <p>{{ msg }}</p>
+    <button @click="reversal()">翻转</button>
 </div>
 </template>
 
@@ -50,6 +54,9 @@ export default {
     },
     toAdd(x){
       this.num += x;
+    },
+    reversal(){
+      this.msg = this.msg.split('').reverse().join('')
     }
   }
 }
