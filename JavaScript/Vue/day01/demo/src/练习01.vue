@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="app">
     <p>{{ msg }}</p>
     <button @click="reversal()"></button>
   </div>
@@ -14,7 +14,10 @@ export default {
     },
     methods: {
         reversal(){
-            this.msg = this.msg.split('').reverse().join('')
+            let arr = this.msg.split('');
+            arr = arr.reverse();
+            this.msg = arr.join('');
+            // this.msg = this.msg.split('').reverse().join('')
         }
     }
 }
