@@ -1,18 +1,23 @@
 <template>
   <div id="app">
-    <!-- 遍历数组 -->
-    <button @click="add">添加</button>
-    <ul>
-      <li v-for="(item, index) in list" :key="index">
-        id:{{ item.id }} - 姓名：{{ item.name }} - 年龄：{{ item.age }}
-      </li>
-    </ul>
-    <hr>
-    <ul>
-      <li v-for="(item, index) in list" :key="item.id">
-        id:{{ item.id }} - 姓名：{{ item.name }} - 年龄：{{ item.age }}
-      </li>
-    </ul>
+    <h1>小结</h1>
+    <p>事件对象: @事件类型="fun(实参, $event)"</p>
+    <p>事件修饰符 @事件类型.prevent @事件类型.stop</p>
+    <p>按键修饰符 @keydown.enter @keyup.esc 等</p>
+
+    <p>v-if / v-show: 显示和隐藏</p>
+    <p>v-if: 创建或销毁标签</p>
+    <p>v-show: 控制元素css的显示和隐藏 display:none</p>
+
+    <p>v-if / v-esle-if / v-else 分支指令</p>
+
+    <p>v-text / v-html: 文本指令 / 解析HTML标签指令</p>
+
+    <p>v-model: 数据的双向绑定 作用于表单元素</p>
+    <p>修饰符 v-model.number v-model.trim v-model.lazy</p>
+
+    <p>v-for: 列表渲染指令</p>
+    <p>:key的值 字符串或数值，唯一不重复。提高虚拟DOM的对比复用性能</p>
   </div>
 </template>
 
@@ -20,28 +25,11 @@
 export default {
     data() {
         return {
-            list:[
-              {id:1,name:'张三',age:20},
-              {id:2,name:'李四',age:18},
-              {id:3,name:'王五',age:24},
-            ],
+
         }
     },
     methods: {
-        add() {
-          let name = '';
-          for(let i = 0; i < 2; i++){
-              name += String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-          }
-          
-          let newItem = {
-            id: Math.floor(Math.random() * 10000),
-            name: name,
-            age: Math.floor(Math.random() * 50) + 18
-          };
-          
-          this.list.splice(1, 0, newItem);
-        }
+        
     }
 }
 </script>
