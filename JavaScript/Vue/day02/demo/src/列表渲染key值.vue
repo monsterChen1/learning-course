@@ -18,7 +18,7 @@
     </ul>
     <hr>
     <ul>
-      <li v-for="(item, index) in list" :key="item.id">
+      <li v-for="item in list" :key="item.id">
         id:{{ item.id }} - 姓名：{{ item.name }} - 年龄：{{ item.age }}
       </li>
     </ul>
