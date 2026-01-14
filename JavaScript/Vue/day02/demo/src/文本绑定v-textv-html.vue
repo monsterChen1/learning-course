@@ -10,7 +10,7 @@
 export default {
     data() {
         return {
-            text: "Hello, v-text!",
+            text: "<h2 class='red'>Hello, v-text!</h2>",
             html: "<h2 class='red'>Hello, v-html!</h2>"
         }
     },
