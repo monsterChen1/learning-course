@@ -11,21 +11,33 @@
         <li>xxxxxxxxxxxxxxxxxxxx</li>
       </ul>
     </div>
-    <Draw :show="show1"></Draw>
+    <mo-text></mo-text>
+    <Product v-for="item in product" :key="item.title" :title="item.title" :price="item.price" :subTitle="item.subTitle"></Product>
+    <Draw></Draw>
+    <Draw></Draw>
+    <Draw></Draw>
+    <Draw></Draw>
   </div>
 </template>
 
 <script>
 import Draw from './components/draw.vue'
+import MoText from './components/moText.vue'
+import Product from './components/product.vue';
 export default {
   name: 'App',
   components: {
-    Draw
+    Draw,
+    MoText,
+    Product
   },
   data() {
     return {
       show: true,
-      show1: true
+      product: [
+        { title: '超级好吃的口水鸡', price: 50, subTitle: '开业大酬宾，全场8折'},
+        { title: '超级好吃的棒棒糖', price: 18.8, subTitle: '开业大酬宾，全场八折'},
+      ]
     }
   },
   methods: {
