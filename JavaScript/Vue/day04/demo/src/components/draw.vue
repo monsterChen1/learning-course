@@ -1,7 +1,7 @@
 <template>
   <div id="draw">
     <div class="box">
-      <h2>标题 <button @click="toShow = !toShow">{{ show ? '折叠' : '展开' }}</button></h2>
+      <h2>标题 <button @click="toShow = !toShow">{{ toShow ? '折叠' : '展开' }}</button></h2>
       <ul v-show="toShow">
         <li>xxxxxxxxxxxxxxxxxxxx</li>
         <li>xxxxxxxxxxxxxxxxxxxx</li>

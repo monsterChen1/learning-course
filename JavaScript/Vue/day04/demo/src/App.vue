@@ -12,11 +12,14 @@
       </ul>
     </div>
     <mo-text></mo-text>
-    <Product v-for="item in product" :key="item.title" :title="item.title" :price="item.price" :subTitle="item.subTitle"></Product>
     <Draw></Draw>
     <Draw></Draw>
     <Draw></Draw>
     <Draw></Draw>
+
+    <h2>超市商品列表</h2>
+    <div v-for="item in product" :key="item.title">{{ item.title }} 库存：{{ item.store }}</div>
+    <Product v-for="item in product" :key="item.id" :id="item.id" :title="item.title" :price="item.price" :discount="item.discount" :store="item.store" @shop="toShop"></Product>
   </div>
 </template>
 
@@ -35,14 +38,20 @@ export default {
     return {
       show: true,
       product: [
-        { title: '超级好吃的口水鸡', price: 50, subTitle: '开业大酬宾，全场8折'},
-        { title: '超级好吃的棒棒糖', price: 18.8, subTitle: '开业大酬宾，全场八折'},
+        { id: 1, title: '超级好吃的口水鸡', price: 50, discount: 8, store: 100 },
+        { id: 2, title: '超级好吃的棒棒糖', price: 18.8, discount: 9, store: 100 },
       ]
     }
   },
   methods: {
     toClick() {
       this.show = !this.show
+    },
+    toShop(id) {
+      this.product.forEach(item => {
+        if(item.id !== id) return;
+        item.store--;
+      })
     }
   },
   computed: {

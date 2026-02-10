@@ -2,7 +2,9 @@
   <div class="content">
     <div class="title">标题：{{ title }}</div>
     <div class="price">价格：{{ price }}</div>
-    <div class="sub-title">{{ subTitle }}</div>
+    <div class="sub-title">开业大酬宾，全场{{ discount }}折</div>
+    <div class="store">库存：{{ store }}</div>
+    <button @click="handleShop">卖一件</button>
   </div>
 </template>
 
@@ -10,6 +12,10 @@
 export default {
     name: 'product',
     props: {
+        id: {
+            type: String,
+            required: true,
+        },
         title: {
             type: String,
             required: true,
@@ -20,10 +26,21 @@ export default {
             required: true,
             default: 0
         },
-        subTitle: {
-            type: String,
+        discount: {
+            type: Number,
             required: false,
-            default: '副标题'
+            default: 8
+        },
+        store: {
+            type: Number,
+            required: false,
+            default: 0
+        }
+    },
+    methods: {
+        handleShop() {
+            // 发送信号
+            this.$emit('shop', this.id);
         }
     }
 }
@@ -41,5 +58,10 @@ export default {
 }
 .price {
     margin: 20px 0;
+}
+.store {
+    margin: 20px 0;
+    font-weight: bold;
+
 }
 </style>
