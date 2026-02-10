@@ -4,7 +4,7 @@
     <div class="price">价格：{{ price }}</div>
     <div class="sub-title">开业大酬宾，全场{{ discount }}折</div>
     <div class="store">库存：{{ store }}</div>
-    <button @click="handleShop">卖一件</button>
+    <button :data-id="id" @click="handleShop">卖一件</button>
   </div>
 </template>
 
@@ -38,8 +38,9 @@ export default {
         }
     },
     methods: {
-        handleShop() {
+        handleShop(e) {
             // 发送信号
+            // console.log(e.target.dataset.id);
             this.$emit('shop', this.id);
         }
     }

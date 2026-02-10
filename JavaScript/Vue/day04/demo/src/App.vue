@@ -20,6 +20,7 @@
     <h2>超市商品列表</h2>
     <div v-for="item in product" :key="item.title">{{ item.title }} 库存：{{ item.store }}</div>
     <Product v-for="item in product" :key="item.id" :id="item.id" :title="item.title" :price="item.price" :discount="item.discount" :store="item.store" @shop="toShop"></Product>
+    <ProductObj v-for="item in product" :key="item.id" :product="item"></ProductObj>
   </div>
 </template>
 
@@ -27,12 +28,15 @@
 import Draw from './components/draw.vue'
 import MoText from './components/moText.vue'
 import Product from './components/product.vue';
+import ProductObj from './components/productObj.vue';
+
 export default {
   name: 'App',
   components: {
     Draw,
     MoText,
-    Product
+    Product,
+    ProductObj
   },
   data() {
     return {
