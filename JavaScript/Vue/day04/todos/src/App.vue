@@ -21,13 +21,13 @@
       <span class="todo-count">剩余<strong>{{ unfinished }}</strong>未完成 </span>
       <ul class="filters">
         <li>
-          <a :class="select === 'all' ? 'selected' : ''" href="#/" @click="handleSelect('all')">全部</a>
+          <a :class="{selected: select === 'all'}" href="#/" @click="handleSelect('all')">全部</a>
         </li>
         <li>
-          <a :class="select === false ? 'selected': ''" href="#/active" @click="handleSelect(false)">未完成</a>
+          <a :class="{selected: select === 'false'}" href="#/active" @click="handleSelect(false)">未完成</a>
         </li>
         <li>
-          <a :class="select === true ? 'selected': ''" href="#/completed" @click="handleSelect(true)">已完成</a>
+          <a :class="{selected: select === true}" href="#/completed" @click="handleSelect(true)">已完成</a>
         </li>
       </ul>
       <button class="clear-completed" @click="delFinish">清除已完成</button>

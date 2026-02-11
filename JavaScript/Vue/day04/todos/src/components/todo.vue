@@ -1,5 +1,5 @@
 <template>
-    <li :class="item.check ? 'completed': ''">
+    <li :class="{completed: item.check}">
         <div class="view">
             <input class="toggle" type="checkbox" :checked="item.check" @change="handleCheck">
             <label>{{ item.label }}</label>
