@@ -1,0 +1,106 @@
+<template>
+  <div id="app">
+    <section class="todoapp">
+    <!-- 头部：输入框 -->
+    <header class="header">
+      <h1>todos</h1>
+      <input class="new-todo" placeholder="输入新计划" autofocus v-model="label" @keydown.enter="submitTodo">
+    </header>
+
+    <!-- 列表： -->
+    <section class="main">
+      <input id="toggle-all" class="toggle-all" type="checkbox">
+      <label for="toggle-all" @click="handleAllCheck">Mark all as complete</label>
+      <ul class="todo-list">
+          <Todo v-for="item in todoList" :item="item" :key="item.id" v-show="select === 'all' || select === item.check"></Todo>
+      </ul>
+    </section>
+
+    <!-- 底部：状态栏 -->
+    <footer class="footer">
+      <span class="todo-count">剩余<strong>{{ unfinished }}</strong>未完成 </span>
+      <ul class="filters">
+        <li>
+          <a :class="select === 'all' ? 'selected' : ''" href="#/" @click="handleSelect('all')">全部</a>
+        </li>
+        <li>
+          <a :class="select === false ? 'selected': ''" href="#/active" @click="handleSelect(false)">未完成</a>
+        </li>
+        <li>
+          <a :class="select === true ? 'selected': ''" href="#/completed" @click="handleSelect(true)">已完成</a>
+        </li>
+      </ul>
+      <button class="clear-completed" @click="delFinish">清除已完成</button>
+    </footer>
+  </section>
+  </div>
+</template>
+
+<script>
+import Todo from './components/todo.vue';
+export default {
+  name: 'App',
+  components: {
+    Todo
+  },
+  data() {
+    return {
+      label: '',
+      todoList: [],
+      select: 'all',
+    }
+  },
+  methods: {
+    submitTodo(){
+      this.todoList.push({
+        id: Math.random() * 1000 + 1,
+        label: this.label,
+        check: false
+      });
+      this.label = '';
+    },
+    handleAllCheck() {
+      let c = this.allCheck;
+      this.todoList.forEach(item => {
+        item.check = !c;
+      });
+    },
+    handleSelect(type) {
+      this.select = type;
+    },
+    delFinish() {
+      this.todoList = this.todoList.filter(item => item.check === false);
+    }
+  },
+  computed: {
+    unfinished(){
+      return this.todoList.reduce((sum, item) => sum += item.check ? 0 : 1, 0);
+    },
+    allCheck: {
+      get(){
+        return this.todoList.every(item => item.check === true);
+      },
+      set(value){
+        this.todoList.forEach(item => item.check = value);
+      }
+    }
+  },
+  watch: {
+    todoList: {
+      deep: true,
+      immediate: true,
+      handler (newV, oldV){
+        if(oldV === undefined){
+          this.todoList = JSON.parse(localStorage.getItem('todos') ? localStorage.getItem('todos') : []);
+        }else{
+          localStorage.setItem('todos', JSON.stringify(this.todoList));
+        }
+      }
+    },
+  }
+}
+</script>
+
+<style>
+
+</style>
