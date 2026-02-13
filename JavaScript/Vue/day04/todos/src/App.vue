@@ -4,15 +4,15 @@
     <!-- 头部：输入框 -->
     <header class="header">
       <h1>todos</h1>
-      <input class="new-todo" placeholder="输入新计划" autofocus v-model="label" @keydown.enter="submitTodo">
+      <input class="new-todo" placeholder="输入新计划" autofocus v-model.trim="label" @keydown.enter="submitTodo">
     </header>
 
     <!-- 列表： -->
     <section class="main">
-      <input id="toggle-all" class="toggle-all" type="checkbox">
-      <label for="toggle-all" @click="handleAllCheck">Mark all as complete</label>
+      <input id="toggle-all" class="toggle-all" type="checkbox" v-model="allCheck">
+      <label for="toggle-all">Mark all as complete</label>
       <ul class="todo-list">
-          <Todo v-for="item in todoList" :item="item" :key="item.id" v-show="select === 'all' || select === item.check"></Todo>
+          <Todo v-for="item in todoList" :item="item" :key="item.id" @del="del" v-show="select === 'all' || select === item.check"></Todo>
       </ul>
     </section>
 
@@ -24,7 +24,7 @@
           <a :class="{selected: select === 'all'}" href="#/" @click="handleSelect('all')">全部</a>
         </li>
         <li>
-          <a :class="{selected: select === 'false'}" href="#/active" @click="handleSelect(false)">未完成</a>
+          <a :class="{selected: select === false}" href="#/active" @click="handleSelect(false)">未完成</a>
         </li>
         <li>
           <a :class="{selected: select === true}" href="#/completed" @click="handleSelect(true)">已完成</a>
@@ -37,6 +37,7 @@
 </template>
 
 <script>
+import { del } from 'vue';
 import Todo from './components/todo.vue';
 export default {
   name: 'App',
@@ -52,8 +53,9 @@ export default {
   },
   methods: {
     submitTodo(){
+      if(this.label === '') return;
       this.todoList.push({
-        id: Math.random() * 1000 + 1,
+        id: parseInt(Math.random() * 1000 + 1),
         label: this.label,
         check: false
       });
@@ -70,6 +72,9 @@ export default {
     },
     delFinish() {
       this.todoList = this.todoList.filter(item => item.check === false);
+    },
+    del(id){
+      this.todoList = this.todoList.filter(item => item.id !== id);
     }
   },
   computed: {
@@ -91,8 +96,8 @@ export default {
       immediate: true,
       handler (newV, oldV){
         if(oldV === undefined){
-          this.todoList = JSON.parse(localStorage.getItem('todos') ? localStorage.getItem('todos') : []);
-        }else{
+          this.todoList = JSON.parse(localStorage.getItem('todos')) || [];
+        }else if(newV){
           localStorage.setItem('todos', JSON.stringify(this.todoList));
         }
       }
