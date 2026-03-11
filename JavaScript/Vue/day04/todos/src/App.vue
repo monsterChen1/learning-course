@@ -37,7 +37,6 @@
 </template>
 
 <script>
-import { del } from 'vue';
 import Todo from './components/todo.vue';
 export default {
   name: 'App',
@@ -60,12 +59,6 @@ export default {
         check: false
       });
       this.label = '';
-    },
-    handleAllCheck() {
-      let c = this.allCheck;
-      this.todoList.forEach(item => {
-        item.check = !c;
-      });
     },
     handleSelect(type) {
       this.select = type;
