@@ -12,13 +12,21 @@
     <VModel v-model="scale"></VModel>
 
     <h2>ref 和 $refs</h2>
-    <Ref></Ref>
+    <h3>ref获取DOM节点</h3>
+    <RefCpt ref="cpt"></RefCpt>
+
+    <h3>ref获取组件对象</h3>
+    <button @click="getCpt">获取组件对象</button>
+
+    <h2>nextTick</h2>
+    <NextTickCpt></NextTickCpt>
   </div>
 </template>
 
 <script>
-import Ref from './components/Ref.vue';
 import VModel from './components/VModel.vue';
+import RefCpt from './components/RefCpt.vue';
+import NextTickCpt from './components/NextTickCpt.vue';
 
 export default {
   name: 'App',
@@ -31,7 +39,8 @@ export default {
   },
   components: {
     VModel,
-    Ref
+    RefCpt,
+    NextTickCpt
   },
   methods: {
     fn(e){
@@ -39,6 +48,15 @@ export default {
     },
     input(num){
       this.scale = num;
+    },
+    getCpt(){
+      // 获取组件对象
+      let cptO = this.$refs.cpt
+      console.log(cptO);
+      // 获取组件对象的数据
+      console.log(cptO.info);
+      // 调用组件对象的方法
+      cptO.getRef();
     }
   }
 }

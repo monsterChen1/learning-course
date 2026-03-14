@@ -15,6 +15,11 @@
 <script>
 export default {
     name: 'Ref',
+    data() {
+        return {
+            info: '子组件数据'
+        }
+    },
     methods: {
         getDiv() {
             let d = document.querySelector('#box');
