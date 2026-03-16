@@ -20,6 +20,15 @@
 
     <h2>nextTick</h2>
     <NextTickCpt></NextTickCpt>
+
+    <h2>练习</h2>
+    <TestOne></TestOne>
+    <ChangeSpan></ChangeSpan>
+
+    <h2>动态组件</h2>
+    <button @click="cpt = 'Account'">账户密码填写</button>
+    <button @click="cpt = 'Info'">个人信息填写</button>
+    <component :is="cpt"></component>
   </div>
 </template>
 
@@ -27,6 +36,10 @@
 import VModel from './components/VModel.vue';
 import RefCpt from './components/RefCpt.vue';
 import NextTickCpt from './components/NextTickCpt.vue';
+import TestOne from './components/TestOne.vue';
+import ChangeSpan from './components/ChangeSpan.vue';
+import Account from './components/Account.vue';
+import Info from './components/Info.vue';
 
 export default {
   name: 'App',
@@ -34,13 +47,18 @@ export default {
     return {
       msg: '初始化数据',
       info: '初始化数据',
-      scale: 100
+      scale: 100,
+      cpt: 'Account'
     };
   },
   components: {
     VModel,
     RefCpt,
-    NextTickCpt
+    NextTickCpt,
+    TestOne,
+    ChangeSpan,
+    Account,
+    Info
   },
   methods: {
     fn(e){
