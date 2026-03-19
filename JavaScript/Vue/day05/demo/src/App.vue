@@ -29,6 +29,11 @@
     <button @click="cpt = 'Account'">账户密码填写</button>
     <button @click="cpt = 'Info'">个人信息填写</button>
     <component :is="cpt"></component>
+
+    <h2>自定义指令</h2>
+    <div v-color="'red'">v-color自定义指令 全局指令</div>
+    <!-- <div v-bgColor="blue"></div> -->
+    <Directive></Directive>
   </div>
 </template>
 
@@ -40,6 +45,18 @@ import TestOne from './components/TestOne.vue';
 import ChangeSpan from './components/ChangeSpan.vue';
 import Account from './components/Account.vue';
 import Info from './components/Info.vue';
+import Directive from './components/Directive.vue';
+import Vue from 'vue';
+
+Vue.directive('color', {
+  inserted(el, value){
+    // console.log(value);
+    el.style.backgroundColor = value.value || value.expression;
+  },
+  update(el, binding){
+    // console.log(binding.value);
+  }
+});
 
 export default {
   name: 'App',
@@ -48,7 +65,7 @@ export default {
       msg: '初始化数据',
       info: '初始化数据',
       scale: 100,
-      cpt: 'Account'
+      cpt: 'Account',
     };
   },
   components: {
@@ -58,7 +75,8 @@ export default {
     TestOne,
     ChangeSpan,
     Account,
-    Info
+    Info,
+    Directive
   },
   methods: {
     fn(e){
