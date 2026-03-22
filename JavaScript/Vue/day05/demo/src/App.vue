@@ -34,6 +34,19 @@
     <div v-color="'red'">v-color自定义指令 全局指令</div>
     <!-- <div v-bgColor="blue"></div> -->
     <Directive></Directive>
+
+    <h2>slot插槽</h2>
+    <CptSlot>
+      <ul>
+        <li>寒雨连江夜入吴</li>
+        <li>平明送客楚山孤</li>
+        <li>洛阳亲友如相问</li>
+        <li>一片冰心在玉壶</li>
+      </ul>
+    </CptSlot><br>
+    <CptSlot>
+      <img src="./assets/logo.png" alt="">
+    </CptSlot>
   </div>
 </template>
 
@@ -46,6 +59,7 @@ import ChangeSpan from './components/ChangeSpan.vue';
 import Account from './components/Account.vue';
 import Info from './components/Info.vue';
 import Directive from './components/Directive.vue';
+import CptSlot from './components/CptSlot.vue';
 import Vue from 'vue';
 
 Vue.directive('color', {
@@ -76,7 +90,8 @@ export default {
     ChangeSpan,
     Account,
     Info,
-    Directive
+    Directive,
+    CptSlot
   },
   methods: {
     fn(e){
@@ -99,4 +114,7 @@ export default {
 </script>
 
 <style>
+ul {
+  list-style: none;
+}
 </style>
