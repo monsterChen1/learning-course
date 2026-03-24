@@ -25,12 +25,22 @@
     </CptSlotName>
 
     <h2>作用域插槽</h2>
+    <h3>具名作用域插槽</h3>
     <CptSlotScope >
       <template #image="scope">
         <img :src="scope.src" alt="">
       </template>
     </CptSlotScope>
-
+    <h3>elementUI - 组件库写法</h3>
+    <CptSlotScopeObj>
+      <template #default="scope">
+        <ul>
+          <li>{{ scope.row.name }}</li>
+          <li>{{ scope.row.age }}</li>
+          <li>{{ scope.row.sex }}</li>
+        </ul>
+      </template>
+    </CptSlotScopeObj>
   </div>
 </template>
 
@@ -38,14 +48,15 @@
 import CptSlot from './components/CptSlot.vue';
 import CptSlotName from './components/CptSlotName.vue';
 import CptSlotScope from './components/CptSlotScope.vue';
-
+import CptSlotScopeObj from './components/CptSlotScopeObj.vue';
 
 export default {
   name: 'App',
   components: {
     CptSlot,
     CptSlotName,
-    CptSlotScope
+    CptSlotScope,
+    CptSlotScopeObj
   }
 }
 </script>
