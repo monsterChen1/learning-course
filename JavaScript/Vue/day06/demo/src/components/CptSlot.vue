@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h3>默认插槽</h3>
     <div class="title">标题 <button @click="toClose">{{ close ? '折叠 ' : '展开' }}</button></div>
     <div class="content" v-show="close">
         <slot>
@@ -27,7 +26,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .title {
     width: 200px;
     display: flex;
