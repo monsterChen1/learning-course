@@ -24,18 +24,28 @@
       </template>
     </CptSlotName>
 
+    <h2>作用域插槽</h2>
+    <CptSlotScope >
+      <template #image="scope">
+        <img :src="scope.src" alt="">
+      </template>
+    </CptSlotScope>
+
   </div>
 </template>
 
 <script>
 import CptSlot from './components/CptSlot.vue';
 import CptSlotName from './components/CptSlotName.vue';
+import CptSlotScope from './components/CptSlotScope.vue';
+
 
 export default {
   name: 'App',
   components: {
     CptSlot,
-    CptSlotName
+    CptSlotName,
+    CptSlotScope
   }
 }
 </script>
