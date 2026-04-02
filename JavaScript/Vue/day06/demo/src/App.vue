@@ -41,6 +41,10 @@
         </ul>
       </template>
     </CptSlotScopeObj>
+
+    <h2>生命周期函数</h2>
+    <CptLife v-if="showLife"></CptLife>
+    <button @click="lifeClost">销毁组件</button>
   </div>
 </template>
 
@@ -49,6 +53,7 @@ import CptSlot from './components/CptSlot.vue';
 import CptSlotName from './components/CptSlotName.vue';
 import CptSlotScope from './components/CptSlotScope.vue';
 import CptSlotScopeObj from './components/CptSlotScopeObj.vue';
+import CptLife from './components/CptLife.vue';
 
 export default {
   name: 'App',
@@ -56,7 +61,18 @@ export default {
     CptSlot,
     CptSlotName,
     CptSlotScope,
-    CptSlotScopeObj
+    CptSlotScopeObj,
+    CptLife
+  },
+  data() {
+    return {
+        showLife: true
+    }
+  },
+  methods: {
+    lifeClost() {
+        this.showLife = false;
+    }
   }
 }
 </script>
