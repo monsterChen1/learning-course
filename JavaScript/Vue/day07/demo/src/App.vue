@@ -1,9 +1,14 @@
 <template>
   <div id="app">
     <div class="footer_wrap">
-      <a href="#/find">发现音乐</a>
-      <a href="#/my">我的音乐</a>
-      <a href="#/part">朋友</a>
+      <RouterLink to="/find">发现音乐</RouterLink>
+      <RouterLink to="/my">我的音乐</RouterLink>
+      <RouterLink to="/part">朋友</RouterLink>
+      <!-- <a href="#/find">发现音乐</a> -->
+      <!-- <a href="#/my">我的音乐</a> -->
+      <!-- <a href="#/part">朋友</a> -->
+
+      <a @click="onTab">我的歌单</a>
     </div>
     <div class="top">
       <!-- 路由视图 -->
@@ -13,9 +18,23 @@
 </template>
 
 <script>
+
 export default {
   name: 'App',
   components: {
+  },
+  methods: {
+    onTab() {
+      this.$router.push({
+        name: 'MySong',
+        params: {
+          id: 1234,
+        },
+        query: {
+          name: '天外来物'
+        }
+      });
+    }
   }
 }
 </script>
@@ -45,5 +64,8 @@ export default {
 }
 .top {
   padding-top: 62px;
+}
+.router-link-active {
+  background-color: aqua !important;
 }
 </style>
