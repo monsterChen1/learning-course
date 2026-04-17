@@ -56,7 +56,7 @@
       :before-close="cancel"
       :wrapperClosable="false"
       size="40%">
-      <div v-if="title === '预览'">
+      <div v-if="title === '预览'" class="article-preview ">
         <h5>{{ form.stem }}</h5>
         <div v-html="form.content"></div>
       </div>
