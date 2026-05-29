@@ -6,4 +6,6 @@ var empty: null = null
 var undef: undefined = undefined
 
 // void用来规定函数无返回值
-var callback = function (): void { }
+var callback = function (): void {
+    // return 10;
+}
