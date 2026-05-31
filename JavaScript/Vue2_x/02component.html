@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02Component</title>
+    <script src="./js/vue2.dev.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ol>
+            <todo-item v-for="todo in todoList" v-bind:todo="todo" v-bind:key="todo.text"></todo-item>
+        </ol>
+    </div>
+    <script>
+        // 组件声明
+        Vue.component('todo-item', {
+            props: ['todo'],
+            template: `<li>{{ todo.text }}</li>`
+        });
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                todoList: [
+                    { text: '待办1' },
+                    { text: '待办2' },
+                    { text: '待办3' },
+                    { text: '待办4' },
+                ]
+            }
+        });
+    </script>
+</body>
+</html>

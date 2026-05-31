@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello, vue</title>
+    <!-- 开发环境 -->
+    <script src="./js/vue2.dev.js"></script>
+    <!-- 生产环境 -->
+<!--    <script src="./js/vue2.prod.js"></script>-->
+</head>
+<body>
+    <div id="app">
+        <h1>{{ message }}</h1>
+        <!-- 属性绑定 -->
+        <span v-bind:title="title">鼠标悬停</span>
+        <!-- if条件 -->
+        <p v-if="step == 1">第一步</p>
+        <p v-else-if="step == 2">第二步</p>
+        <p v-else>第{{ step }}步</p>
+        <!-- 循环 -->
+        <ol>
+            <li v-for="item in list">
+                {{item.text }}
+            </li>
+        </ol>
+        <!-- 事件监听 -->
+        <button v-on:click="reverseMessage">反转消息</button>
+        <!-- 双向绑定 -->
+        <br/>
+        <input type="text" v-model="message" />
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                title: '网页加载于' + new Date().toLocaleString(),
+                message: "Hello, Vue2!",
+                step: 0,
+                list: [{text: '这是第一列'}, {text: '这是第二列'}]
+            },
+            methods: {
+                reverseMessage: function () {
+                    let strArr = this.message.split('')
+                    strArr.reverse();
+                    this.message = strArr.join('')
+                }
+            }
+        });
+    </script>
+</body>
+</html>
