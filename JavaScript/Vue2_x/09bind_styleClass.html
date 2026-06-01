@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue2.dev.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+
+        .bkRed {
+            background-color: red;
+        }
+
+        .bkBlue {
+            background-color: blue;
+        }
+
+        .bkPink {
+            background-color: pink;
+        }
+
+        .fWhite {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- style -->
+        <!-- 可以为纯字符串, 或者样式值 -->
+        <div :style="{backgroundColor: bkColor, color: fColor}">样式名称</div>
+        <!-- 数组一般为对象数组 -->
+        <div :style="bkArr">样式数组</div>
+        <div :style="bkObj">样式对象</div>
+        <!-- 多重值 -->
+        <div :style="{ display: ['-webkit-box', '-ms-flexbox', 'flex'] }"></div>
+        <!-- class -->
+        <div :class="bkClass">样式类名称</div>
+        <div :class="bkClassArr">样式类对象</div>
+        <div :class="bkClassObj">样式类数组</div>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                bkColor: 'red',
+                fColor: 'white',
+                bkArr: [{ backgroundColor: 'blue' }, { color: 'white' }],
+                bkObj: {
+                    backgroundColor: 'pink',
+                    color: 'white',
+                },
+                bkClass: 'bkRed',
+                bkClassArr: ['bkBlue', 'fWhite'],
+                bkClassObj: {
+                    bkPink: true,
+                    fWhite: true,
+                    bkRed: false,
+                }
+            },
+        });
+    </script>
+</body>
+
+</html>

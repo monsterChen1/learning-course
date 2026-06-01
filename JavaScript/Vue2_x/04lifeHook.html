@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04lifeHook</title>
+    <script src="./js/vue2.dev.js"></script>
+</head>
+
+<body>
+    <div id="app">
+
+    </div>
+    <script>
+        // Vue的生命周期钩子函数
+        // 八大生命周期函数
+        var vm = new Vue({
+            el: '#app',
+            data: {},
+            // 初始化阶段 (数据初始化和DOM渲染)
+            beforeCreate() {
+                // data数据初始化之前调用
+                console.log('beforeCreate');
+            },
+            created() {
+                // data数据初始化之后调用, 可以获取组件数据
+                console.log('created');
+            },
+            beforeMount() {
+                // Dom元素渲染之前, 无法获取到DOM元素
+                console.log('beforeMount');
+            },
+            mounted() {
+                // Dom元素渲染之后 可以操作Dom元素
+                console.log('mounted');
+            },
+            // 运行阶段
+            beforeUpdate() {
+                // 数据更新之前调用, 可以获取到更新前的数据
+                // Dom更新前
+                console.log('beforeUpdate');
+            },
+            updated() {
+                // 数据更新之后调用, 可以获取到更新后的数据
+                // Dom更新后
+                console.log('updated');
+            },
+            // 销毁阶段
+            beforeDestroy() {
+                // Vue实例销毁之前调用, 可以进行一些清理工作
+                console.log('beforeDestroy');
+            },
+            destroyed() {
+                // Vue实例销毁之后调用, 无法再访问Vue实例
+                console.log('destroyed');
+            }
+        });
+    </script>
+</body>
+
+</html>

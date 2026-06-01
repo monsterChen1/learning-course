@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10条件渲染</title>
+    <script src="./js/vue2.dev.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 条件渲染 -->
+        <!-- v-if -->
+        <div v-if="step === 0">Step 0 - 还没开始</div>
+        <div v-else> Step {{ step }} - 进行中</div>
+
+        <div>分数: {{ score }}</div>
+        <div v-if="score >= 95">优秀</div>
+        <div v-else-if="score >= 80">良好</div>
+        <div v-else-if="score >= 60">一般</div>
+        <div v-else>不及格</div>
+
+        <!-- v-show -->
+        <div v-show="isShow">{{ isShow ? '显示' : '隐藏' }}</div>
+        <!-- v-if和v-for一起使用时，v-for具有更高的优先级 -->
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                step: 0,
+                score: 60,
+                isShow: true
+            }
+        });
+    </script>
+</body>
+
+</html>

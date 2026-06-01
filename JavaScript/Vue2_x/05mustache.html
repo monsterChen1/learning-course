@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05mustache</title>
+    <script src="./js/vue2.dev.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 插值语法 mustache -->
+        <h1>{{ message }}</h1>
+        <!-- 只渲染一次，初始化后不会在更新 -->
+        <h2 v-once>{{ title }}</h2>
+        <!-- 插值语法只渲染文本 -->
+        <div>{{ description }}</div>
+        <!-- 渲染HTML -->
+        <div v-html="description"></div>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue!',
+                title: 'Vue.js 是一款流行的JavaScript框架',
+                description: '<p>Vue.js</p>'
+            }
+        });
+
+        setTimeout(() => {
+            vm.message = 'Hello Vue.js!';
+            vm.title = 'Vue.js 是一款流行的JavaScript框架, 但v-once指令只会渲染一次';
+        }, 2000);
+    </script>
+</body>
+
+</html>

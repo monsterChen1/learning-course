@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08watch</title>
+    <script src="./js/vue2.dev.js"></script>
+</head>
+
+<body>
+    <div id="app">
+
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                list: [],
+            },
+            watch: {
+                // 简单写法
+                list: function (newVal, oldVal) {
+                    console.log('list changed:', newVal, oldVal);
+                },
+                // 完成写法
+                list: {
+                    immediate: true, // 立即执行一次
+                    deep: true, // 深度监听
+                    handler: function (newVal, oldVal) {
+                        console.log('list changed (deep):', newVal, oldVal);
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

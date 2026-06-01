@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06指令</title>
+    <script src="./js/vue2.dev.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- v-bind 指令 -->
+        <a v-bind:href="bd" target="_blank">百度一下</a>
+        <!-- 动态参数 -->
+        <a v-bind:[key]="wb" target="_blank">微博</a>
+        <!-- v-on 指令 -->
+        <button v-on:click="handleClick">点击我</button>
+        <!-- 修饰符 -->
+        <!-- 事件修饰符 .prevent:阻止默认行为 .stop:阻止事件冒泡 -->
+        <!-- 按键修饰符keyup&keydown .enter .tab .delete .esc .space .up .down .left .right -->
+        <input v-on:keyup.enter="handleClick" placeholder="按回车触发事件">
+        <!-- 缩写 -->
+        <!-- v-bind:href 可以缩写为 :href-->
+        <!-- v-on:click 可以缩写为 @click -->
+    </div>
+    <script>
+        // 指令是带有 v- 前缀的特殊属性
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue!',
+                bd: "https://www.baidu.com",
+                key: "href",
+                wb: "https://www.weibo.com"
+            },
+            methods: {
+                handleClick: function () {
+                    alert('按钮被点击了！');
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
