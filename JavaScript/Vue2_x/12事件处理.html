@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11事件处理</title>
+    <script src="./js/vue2.dev.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>库存: {{ count }}</div>
+        <button @click="handleInc(10, $event)">增加10</button>
+        <button @click="handleDec(10)">减少10</button>
+        <button @click="cancelCount">清空</button>
+    </div>
+    <script>
+        /**
+         * 事件修饰符
+         * .prevent
+         * .stop
+         * .capture
+         * .self
+         * .once
+         * .passive
+         * 
+         * 按键修饰符
+         * .enter
+         * .tab
+         * .delete
+         * .esc
+         * .space
+         * .up
+         * .down
+         * .left
+         * .right
+         * .ctrl
+         * .alt
+         * .shift
+         * .meta
+         * .exact
+         * 
+         * 鼠标修饰符
+         * .left
+         * .right
+         * .middle
+         **/
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                count: 0
+            },
+            methods: {
+                handleInc(step, event) {
+                    this.count += step;
+                    console.log("事件对象: ", event);
+                },
+                handleDec(step) {
+                    if (this.count - step < 0) {
+                        alert('库存不足');
+                        return;
+                    }
+                    this.count -= step;
+                },
+                cancelCount(event) {
+                    // 未传参数时，事件对象会默认传入方法中
+                    console.log("事件对象: ", event);
+                    this.count = 0;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
