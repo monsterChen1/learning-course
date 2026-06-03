@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>13表单绑定</title>
+    <script src="./js/vue2.dev.js"></script>
+</head>
+<body>
+<div id="app">
+    <!-- 文本框  -->
+    <input type="text" v-model="username" placeholder="用户名">
+    <p>{{username}}</p>
+    <!-- 多行文本框 -->
+    <textarea v-model="remark"></textarea>
+    <p>{{remark}}</p>
+    <!-- 复选框 -->
+    <input type="checkbox" v-model="checked">
+    <p>{{checked}}</p>
+    <input type="checkbox" id="lanqiu" value="lanqiu" v-model="hobby">
+    <label for="lanqiu">篮球</label>
+    <input type="checkbox" id="sing" value="sing" v-model="hobby">
+    <label for="sing">唱歌</label>
+    <input type="checkbox" id="dance" value="dance" v-model="hobby">
+    <label for="dance">跳舞</label>
+    <p>{{hobby}}</p>
+    <!-- 单选框 -->
+    <input type="radio" id="man" value="man" v-model="sex">
+    <label for="man">男</label>
+    <input type="radio" id="woman" value="woman" v-model="sex">
+    <label for="woman">女</label>
+    <p>{{ sex }}</p>
+    <!-- 选择框 -->
+    <select v-model="option" multiple>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+    </select>
+    <p>{{ option }}</p>
+
+</div>
+<script>
+    /*
+    修饰符
+    .lazy change事件后同步
+    .number 将输入值转为数值类型
+    .trim 将输入值过滤首尾空格
+    * */
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            username: '',
+            remark: '',
+            checked: false,
+            hobby: [],
+            sex: '',
+            option: []
+        }
+    });
+</script>
+</body>
+</html>
