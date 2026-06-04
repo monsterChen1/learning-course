@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13component</title>
+    <script src="./js/vue2.dev.js"></script>
+    <style>
+        .black-border {
+            border: 1px solid black;
+        }
+
+        .gray-bkg {
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <my-button></my-button>
+        <my-button></my-button>
+        <!-- 父传子：通过Props传递数据 -->
+        <blog v-for="item in titleList" :title="item" :key="item"></blog>
+        <!-- 子传父：通过事件传递数据 -->
+        <btn-incr class="gray-bkg" :num="num" @incr="handleIncr"></btn-incr>
+    </div>
+    <script>
+        Vue.component('my-button', {
+            name: 'myButton',
+            data() {
+                return {
+                    count: 0
+                }
+            },
+            template: `
+                <button @click="count++">点击了{{ count }}次</button>
+            `
+        });
+
+        Vue.component('blog', {
+            // 数组形式
+            // props: ['title'],
+            // 对象形式
+            props: {
+                title: {
+                    type: String,
+                    required: true,
+                    default: '默认标题'
+                }
+            },
+            template: `
+                <h3>{{ title }}</h3>
+            `
+        });
+
+        Vue.component('btn-incr', {
+            // 禁用属性继承，不影响class和style等属性的传递
+            inheritAttrs: false,
+            props: {
+                num: {
+                    type: Number,
+                    required: true,
+                    default: 0
+                }
+            },
+            template: `
+                <div class='black-border' @click='handleClick'>{{ num }}</div>
+            `,
+            methods: {
+                handleClick() {
+                    // 组件内部不能直接修改props传递的数据
+                    // this.num++
+                    // 通过事件通知父组件修改数据
+                    this.$emit('incr');
+                }
+            }
+        });
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                titleList: ['Vue.js', 'React', 'Angular'],
+                num: 10
+            },
+            methods: {
+                handleIncr() {
+                    console.log('父组件接收到事件，执行数据修改');
+                    this.num++;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

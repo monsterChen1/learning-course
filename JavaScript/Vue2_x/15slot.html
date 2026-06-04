@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15slot</title>
+    <script src="./js/vue2.dev.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 默认插槽 -->
+        <my-title>这是标题</my-title>
+        <!-- 具名插槽 -->
+        <my-layout>
+            <!-- 指定名称 -->
+            <template v-slot:title>这是标题</template>
+            <!-- 简写 -->
+            <template #content>这是内容</template>
+        </my-layout>
+        <!-- 作用域插槽 -->
+        <my-list #content="scope">
+            <li v-for="item in scope.row" :key="item">{{ item }}</li>
+        </my-list>
+    </div>
+    <script>
+        Vue.component('my-title', {
+            template: `
+                <div>
+                    <h2>
+                        <slot></slot>
+                    </h2>
+                </div>
+            `
+        })
+
+        Vue.component('my-layout', {
+            template: `
+                <div>
+                    <h2>
+                        <slot name="title"></slot>
+                    </h2>
+                    <slot name="content"></slot>
+                </div>
+            `
+        })
+
+        Vue.component('my-list', {
+            data() {
+                return {
+                    list: ['vue', 'react', 'angular']
+                }
+            },
+            template: `
+                <ul>
+                    <slot name="content" :row="list"><slot>
+                </ul>
+            `
+        })
+        var vm = new Vue({
+            el: '#app',
+            data: {},
+        })
+    </script>
+</body>
+
+</html>
