@@ -26,6 +26,17 @@ let obj4 = shallowReactive({
   count:0,
   obj: { count: 0 }
 })
+
+let obj5 = reactive({
+  count
+})
+let obj6 = {
+  id: ref(1)
+}
+let arr = reactive([ref(1), ref(2), ref(3)])
+console.log(obj5.count)
+console.log(obj6.id.value)
+console.log(arr[0].value)
 </script>
 
 <template>
@@ -36,6 +47,7 @@ let obj4 = shallowReactive({
     <div @click="obj2.count++">{{ obj2.count }}</div>
     <div @click="obj3.count++">{{ obj3.count }}</div>
     <div @click="obj4.obj.count++">{{ obj4.obj.count }}</div>
+    <div>数字是：{{ obj6.id + 1 }}</div>
   </div>
 </template>
 
