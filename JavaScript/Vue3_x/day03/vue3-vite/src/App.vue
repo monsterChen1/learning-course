@@ -48,6 +48,7 @@ console.log(arr[0].value)
     <div @click="obj3.count++">{{ obj3.count }}</div>
     <div @click="obj4.obj.count++">{{ obj4.obj.count }}</div>
     <div>数字是：{{ obj6.id + 1 }}</div>
+    <div>数字是：{{ obj6.id.value + 1 }}</div>
   </div>
 </template>
 
