@@ -46,7 +46,7 @@ const num = 10
       <li v-for="n in num" :key="n">{{ n }}</li>
     </ul>
 
-    <h2>v-if/v-show</h2>
+    <h2>v-if/v-for</h2>
     <ul>
       <template v-for="item in courseList">
         <li v-if="item.isShow" :key="item.name">{{ item.name }}</li>
