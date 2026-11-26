@@ -26,6 +26,7 @@ const styleObject = ref({
 
 <template>
   <div id="app">
+    <!-- 类绑定 -->
     <h1 :class="isActive ? 'active': ''">Monster - 三元表达式</h1>
     <h1 :class="{ 'active': isActive, 'title': isTitle }">Monster - 对象</h1>
     <h1 :class="classObject">Monster - 对象变量</h1>
@@ -35,6 +36,7 @@ const styleObject = ref({
     <h1 :class="[isActive ? active: '', title]">Monster - 三元表达式 + 数组</h1>
     <h1 :class="[{ [active]: isActive }, title]">Monster - 对象 + 数组</h1>
 
+    <!-- 样式绑定 -->
     <h1 :style="{ 'color': color, 'font-size': fontSize}">Monster - 内联样式</h1>
     <h1 :style="styleObject">Monster - 内联样式对象</h1>
   </div>
